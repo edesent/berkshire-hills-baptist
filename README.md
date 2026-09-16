@@ -1,0 +1,214 @@
+# Countryside Baptist Church — redesign
+
+A proposed website for **Countryside Baptist Church**, Port Washington, Ohio
+(<https://countrysidebc.com>). Independent Baptist, King James Bible, incorporated
+in Ohio in 1975. Pastor Paul Harvey.
+
+- Repo: `edesent/countrysidebc-redesign` (private)
+- Demo: <https://countrysidebc.elijahdesent.com>
+
+## This is a demo, not the live church site
+
+Two guards keep it from competing with the church's real site in search. **Both
+must be removed together, on the day this becomes the live site on their own
+domain — and not before:**
+
+1. `src/app/robots.ts` — `disallow: "/"` for all robots.
+2. `src/app/layout.tsx` — `robots: { index: false, follow: false }`.
+
+Also delete `src/components/DemoBanner.tsx` and its call in `layout.tsx` (the
+brown "Design proposal" strip), and set `siteUrl` in `src/lib/site.ts` to
+`https://countrysidebc.com`.
+
+## For AI editors (ChatGPT, Claude, etc.) — read this before editing
+
+### Stack snapshot
+
+| Thing | Version / setting |
+| --- | --- |
+| Next.js | **16.2.4** (App Router, Server Components by default) |
+| React | 19.2.4 |
+| Tailwind | **v4** — CSS-first config in `src/app/globals.css`, no `tailwind.config.js` |
+| TypeScript | strict — `next build` fails on any type error |
+| Hosting | Vercel |
+
+### Next.js 16 conventions that bite older code
+
+1. Dynamic route `params` and `searchParams` are **Promises** — `await` them.
+2. `generateMetadata` is `async`.
+3. `<Image>` remote hosts must be allow-listed in `next.config.ts`.
+   `**.ytimg.com` is already there for sermon thumbnails.
+4. Tailwind v4 has no config file. Theme tokens live in `globals.css` under
+   `@theme`.
+
+### Where things live
+
+- `src/lib/site.ts` — **the single source of truth** for the church's facts:
+  address, service times, mission, pastor's biography, first-visit answers.
+  Change a fact here, not in a component.
+- `src/lib/content.ts` — the salvation tract and the full statement of faith,
+  carried over **verbatim** from the church's own pages. Generated from a scrape
+  so nothing was retyped. Do not paraphrase this text; it is the church's own
+  doctrinal wording.
+- `src/lib/messages.ts` — reads the church's YouTube RSS feed and parses their
+  upload titles (`"Sunday Evening Service 8/16/26 (Pastor Paul Harvey)"`) into a
+  service name, speaker and date. Revalidates every 30 minutes, so `/sermons`
+  follows their uploads with no manual step.
+- `src/components/` — one component per homepage section, plus `Logo`, `Prose`,
+  `Phone`, `PageHero`.
+- `public/csbc/` — photographs. See "Photographs" below.
+- `src/og-fonts/` — EB Garamond as **static, non-variable TTF**, read at request
+  time by `opengraph-image.tsx`. Satori cannot read woff2 or variable fonts;
+  swapping these for the `public/fonts` woff2 files breaks the OG image with
+  `Cannot read properties of undefined`.
+
+### Design system
+
+Palette is drawn from the church's own material — the honey-oak pulpit and pews,
+the stacked-stone wall behind the platform, their cream sanctuary walls, and the
+pale gold of the open Bible in their own logo (`#ffd479`). Tokens are in
+`globals.css`.
+
+Type: **EB Garamond** for display, **Inter** for body, **Cinzel** for the small
+letterspaced caps. All three are self-hosted in `public/fonts` — `next/font/google`
+can fail the Vercel build outright, so do not switch to it.
+
+### The brand guide governs type and colour
+
+The church issued a brand guide in 2026 and the site follows it. Before changing
+a colour or a typeface, know these rules:
+
+**Colours** — five, and only these:
+
+| Name | Hex | Where |
+| --- | --- | --- |
+| Olive Tree | `#747A3A` | eyebrows, links, secondary accents (`oak` tokens) |
+| Soft Gold | `#FCD68A` | decorative only — too pale for text (`gold-light`) |
+| Earth | `#9E7211` | the readable gold: accent text, rules (`gold`) |
+| Off-White | `#FFFBF6` | the page ground (`cream`) |
+| Charcoal | `#2B3422` | text and dark bands (`ink`) |
+
+The Tailwind token *names* are inherited from the pre-guide build (`ink`, `oak`,
+`gold`, `cream`…) because ~600 class names reference them. `globals.css` maps
+each one to its brand role; brand-named aliases (`--color-olive`, `--color-earth`,
+`--color-charcoal`, `--color-soft-gold`, `--color-off-white`) exist for new work.
+
+**Type** — three roles, and the guide is explicit about the boundaries:
+
+- The **script** is for the church's name and a welcome sign only. It is *never*
+  used for headings or body text, which is why it appears on this site solely
+  inside the logo artwork.
+- **Cinzel Bold** is headings and titles, *never* body text. Its lowercase is
+  small capitals, so every heading is set about **0.76x** the size it was under
+  the old Garamond and slightly tighter — the same string is far wider in caps.
+  Cinzel has **no italic**: anywhere the old build leaned for emphasis, Earth
+  gold carries it instead, and `.display em` forces `font-style: normal`.
+- **Body text** is Century Gothic in the guide. That is a licensed Monotype face
+  and cannot be embedded on a website, so the site self-hosts **Poppins** — the
+  closest freely licensable geometric sans (same single-storey `a`, round bowls,
+  tall x-height) at 400/600/700. If the church ever buys a Century Gothic web
+  licence, swapping those three files and the family name in `globals.css` is the
+  whole change.
+
+**Long quotations are body text, not titles.** The scripture banner, the pastor's
+welcome quote and the mission statement are set in the body face at a generous
+size. A whole verse in small capitals is not readable, and the guide bars Cinzel
+from body text — both point the same way.
+
+The OG image is rendered by Satori, which reads ttf and not woff2, so
+`src/og-fonts/` carries static copies: `cinzel-bold.ttf` is the variable Cinzel
+pinned at wght 700 (Satori cannot instance a variable font itself) plus
+`poppins-regular.ttf`.
+
+Custom classes (`.display`, `.eyebrow`, `.caps`, `.paper`, `.ref`) live inside
+`@layer components` so Tailwind utilities still beat them. Keep new ones there —
+an unlayered `.display { color: … }` would override every `text-*` utility.
+
+### Conventions worth keeping
+
+- **The phone number never appears in the HTML.** It is base64'd in `site.ts` and
+  assembled in the browser by `src/components/Phone.tsx`, which keeps it out of
+  scraper harvests. Do not paste the digits into a component or into JSON-LD.
+- **No email address on the public pages.** Link `/contact` instead.
+- The contact form posts to `src/app/api/contact/route.ts`, which forwards to
+  Slack when `SLACK_WEBHOOK_URL` is set and otherwise logs the message. It never
+  silently drops a submission.
+- Old WordPress URLs (`/who-we-are/our-beliefs`, `/who-we-are/our-staff`, …)
+  are redirected in `next.config.ts`. Add to that list rather than breaking them.
+
+### The logo
+
+`src/components/Logo.tsx` renders the church's **real** mark, not a redraw of it.
+
+The church has no vector copy. The largest raster in existence anywhere — their
+own WordPress media library tops out here — is a 326x175 PNG, checked in as
+`public/csbc/wordmark-source.png`. The original PNG is embedded unchanged in two cropped SVG wrappers, preserving the source lettering and Bible contours. The cream variant shows the original colours; the ink variant applies an SVG colour matrix for contrast on cream, preserving alpha. A larger original is still needed for sharper large-format use.
+
+| File | Use |
+| --- | --- |
+| `public/csbc/wordmark-ink.svg` | cream bands, colour-filtered original |
+| `public/csbc/wordmark-cream.svg` | dark bands, untouched original |
+
+Rules:
+
+- **Do not substitute a script font for the lettering.** It is engraved English
+  script that no webfont in the stack matches. Embed
+  `wordmark-source.png` unchanged if either SVG ever needs regenerating.
+- The original artwork is cropped to the ink (`viewBox="-2 39 332 97"`, with a little clearance for the strokes). The source PNG has ~41px of dead padding above and below the mark;
+  keeping it would force the navbar half again as tall.
+- Size the logo by **width** only — `Logo` sets `h-auto`. It no longer responds
+  to font-size the way the old type-set version did.
+- `BibleMark`, exported from the same file, is a *separate* simplified redraw of
+  just the open-Bible outline, used as the oversized watermark behind the
+  scripture banner. The real line art is too fine to read at that scale. It is
+  not the logo — do not swap it in for one.
+- The social share card (`src/app/opengraph-image.tsx`) still sets the church
+  name as EB Garamond type rather than using the mark, because the fine gold
+  line art disappears at share-card size.
+
+### Photographs
+
+Every photo on this site is **real** — no AI-generated, upscaled, or invented
+imagery, and no stock. Sources:
+
+- `sanctuary-wide.jpg`, `preaching-*.jpg` — frames from the church's own
+  livestream recordings on their YouTube channel.
+- `pastor-harvey.jpg`, `pastor-harvey-family.jpg` — the photograph of Pastor
+  Harvey and Joanna from their current site, cropped.
+
+If a new photo is needed, get it from the church. Do not generate one.
+
+The hero's background clip (`public/video/hero.mp4`) is the church's own footage
+of Pastor Harvey preaching, supplied by Eli. It is **silent — there is no audio
+track in the file at all** — trimmed to a stable 18s (the source pushes in past
+~20s, which read as a jump on every loop) and cropped so he sits right of centre,
+because uncropped he stands dead centre and the copy had nowhere to go. It is
+mounted only at `lg` and above with motion allowed, so a phone never downloads
+it; `hero-poster.jpg` stands in everywhere else.
+
+### Facts to confirm with the church
+
+- The welcome quotation attributed to Pastor Harvey in `site.ts`
+  (`pastor.welcomeQuote`) is written in his register but is **not** a real quote.
+  Replace it with his own words or remove it before launch.
+- `visitFacts` in `site.ts` describes parking, dress and children's classes from
+  general knowledge of the church's own material. Worth a read-through by
+  someone who is there on a Sunday.
+- The site says the church does not stream services live, only posts recordings.
+  Confirm before adding any "Watch Live" call to action.
+
+## After-push protocol — DO NOT SKIP
+
+Vercel runs `next build` (including strict TypeScript) on every push. **The build
+can fail even when your edit looked fine locally, and when it does Vercel keeps
+the previous build live** — the change appears to "404" or simply not happen.
+
+After every push, confirm the deployment reached `Ready` before reporting the
+change as live. If it errored, read the build log, fix the file, and push again.
+
+Two failure classes that bite this codebase:
+
+- **Strict TypeScript at build time.** Whenever you change a shape in
+  `site.ts` or `content.ts` (rename a key, drop a property), grep for callers
+  before pushing.
+- **Unlayered CSS.** See the design-system note above.

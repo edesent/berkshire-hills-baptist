@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+/* ── Self-hosted fonts (next/font/google can fail the Vercel build) ────────── */
+
+/* Cinzel carries the headings and the small-caps labels — the brand guide puts
+   it on the logo, headings and titles, and bars it from body text. It is a
+   variable face (400-900); headings ask for 700. Its "lowercase" is small
+   capitals, which is why every heading here is set smaller and tighter than the
+   Garamond it replaced: the same string occupies far more width in caps. */
+@font-face {
+  font-family: "Cinzel";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/cinzel.woff2") format("woff2");
+}
+
+/* The guide names Century Gothic for body text. It is a licensed Monotype face
+   and cannot be embedded on a website, so this is Poppins — the closest freely
+   licensable geometric sans: same single-storey 'a', same round bowls and tall
+   x-height. If the church ever buys a Century Gothic web licence, swapping
+   these three files and this family name is the whole change. */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/poppins-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/poppins-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/poppins-700.woff2") format("woff2");
+}
+
+@theme {
+  /* The church's 2026 brand guide palette. Five colours:
+       OLIVE TREE #747A3A · SOFT GOLD #FCD68A · EARTH #9E7211
+       OFF-WHITE #FFFBF6 · CHARCOAL #2B3422
+
+     The token NAMES below are inherited from the pre-brand-guide build and are
+     kept because ~600 class names reference them. Read them as brand roles:
+
+       ink / ink-soft ....... CHARCOAL and a lighter charcoal
+       cream ................ OFF-WHITE (the page ground)
+       gold ................. EARTH — the readable gold, for text and rules
+       gold-light ........... SOFT GOLD — decorative only; too pale for text
+       oak / oak-dark ....... OLIVE TREE and a deeper olive
+       linen / parchment .... tints of off-white for panels and borders
+
+     Correctly-named aliases are defined underneath for new work. */
+  --color-ink: #2b3422;
+  --color-ink-soft: #3e4832;
+  --color-oak: #747a3a;
+  --color-oak-light: #8d9450;
+  --color-oak-dark: #5c6130;
+  --color-gold: #9e7211;
+  --color-gold-light: #fcd68a;
+  --color-gold-pale: #fbeac2;
+  --color-cream: #fffbf6;
+  --color-parchment: #f7f1e6;
+  --color-linen: #ece5d6;
+  --color-linen-dark: #dbd3c0;
+  --color-stone: #6a6a56;
+  --color-stone-cool: #4f5a4a;
+  --color-claret: #8c2733;
+  --color-claret-dark: #6b1c26;
+  --color-text-body: #3a4231;
+  --color-text-light: #5f6653;
+  --color-text-muted: #878d76;
+
+  /* The brand guide's own names — prefer these going forward. */
+  --color-olive: #747a3a;
+  --color-soft-gold: #fcd68a;
+  --color-earth: #9e7211;
+  --color-off-white: #fffbf6;
+  --color-charcoal: #2b3422;
+
+  --font-sans: "Poppins", "Century Gothic", "Questrial", -apple-system, sans-serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-caps: "Cinzel", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-body);
+    background: var(--color-cream);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Kept inside @layer base so Tailwind text-* utilities still win on links. */
+  a {
+    color: inherit;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgba(252, 214, 138, 0.55);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .section-pad {
+    padding-block: clamp(4rem, 7.5vw, 7.5rem);
+  }
+
+  /* Small letterspaced Cinzel label above a section heading. */
+  .eyebrow {
+    font-family: var(--font-caps);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  /* The display face. Never sets its own color — let text-* utilities decide.
+     Cinzel Bold per the brand guide. Its lowercase is small capitals, so this
+     runs tighter and with a little more leading than a lowercase face would. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.005em;
+  }
+
+  /* Cinzel has no italic. Anywhere the old Garamond leaned for emphasis, the
+     brand's earth gold carries it instead — a synthesised oblique on an
+     inscriptional face looks like a mistake. */
+  .display em,
+  .display i {
+    font-style: normal;
+    color: var(--color-gold);
+  }
+
+  .caps {
+    font-family: var(--font-caps);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* The hero's background clip. Decorative, so it yields entirely to a
+     reduced-motion preference and the poster frame takes over. */
+  .hero-video::-webkit-media-controls,
+  .hero-video::-webkit-media-controls-panel,
+  .hero-video::-webkit-media-controls-play-button,
+  .hero-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+
+  /* A hairline gold rule with a diamond at its centre — the recurring divider. */
+  .rule-diamond {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .rule-diamond::before,
+  .rule-diamond::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.28;
+  }
+
+  /* Warm paper grain — subtle, no busy texture. */
+  .paper {
+    background-color: var(--color-cream);
+    background-image: radial-gradient(
+        circle at 18% 12%,
+        rgba(158, 114, 17, 0.05),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 84% 78%,
+        rgba(116, 122, 58, 0.055),
+        transparent 42%
+      );
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  .prose-scripture p {
+    margin-block: 0.9em;
+  }
+
+  /* Verse references inside the salvation tract and statement of faith. */
+  .ref {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+    color: var(--color-text-muted);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 0.8, 0.28, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.12s;
+}
+.delay-2 {
+  animation-delay: 0.26s;
+}
+.delay-3 {
+  animation-delay: 0.4s;
+}
+.delay-4 {
+  animation-delay: 0.54s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
