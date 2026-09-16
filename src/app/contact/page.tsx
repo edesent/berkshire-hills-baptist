@@ -10,7 +10,7 @@ import { canonical, serviceTimes, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Countryside Baptist Church, 4283 Shoemaker Road SW, Port Washington, Ohio. Service times, directions, and a message form that reaches the church directly.",
+    "Get in touch with Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts. Service times, directions, and a message form that reaches the church directly.",
   alternates: { canonical: "/contact" },
 };
 
@@ -102,14 +102,6 @@ export default function ContactPage() {
                           className="focus-ring text-oak-dark underline decoration-gold/50 underline-offset-4 transition hover:decoration-gold"
                         >
                           Facebook
-                        </a>
-                        <a
-                          href={site.social.youtube}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="focus-ring text-oak-dark underline decoration-gold/50 underline-offset-4 transition hover:decoration-gold"
-                        >
-                          YouTube
                         </a>
                       </dd>
                     </div>

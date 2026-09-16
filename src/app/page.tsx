@@ -10,7 +10,6 @@ import ScriptureBanner from "@/components/ScriptureBanner";
 import Services from "@/components/Services";
 import StillThatChurch from "@/components/StillThatChurch";
 import WelcomePastor from "@/components/WelcomePastor";
-import { getMessages } from "@/lib/messages";
 import { canonical, pastor, serviceTimes, site } from "@/lib/site";
 
 const churchSchema = {
@@ -18,12 +17,11 @@ const churchSchema = {
   "@type": "Church",
   "@id": canonical("/#church"),
   name: site.name,
-  alternateName: [site.shortName, "Countryside Baptist Port Washington"],
+  alternateName: [site.shortName],
   url: canonical("/"),
   slogan: site.tagline,
   description: site.description,
-  foundingDate: "1975-08-25",
-  image: canonical("/csbc/sanctuary-wide.jpg"),
+  image: canonical("/bhbc/church-exterior.jpg"),
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -38,16 +36,15 @@ const churchSchema = {
     longitude: site.geo.longitude,
   },
   areaServed: [
-    { "@type": "City", name: "Port Washington" },
-    { "@type": "City", name: "Newcomerstown" },
+    { "@type": "City", name: site.address.city },
     { "@type": "AdministrativeArea", name: site.address.county },
     { "@type": "State", name: site.address.regionName },
   ],
   hasMap: site.mapUrl,
-  sameAs: [site.social.facebook, site.social.youtube],
+  sameAs: [site.social.facebook],
   employee: {
     "@type": "Person",
-    name: `${pastor.name}`,
+    name: pastor.name,
     jobTitle: pastor.title,
   },
   openingHoursSpecification: serviceTimes.map((service) => ({
@@ -66,42 +63,34 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Where is Countryside Baptist Church located?",
+      name: "Where is Berkshire Hills Baptist Church located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: `${site.name} is at ${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}, just off US-36 in ${site.address.county}, Ohio.`,
+        text: `${site.name} is at ${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}, in ${site.address.county}.`,
       },
     },
     {
       "@type": "Question",
-      name: "What time are services at Countryside Baptist Church?",
+      name: "What time are services at Berkshire Hills Baptist Church?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sunday School is at 10:00 a.m., Morning Worship at 11:00 a.m., and Sunday Evening service at 6:00 p.m. Prayer Meeting and Bible Study is Wednesday at 7:00 p.m.",
+        text: "Sunday School is at 10:00 a.m., Morning Worship at 11:00 a.m., and Sunday Evening Praise at 2:00 p.m. Prayer and Bible Study is Wednesday at 6:30 p.m.",
       },
     },
     {
       "@type": "Question",
-      name: "What kind of church is Countryside Baptist Church?",
+      name: "What kind of church is Berkshire Hills Baptist Church?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "It is an Independent, old-fashioned Baptist church that preaches from the King James Bible and sings classic hymns from the hymnal. It is not affiliated with a denominational headquarters.",
+        text: "It is an Independent Baptist church that preaches from the King James Bible. It is not affiliated with a denominational headquarters.",
       },
     },
     {
       "@type": "Question",
-      name: "What should I wear to Countryside Baptist Church?",
+      name: "What should I wear to Berkshire Hills Baptist Church?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "There is no dress code. You will see suits and ties as well as slacks and a shirt. Come as you are able.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I listen to sermons from Countryside Baptist Church online?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Sunday morning, Sunday evening, and Wednesday evening services are recorded and posted to the church's YouTube channel, and are listed on the sermons page of this site.",
       },
     },
   ],
@@ -121,9 +110,7 @@ const websiteSchema = {
 
 const structuredData = [churchSchema, faqSchema, websiteSchema];
 
-export default async function Home() {
-  const messages = await getMessages(4);
-
+export default function Home() {
   return (
     <>
       <script
@@ -141,7 +128,7 @@ export default async function Home() {
         <StillThatChurch />
         <Mission />
         <ScriptureBanner />
-        <LatestMessages messages={messages} />
+        <LatestMessages />
         <EternalLifeCta />
         <FindUs />
       </main>

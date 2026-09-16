@@ -13,7 +13,7 @@ import { canonical, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Who We Are",
   description:
-    "An Independent, old-fashioned Baptist church in Port Washington, Ohio, incorporated in 1975 — King James Bible preaching, classic hymns, and our mission to glorify, evangelize and edify.",
+    "An Independent Baptist church in Lee, Massachusetts — King James Bible preaching, hymn singing, and a warm welcome in the Berkshires.",
   alternates: { canonical: "/who-we-are" },
 };
 
@@ -28,10 +28,10 @@ const schema = {
 };
 
 const facts = [
-  { label: "Incorporated in Ohio", value: "August 25, 1975" },
   { label: "Affiliation", value: "Independent Baptist" },
   { label: "Bible", value: "King James (Authorized Version)" },
   { label: "County", value: site.address.county },
+  { label: "Doctrine last published", value: "October 24, 2010" },
 ];
 
 export default function WhoWeArePage() {
@@ -47,8 +47,8 @@ export default function WhoWeArePage() {
       <main id="main">
         <PageHero
           eyebrow="Who we are"
-          title="A country church that never went looking for a new identity."
-          lede="Countryside Baptist Church was incorporated in Ohio in 1975 and has been meeting on Shoemaker Road ever since. What you find here on a Sunday is close to what you would have found here fifty years ago — and that is on purpose."
+          title="A church filled with caring, friendly people."
+          lede="Berkshire Hills Baptist Church meets on Pleasant Street in Lee, Massachusetts. What makes it special, in the church's own words, is simply the people — and a welcome that has not changed with the trends."
           breadcrumb={[{ href: "/who-we-are", label: "Our Church" }]}
         />
 
@@ -62,23 +62,23 @@ export default function WhoWeArePage() {
                 </h2>
                 <div className="mt-8 space-y-6 text-[1.03rem] leading-[1.75] text-text-body">
                   <p>
-                    Countryside Baptist Church is an Independent Baptist church
-                    that believes in the King James Bible and values the timeless
-                    truths of God&rsquo;s Word. Rather than following modern
-                    trends, we remain committed to traditional Bible preaching
-                    and teaching. Our worship features classic style hymns that
-                    honor our Saviour.
+                    Berkshire Hills Baptist Church is an Independent Baptist
+                    church that believes the Bible is the preserved Word of
+                    God and the only authority for our standard of conduct
+                    and the rule for life and service. Rather than following
+                    modern trends, we remain committed to King James Bible
+                    preaching and teaching.
                   </p>
                   <p>
-                    We warmly invite you to join us as we grow together in grace
-                    and in the knowledge of our Lord and Saviour, Jesus Christ.
+                    We warmly invite you to join us as we grow together in
+                    grace and in the knowledge of our Lord and Saviour, Jesus
+                    Christ.
                   </p>
                   <p>
                     Independent means there is no denominational headquarters
-                    setting our direction and no board in another state to
-                    answer to. This is a local New Testament church governing
-                    itself under one Head &mdash; Christ &mdash; with two
-                    biblical offices, pastor and deacon.
+                    setting our direction. This is a local New Testament
+                    church governing itself under one Head &mdash; Christ
+                    &mdash; with two biblical offices, pastor and deacon.
                   </p>
                 </div>
 
@@ -100,7 +100,7 @@ export default function WhoWeArePage() {
                     href="/beliefs"
                     className="focus-ring caps rounded-sm bg-ink px-6 py-4 text-[0.68rem] font-semibold text-cream transition hover:bg-oak-dark"
                   >
-                    Full Statement of Faith
+                    Full Statement of Doctrine
                   </Link>
                   <Link
                     href="/our-pastor"
@@ -115,38 +115,33 @@ export default function WhoWeArePage() {
                 <figure>
                   <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_28px_60px_-32px_rgba(34,30,23,0.4)]">
                     <Image
-                      src="/csbc/sanctuary-wide.jpg"
-                      alt="The auditorium at Countryside Baptist Church seen from the back pews, with the communion table in the foreground reading 'This do in remembrance of me'."
-                      width={1280}
-                      height={720}
+                      src="/bhbc/sanctuary.jpg"
+                      alt="The sanctuary at Berkshire Hills Baptist Church during a service, with the American and Christian flags flanking the platform."
+                      width={577}
+                      height={324}
                       sizes="(max-width: 1024px) 100vw, 46vw"
                       className="h-auto w-full"
                     />
                   </div>
                   <figcaption className="mt-4 text-[0.79rem] leading-relaxed text-text-muted">
-                    Honey-oak pews, a stacked-stone wall behind the platform, and
-                    a communion table that reads{" "}
-                    <span className="italic">
-                      This do in remembrance of me
-                    </span>
-                    .
+                    Wooden pews, a simple platform, and a message on the
+                    screen behind the pulpit.
                   </figcaption>
                 </figure>
 
                 <figure>
                   <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_28px_60px_-32px_rgba(34,30,23,0.4)]">
                     <Image
-                      src="/csbc/preaching-3.jpg"
-                      alt="A guest speaker preaching at Countryside Baptist Church while Pastor Harvey listens from the platform bench with an open Bible."
-                      width={1280}
-                      height={720}
+                      src="/bhbc/church-exterior.jpg"
+                      alt="The Berkshire Hills Baptist Church building on Pleasant Street, with its wood siding and large white cross."
+                      width={960}
+                      height={337}
                       sizes="(max-width: 1024px) 100vw, 46vw"
                       className="h-auto w-full"
                     />
                   </div>
                   <figcaption className="mt-4 text-[0.79rem] leading-relaxed text-text-muted">
-                    Men of the church and visiting preachers both take the pulpit
-                    through the year.
+                    The building on Pleasant Street, Route 102.
                   </figcaption>
                 </figure>
               </div>

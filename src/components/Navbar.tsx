@@ -10,7 +10,7 @@ const links = [
   { href: "/who-we-are", label: "Our Church" },
   { href: "/our-pastor", label: "Our Pastor" },
   { href: "/beliefs", label: "What We Believe" },
-  { href: "/sermons", label: "Sermons" },
+  { href: "/sermons", label: "Messages" },
   { href: "/visit", label: "Plan a Visit" },
 ];
 
@@ -50,12 +50,12 @@ export default function Navbar() {
             <span className="mx-2 text-gold/50">&#9670;</span>
             Worship 11:00
             <span className="mx-2 text-gold/50">&#9670;</span>
-            Sunday Evening 6:00
+            Sunday Evening 2:00
             <span className="mx-2 text-gold/50">&#9670;</span>
-            Wednesday 7:00
+            Wednesday 6:30
           </p>
           <p className="caps text-[0.63rem] font-semibold text-gold-pale/85 xl:text-[0.7rem]">
-            Port Washington, Ohio
+            Lee, Massachusetts
             <span className="mx-2 text-gold/50">&#9670;</span>
             <Phone className="transition hover:text-gold-light" />
           </p>
@@ -73,7 +73,7 @@ export default function Navbar() {
           <Link
             href="/"
             className="focus-ring shrink-0 py-1"
-            aria-label="Countryside Baptist Church — home"
+            aria-label="Berkshire Hills Baptist Church — home"
           >
             <Logo alt="" className="w-[11rem] sm:w-[12.5rem]" />
           </Link>

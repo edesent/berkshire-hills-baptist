@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   }
 
   const lines = [
-    `*New message from the Countryside Baptist website*`,
+    `*New message from the Berkshire Hills Baptist website*`,
     `*Name:* ${name}`,
     email ? `*Email:* ${email}` : null,
     phone ? `*Phone:* ${phone}` : null,

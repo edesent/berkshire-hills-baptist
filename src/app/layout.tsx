@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { HashScroller } from "@/components/HashScroller";
-import { CHAT } from "@/config/chat";
 import { localKeywords, site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default:
-      "Countryside Baptist Church | Independent Baptist Church in Port Washington, Ohio",
+      "Berkshire Hills Baptist Church | Independent Baptist Church in Lee, Massachusetts",
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -34,8 +33,8 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/twitter-image`],
   },
   // This is a design proposal that re-hosts the church's own words. It must
-  // never compete with countrysidebc.com in search. Flip to index/follow only
-  // once it becomes the live site on their own domain.
+  // never compete with berkshirehillsbaptist.weebly.com in search. Flip to
+  // index/follow only once it becomes the live site on their own domain.
   robots: {
     index: false,
     follow: false,
@@ -76,20 +75,6 @@ export default function RootLayout({
         </a>
         <HashScroller />
         {children}
-        {/*
-          The chat bubble. A plain <script> on purpose: the widget reads its own
-          data- attributes off this tag, so they have to be in the served HTML
-          exactly as written.
-        */}
-        <script
-          src={`${CHAT.origin}/widget/wbc-chat.js`}
-          data-api={CHAT.origin}
-          data-key={CHAT.apiKey}
-          data-agent-icon-url={CHAT.agentIcon}
-          data-accent-color={CHAT.accentColor}
-          data-greeting={CHAT.greeting}
-          defer
-        />
       </body>
     </html>
   );

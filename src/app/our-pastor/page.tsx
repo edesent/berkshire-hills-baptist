@@ -4,12 +4,12 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import { canonical, pastor, site } from "@/lib/site";
+import { canonical, pastor, recentMessages, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Our Pastor — Paul Harvey",
+  title: `Our Pastor — ${pastor.displayName}`,
   description:
-    "Pastor Paul Harvey has served Countryside Baptist Church since 2013 and as Senior Pastor since October 2018, with over 30 years in pastoral ministry and Christian education.",
+    "Pastor Dr. Doug Mann leads Berkshire Hills Baptist Church in Lee, Massachusetts, preaching verse-by-verse and topically from the King James Bible.",
   alternates: { canonical: "/our-pastor" },
 };
 
@@ -17,15 +17,10 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": canonical("/our-pastor#pastor"),
-  name: pastor.name,
+  name: pastor.displayName,
   jobTitle: `${pastor.title}, ${site.name}`,
   worksFor: { "@id": canonical("/#church") },
   image: canonical(pastor.photo),
-  alumniOf: pastor.education.map((entry) => ({
-    "@type": "EducationalOrganization",
-    name: entry.school,
-  })),
-  spouse: { "@type": "Person", name: `${pastor.wife} Harvey` },
   inLanguage: "en-US",
 };
 
@@ -42,8 +37,8 @@ export default function OurPastorPage() {
       <main id="main">
         <PageHero
           eyebrow="Our pastor"
-          title="Paul Harvey"
-          lede={`${pastor.title} of Countryside Baptist Church. A devoted servant of Christ with ${pastor.yearsInMinistry} in pastoral ministry and Christian education — a good deal of it in a classroom, which tells you something about how he preaches.`}
+          title={pastor.displayName}
+          lede={`${pastor.title} of Berkshire Hills Baptist Church.`}
           breadcrumb={[
             { href: "/who-we-are", label: "Our Church" },
             { href: "/our-pastor", label: "Our Pastor" },
@@ -54,114 +49,59 @@ export default function OurPastorPage() {
           <div className="mx-auto max-w-6xl px-6 lg:px-10">
             <div className="grid gap-14 lg:grid-cols-[0.85fr_1fr] lg:gap-20">
               <div className="lg:sticky lg:top-32 lg:self-start">
-                <figure className="mx-auto w-full max-w-[480px] lg:mx-0">
+                <figure className="mx-auto w-full max-w-[380px] lg:mx-0">
                   <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_30px_65px_-32px_rgba(34,30,23,0.45)]">
                     <Image
-                      src={pastor.familyPhoto}
-                      alt={`Pastor Paul Harvey and his wife ${pastor.wife} standing together outdoors.`}
-                      width={1200}
-                      height={1800}
+                      src={pastor.photo}
+                      alt={`${pastor.displayName} of Berkshire Hills Baptist Church.`}
+                      width={600}
+                      height={493}
                       preload
                       quality={90}
-                      sizes="(max-width: 528px) calc(100vw - 48px), (max-width: 1023px) 480px, (max-width: 1152px) calc((100vw - 160px) * 0.4595), 456px"
+                      sizes="(max-width: 528px) calc(100vw - 48px), 380px"
                       className="h-auto w-full"
                     />
                   </div>
-                  <figcaption className="mt-4 text-[0.79rem] leading-relaxed text-text-muted">
-                    Pastor Harvey and {pastor.wife}, married since{" "}
-                    {pastor.married}.
-                  </figcaption>
                 </figure>
-
-                <dl className="mt-8 space-y-px overflow-hidden rounded-sm border border-linen-dark bg-linen-dark">
-                  {[
-                    ["Ordained", `${pastor.ordained}`],
-                    ["Came to Countryside", pastor.arrived],
-                    ["Senior Pastor since", pastor.seniorPastorSince],
-                    ["Family", `${pastor.wife}; ${pastor.children.join(", ")}`],
-                  ].map(([label, value]) => (
-                    <div key={label} className="bg-cream px-6 py-4">
-                      <dt className="caps text-[0.57rem] font-semibold text-text-muted">
-                        {label}
-                      </dt>
-                      <dd className="mt-1.5 text-[0.95rem] leading-snug text-ink">
-                        {value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
               </div>
 
               <div>
-                <p className="eyebrow">His story</p>
-                <div className="mt-6 space-y-6 text-[1.03rem] leading-[1.75] text-text-body">
-                  <p>
-                    Pastor Paul Harvey is a devoted servant of Christ with{" "}
-                    {pastor.yearsInMinistry} of experience in pastoral ministry
-                    and Christian education. His journey in ministry began with a
-                    strong foundation in biblical studies, and he was ordained on{" "}
-                    {pastor.ordained} at {pastor.ordainedAt}.
-                  </p>
-                  <p>
-                    In {pastor.arrived}, Pastor Harvey joined Countryside Baptist
-                    Church in {site.address.city}, Ohio. He served as Assistant
-                    Pastor until May 2018, then as Intern Pastor until{" "}
-                    {pastor.seniorPastorSince}, when he was called to serve as
-                    Senior Pastor. Under his leadership the church has continued
-                    to grow in faith and fellowship, with a strong emphasis on
-                    biblical teaching and community outreach.
-                  </p>
-                  <p>
-                    Pastor Harvey married {pastor.wife} in {pastor.married}, and
-                    together they are blessed with three children:{" "}
-                    {pastor.children.join(", ")}. His ministry is marked by a
-                    deep commitment to biblical teaching, pastoral care, and
-                    Christian education.
-                  </p>
-                </div>
+                <p className="eyebrow">A welcome, in his own words</p>
+                <blockquote className="mt-6 border-l-2 border-gold/55 pl-5 text-[1.1rem] leading-[1.7] text-ink sm:pl-6">
+                  &ldquo;{pastor.welcomeQuote}&rdquo;
+                </blockquote>
+                <p className="ref mt-4">&mdash; {pastor.displayName}</p>
+
+                <p className="mt-10 leading-relaxed text-text-body">
+                  Pastor Mann preaches verse-by-verse and topically from the
+                  King James Bible on Sunday mornings, and leads a chapter-by-
+                  chapter Wednesday night Bible study — recently working
+                  through the book of Joshua.
+                </p>
 
                 <h2 className="display mt-14 text-[clamp(1.29rem,2.43vw,1.75rem)] text-ink">
-                  Education
+                  Recent messages
                 </h2>
                 <ul className="mt-7 space-y-px overflow-hidden rounded-sm border border-linen-dark bg-linen-dark">
-                  {pastor.education.map((entry) => (
-                    <li key={entry.credential} className="bg-cream p-6">
-                      <p className="display text-[1.25rem] leading-snug text-ink">
-                        {entry.credential}
-                      </p>
-                      <p className="mt-2 text-[0.92rem] text-text-light">
-                        {entry.school} &mdash; {entry.place}
-                      </p>
-                      <p className="ref mt-1.5">{entry.year}</p>
+                  {recentMessages.slice(0, 3).map((message) => (
+                    <li key={message.title} className="bg-cream p-6">
+                      <a
+                        href={message.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="focus-ring group"
+                      >
+                        <p className="display text-[1.2rem] leading-snug text-ink group-hover:text-oak-dark">
+                          {message.title}
+                        </p>
+                        <p className="mt-2 text-[0.92rem] text-text-light">
+                          {message.description}
+                        </p>
+                        <p className="ref mt-2">{message.date}</p>
+                      </a>
                     </li>
                   ))}
                 </ul>
-
-                <h2 className="display mt-14 text-[clamp(1.29rem,2.43vw,1.75rem)] text-ink">
-                  Thirty years of service
-                </h2>
-                <ol className="mt-8 space-y-8 border-l border-linen pl-7">
-                  {pastor.service.map((entry) => (
-                    <li key={entry.years} className="relative">
-                      <span
-                        aria-hidden="true"
-                        className="absolute -left-[calc(1.75rem+4.5px)] top-2 h-2 w-2 rounded-full bg-gold ring-4 ring-cream"
-                      />
-                      <p className="caps text-[0.6rem] font-semibold text-oak">
-                        {entry.years}
-                      </p>
-                      <p className="display mt-2 text-[1.35rem] leading-snug text-ink">
-                        {entry.role}
-                      </p>
-                      <p className="mt-1.5 text-[0.94rem] text-text-light">
-                        {entry.place}
-                      </p>
-                      <p className="mt-3 text-[0.94rem] leading-relaxed text-text-light">
-                        {entry.detail}
-                      </p>
-                    </li>
-                  ))}
-                </ol>
 
                 <div className="mt-14 rounded-sm border border-linen-dark bg-parchment p-8 sm:p-10">
                   <h2 className="display text-[clamp(1.22rem,2.28vw,1.60rem)] text-ink">
@@ -177,7 +117,7 @@ export default function OurPastorPage() {
                       href="/contact"
                       className="focus-ring caps rounded-sm bg-ink px-6 py-4 text-[0.68rem] font-semibold text-cream transition hover:bg-oak-dark"
                     >
-                      Contact Pastor Harvey
+                      Contact Pastor Mann
                     </Link>
                     <Link
                       href="/sermons"

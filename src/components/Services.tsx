@@ -49,8 +49,7 @@ export default function Services() {
         <div className="mt-10 flex flex-col items-start gap-6 border-t border-linen pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[0.9rem] text-text-light">
             {site.address.street}, {site.address.city}, {site.address.region}{" "}
-            {site.address.postalCode} &mdash; just off US-36 in{" "}
-            {site.address.county}.
+            {site.address.postalCode} &mdash; in {site.address.county}.
           </p>
           <div className="flex flex-wrap gap-3">
             <a

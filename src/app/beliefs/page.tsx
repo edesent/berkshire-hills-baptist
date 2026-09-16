@@ -3,14 +3,13 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import Prose from "@/components/Prose";
-import { faithArticles } from "@/lib/content";
+import { doctrineDate, doctrineClosing, faithArticles } from "@/lib/content";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "What We Believe — Statement of Faith",
+  title: "What We Believe — Statement of Doctrine",
   description:
-    "The full statement of faith of Countryside Baptist Church: the King James Bible, the Trinity, the Lord Jesus Christ, salvation by grace through faith, the family, the second coming, and the local church.",
+    "The full Statement of Doctrine of Berkshire Hills Baptist Church: the Holy Scriptures, the Godhead, the person and work of Christ, salvation, the church, and the eternal state.",
   alternates: { canonical: "/beliefs" },
 };
 
@@ -18,7 +17,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "@id": canonical("/beliefs#page"),
-  name: "What We Believe — Statement of Faith",
+  name: "What We Believe — Statement of Doctrine",
   isPartOf: { "@id": canonical("/#website") },
   about: { "@id": canonical("/#church") },
   inLanguage: "en-US",
@@ -38,7 +37,7 @@ export default function BeliefsPage() {
         <PageHero
           eyebrow="Our beliefs"
           title="What we believe"
-          lede="Countryside Baptist Church is an Independent Baptist church that believes in the King James Bible and values the timeless truths of God's Word. Rather than following modern trends, we remain committed to traditional Bible preaching and teaching. Below is our statement of faith in full, article by article."
+          lede={`Our Statement of Doctrine, as of ${doctrineDate}. We believe the Bible is the preserved Word of God and the only authority for faith and practice — below is that statement in full, article by article.`}
           breadcrumb={[
             { href: "/who-we-are", label: "Our Church" },
             { href: "/beliefs", label: "What We Believe" },
@@ -49,7 +48,7 @@ export default function BeliefsPage() {
           <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10 lg:py-24">
             <div className="grid gap-14 lg:grid-cols-[15rem_1fr] lg:gap-20">
               <nav
-                aria-label="Articles of faith"
+                aria-label="Articles of doctrine"
                 className="lg:sticky lg:top-32 lg:self-start"
               >
                 <p className="eyebrow">Articles</p>
@@ -89,19 +88,24 @@ export default function BeliefsPage() {
                         {article.title}
                       </h2>
                     </div>
-                    <div className="mt-7">
-                      <Prose blocks={article.blocks} />
-                    </div>
+                    <p className="mt-7 text-[1.02rem] leading-[1.75] text-text-body">
+                      {article.text}
+                    </p>
+                    <p className="ref mt-4">({article.refs})</p>
                   </section>
                 ))}
 
-                <div className="mt-16 rounded-sm border border-linen-dark bg-parchment p-8 sm:p-10">
+                <p className="mt-14 border-t border-linen pt-8 text-[0.9rem] leading-relaxed text-text-muted">
+                  {doctrineClosing}
+                </p>
+
+                <div className="mt-10 rounded-sm border border-linen-dark bg-parchment p-8 sm:p-10">
                   <h2 className="display text-[clamp(1.22rem,2.28vw,1.60rem)] text-ink">
                     Questions about any of this?
                   </h2>
                   <p className="mt-4 leading-relaxed text-text-light">
                     A statement of faith on a page is no substitute for a
-                    conversation. Pastor Harvey is glad to sit down with anyone
+                    conversation. Pastor Mann is glad to sit down with anyone
                     who wants to work through what we hold and why.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">

@@ -1,8 +1,8 @@
 import { BibleMark } from "@/components/Logo";
 
 /**
- * Philippians 2:16 — the verse the church already puts at the foot of every
- * page on their current site.
+ * Philippians 2:16 — "Holding forth the Word of Life" hangs as a banner
+ * behind the pulpit in the church's own sanctuary photo.
  */
 export default function ScriptureBanner() {
   return (

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Phone from "@/components/Phone";
 import { site } from "@/lib/site";
@@ -15,8 +14,8 @@ export default function FindUs() {
             </h2>
             <p className="mt-6 leading-relaxed text-text-light">
               Nobody will ask you to stand up, introduce yourself, or fill
-              anything out. Park off Shoemaker Road, come in the main entrance,
-              and somebody will point you where you need to go. Come as you are
+              anything out. Come in the main entrance on Pleasant Street, and
+              somebody will point you where you need to go. Come as you are
               able &mdash; you will see suits and you will see shirtsleeves.
             </p>
 
@@ -81,52 +80,40 @@ export default function FindUs() {
             </Link>
           </div>
 
-          {/* A map instead of the service times, which already appear in the
-              top bar, the hero, the Services section and the footer. It links
-              straight out to driving directions rather than embedding an
-              interactive map, which would eat the page's scroll. */}
           <a
             href={site.directionsUrl}
             target="_blank"
             rel="noreferrer"
-            className="focus-ring group block overflow-hidden rounded-sm border border-linen-dark bg-cream transition-shadow hover:shadow-[0_26px_55px_-32px_rgba(34,30,23,0.45)]"
+            className="focus-ring group flex h-full flex-col justify-between overflow-hidden rounded-sm border border-linen-dark bg-parchment p-8 transition-shadow hover:shadow-[0_26px_55px_-32px_rgba(34,30,23,0.45)] sm:p-10"
           >
-            <span className="relative block aspect-[4/3] overflow-hidden">
-              <Image
-                src="/csbc/map-shoemaker-road.jpg"
-                alt="A map of the church's location on Shoemaker Road SW, just off US-36 between Interstate 77 and Port Washington, Ohio, with the Tuscarawas River to the east."
-                width={1200}
-                height={900}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              />
-            </span>
-            <span className="flex items-center justify-between gap-6 border-t border-linen bg-parchment px-7 py-6">
-              <span>
-                <span className="display block text-xl text-ink">
-                  Just off US&#8209;36
-                </span>
-                <span className="mt-1 block text-[0.85rem] text-text-light">
-                  {site.address.street}, {site.address.city}
-                </span>
+            <div>
+              <span className="caps text-[0.6rem] font-semibold text-text-muted">
+                Route 102
               </span>
-              <span className="caps shrink-0 text-[0.66rem] font-semibold text-oak-dark">
-                Open in Maps
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                  className="ml-2 inline h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
-                >
-                  <path
-                    d="M5 12h14m0 0-5-5m5 5-5 5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <span className="display mt-3 block text-2xl text-ink">
+                {site.address.street}
               </span>
+              <span className="mt-2 block text-[0.9rem] text-text-light">
+                {site.address.city}, {site.address.region}{" "}
+                {site.address.postalCode}
+              </span>
+            </div>
+            <span className="caps mt-10 inline-flex shrink-0 items-center text-[0.68rem] font-semibold text-oak-dark">
+              Open in Maps
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="ml-2 inline h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+              >
+                <path
+                  d="M5 12h14m0 0-5-5m5 5-5 5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </span>
           </a>
         </div>

@@ -10,9 +10,9 @@ export default function WelcomePastor() {
           <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_28px_60px_-28px_rgba(34,30,23,0.45)]">
             <Image
               src={pastor.photo}
-              alt={`Pastor ${pastor.name} of Countryside Baptist Church, standing outdoors in a dark suit and flag-patterned tie.`}
-              width={1024}
-              height={1536}
+              alt={`${pastor.displayName} of Berkshire Hills Baptist Church.`}
+              width={600}
+              height={493}
               quality={90}
               sizes="(max-width: 432px) calc(100vw - 48px), 384px"
               className="h-auto w-full"
@@ -40,28 +40,22 @@ export default function WelcomePastor() {
             <span aria-hidden="true" className="h-px w-10 bg-gold" />
             <div>
               <p className="display text-lg text-oak-dark">
-                {pastor.name}
-              </p>
-              <p className="caps mt-1 text-[0.63rem] font-semibold text-text-muted">
-                {pastor.title} since {pastor.seniorPastorSince}
+                {pastor.displayName}
               </p>
             </div>
           </div>
 
           <p className="mt-8 max-w-xl leading-relaxed text-text-light">
-            Pastor Harvey came to Countryside in {pastor.arrived} as Assistant
-            Pastor and was called to serve as Senior Pastor in{" "}
-            {pastor.seniorPastorSince}. He and {pastor.wife} have been married
-            since {pastor.married} and have three children —{" "}
-            {pastor.children.join(", ")}. Between the pulpit and the classroom he
-            has spent {pastor.yearsInMinistry} in ministry.
+            On behalf of everyone here, we would love to have you worship the
+            Lord with us. If we can be of any assistance in your spiritual
+            journey, please get in touch.
           </p>
 
           <Link
             href="/our-pastor"
             className="focus-ring caps group mt-8 inline-flex items-center gap-2.5 text-[0.68rem] font-semibold text-oak-dark"
           >
-            Read his full story
+            Meet Pastor Mann
             <svg
               viewBox="0 0 24 24"
               fill="none"

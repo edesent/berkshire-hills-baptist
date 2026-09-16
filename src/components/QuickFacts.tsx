@@ -1,28 +1,54 @@
-import Image from "next/image";
 import Phone from "@/components/Phone";
 import { site } from "@/lib/site";
 
-/**
- * The strip under the hero, built on the brand guide's own icons.
- *
- * The guide draws this exact row on its bulletin cover and church invitation —
- * icon above a short fact — so the band follows that pattern rather than
- * inventing one. The icons are lifted from the guide's icon sheet and keyed off
- * its cream ground, which is why this band sits on a light ground: their white
- * interiors are opaque, so they need paper behind them, not ink.
- *
- * Service times are deliberately not one of the three. They already appear in
- * the top bar, the hero and the footer, and a fourth listing was the thing that
- * made the old "Come and see" panel redundant.
- */
+/** The strip under the hero. No brand icon set exists for this church, so
+ * these are plain line icons rather than a borrowed or invented brand mark. */
+
+function PinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-9 w-9">
+      <path
+        d="M12 21s7-6.1 7-11.6A7 7 0 0 0 5 9.4C5 14.9 12 21 12 21Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="9.5" r="2.4" stroke="currentColor" strokeWidth="1.4" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-9 w-9">
+      <path
+        d="M6.5 3.5h2.2l1.6 4-2 1.4a11.4 11.4 0 0 0 5.3 5.3l1.4-2 4 1.6v2.2a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function BookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-9 w-9">
+      <path
+        d="M12 5.5c-1.6-1.1-4-1.6-6.5-1.6v13c2.5 0 4.9.5 6.5 1.6 1.6-1.1 4-1.6 6.5-1.6v-13c-2.5 0-4.9.5-6.5 1.6Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+      <path d="M12 5.5v13" stroke="currentColor" strokeWidth="1.4" />
+    </svg>
+  );
+}
 
 const FACTS = [
   {
-    icon: "/csbc/icons/address.png",
-    width: 108,
-    height: 145,
-    alt: "",
-    sizeClass: "h-auto max-h-12 w-auto",
+    icon: PinIcon,
     label: "Where we are",
     body: (
       <>
@@ -33,20 +59,12 @@ const FACTS = [
     ),
   },
   {
-    icon: "/csbc/icons/phone.png",
-    width: 112,
-    height: 148,
-    alt: "",
-    sizeClass: "h-auto max-h-12 w-auto",
+    icon: PhoneIcon,
     label: "Call the church",
     body: <Phone className="transition hover:text-oak" />,
   },
   {
-    icon: "/csbc/icons/scripture.png",
-    width: 255,
-    height: 39,
-    alt: "",
-    sizeClass: "h-auto w-[9.5rem]",
+    icon: BookIcon,
     label: "What you will hear",
     body: <>Preaching straight from the King&nbsp;James Bible</>,
   },
@@ -59,19 +77,10 @@ export default function QuickFacts() {
         {FACTS.map((fact) => (
           <div
             key={fact.label}
-            className="flex flex-col items-center gap-4 text-center"
+            className="flex flex-col items-center gap-4 text-center text-oak"
           >
-            {/* A fixed box so the wide open-Bible sits on the same baseline as
-                the two upright icons instead of setting its own height. */}
             <span className="flex h-14 items-center justify-center">
-              <Image
-                src={fact.icon}
-                alt={fact.alt}
-                width={fact.width}
-                height={fact.height}
-                sizes="140px"
-                className={fact.sizeClass}
-              />
+              <fact.icon />
             </span>
             <span className="caps text-[0.62rem] font-semibold text-text-muted">
               {fact.label}

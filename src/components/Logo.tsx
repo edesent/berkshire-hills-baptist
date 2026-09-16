@@ -1,17 +1,8 @@
 /**
- * The church's own logo, which the brand guide says to keep as-is.
- *
- * It is the original raster embedded in a cropped SVG wrapper — no lettering or
- * Bible contour is re-traced. Each colourway is recoloured per pixel: neutral
- * lettering and warm line art are told apart by saturation and blended by it,
- * so the antialiased edges stay smooth, and the original alpha is preserved.
- * A channel-driven colour filter was tried first and fringed every letter.
- *
- * Light bands get Charcoal lettering and an Earth line — Soft Gold on Off-White
- * all but disappears at nav size. Dark bands use the brand's own pairing.
- *
- * Do not replace the lettering with a script font. BibleMark below is a separate
- * decorative watermark, not the church logo.
+ * Berkshire Hills has no vector logo — their current site sets the church
+ * name in a large script font over a dark green band. This mirrors that
+ * concept (name set in the site's own display face) rather than inventing a
+ * mark that does not exist.
  */
 
 export function BibleMark({ className = "" }: { className?: string }) {
@@ -47,7 +38,6 @@ export function BibleMark({ className = "" }: { className?: string }) {
         strokeLinejoin="round"
         opacity="0.75"
       />
-      {/* outer page edges, hinting at the thickness of the book */}
       <path
         d="M10 3.5C7 4.1 4.5 4.9 2.6 5.8c1.9 7.1 3 14.5 3.1 22.2 1.9-.85 4.4-1.55 7.4-2.1"
         stroke="currentColor"
@@ -71,36 +61,25 @@ export function BibleMark({ className = "" }: { className?: string }) {
 type LogoProps = {
   /** "ink" for cream bands, "cream" for dark bands. */
   tone?: "ink" | "cream";
-  /**
-   * Leave empty where an ancestor already labels the logo — the navbar's home
-   * link does, and a duplicate label just gets announced twice.
-   */
   alt?: string;
   className?: string;
 };
 
-const WORDMARK = {
-  ink: "/csbc/wordmark-ink.svg",
-  cream: "/csbc/wordmark-cream.svg",
-} as const;
+export default function Logo({ tone = "ink", alt = "", className = "" }: LogoProps) {
+  const color = tone === "cream" ? "text-cream" : "text-ink";
 
-/** Display bounds of the original artwork, cropped to the visible mark. */
-const WORDMARK_SIZE = { width: 332, height: 97 };
-
-export default function Logo({
-  tone = "ink",
-  alt = "Countryside Baptist Church",
-  className = "",
-}: LogoProps) {
   return (
-    // An SVG wrapper preserves the original artwork and trims its empty space.
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={WORDMARK[tone]}
-      alt={alt}
-      width={WORDMARK_SIZE.width}
-      height={WORDMARK_SIZE.height}
-      className={`block h-auto max-w-full ${className}`}
-    />
+    <span
+      role={alt ? "img" : undefined}
+      aria-label={alt || undefined}
+      className={`block whitespace-nowrap leading-none ${color} ${className}`}
+    >
+      <span className="display block text-[1.05rem] leading-[1.15] sm:text-[1.2rem]">
+        Berkshire Hills
+      </span>
+      <span className="caps mt-1 block text-[0.52rem] font-semibold tracking-[0.16em] text-gold">
+        Baptist Church
+      </span>
+    </span>
   );
 }

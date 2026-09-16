@@ -10,7 +10,6 @@ const routes = [
   "/visit",
   "/salvation",
   "/contact",
-  "/transparency",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

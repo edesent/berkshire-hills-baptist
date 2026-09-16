@@ -6,12 +6,12 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import Phone from "@/components/Phone";
-import { canonical, serviceTimes, site, visitFacts } from "@/lib/site";
+import { canonical, site, visitFacts } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Plan a Visit",
   description:
-    "What to expect on your first Sunday at Countryside Baptist Church in Port Washington, Ohio — what to wear, where to park, what the music is like, and what happens with your children.",
+    "What to expect on your first Sunday at Berkshire Hills Baptist Church in Lee, Massachusetts — what to wear, what the music is like, and what happens with your children.",
   alternates: { canonical: "/visit" },
 };
 
@@ -29,15 +29,15 @@ const faqSchema = {
 const steps = [
   {
     title: "Pick a service",
-    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come Sunday evening at 6:00.",
+    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come Sunday evening at 2:00.",
   },
   {
-    title: "Find Shoemaker Road",
-    body: `We are at ${site.address.street}, just off US-36 in ${site.address.county}. Parking is on the property; come in the main entrance.`,
+    title: "Find Pleasant Street",
+    body: `We are at ${site.address.street}, in ${site.address.city}. Come in the main entrance.`,
   },
   {
     title: "Walk in",
-    body: "Somebody will greet you and point you toward Sunday School or the auditorium. Sit wherever you like — nobody has an assigned pew, whatever they may tell you.",
+    body: "Somebody will greet you and point you toward Sunday School or the service. Sit wherever you like.",
   },
   {
     title: "That is it",
@@ -59,15 +59,15 @@ export default function VisitPage() {
         <PageHero
           eyebrow="Plan a visit"
           title="Come and see. That is the whole invitation."
-          lede="Walking into a church you have never been to is a strange feeling for anybody. So here is exactly what a first Sunday at Countryside is like, before you have to find out in person."
+          lede="Walking into a church you have never been to is a strange feeling for anybody. So here is exactly what a first Sunday at Berkshire Hills is like, before you have to find out in person."
           breadcrumb={[{ href: "/visit", label: "Plan a Visit" }]}
         >
           <div className="mt-10 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 border-t border-cream/15 pt-8 sm:grid-cols-4">
             {[
               ["Sunday School", "10:00 a.m."],
               ["Morning Worship", "11:00 a.m."],
-              ["Sunday Evening", "6:00 p.m."],
-              ["Wednesday", "7:00 p.m."],
+              ["Sunday Evening", "2:00 p.m."],
+              ["Wednesday", "6:30 p.m."],
             ].map(([label, time]) => (
               <div key={label}>
                 <p className="caps text-[0.57rem] font-semibold text-gold-light/70">
@@ -110,17 +110,17 @@ export default function VisitPage() {
                 <figure className="mt-12">
                   <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_26px_60px_-32px_rgba(34,30,23,0.4)]">
                     <Image
-                      src="/csbc/sanctuary-wide.jpg"
-                      alt="The auditorium at Countryside Baptist Church viewed from the congregation, with families seated in the oak pews."
-                      width={1280}
-                      height={720}
+                      src="/bhbc/sanctuary.jpg"
+                      alt="The sanctuary at Berkshire Hills Baptist Church, viewed from the pews."
+                      width={577}
+                      height={324}
                       sizes="(max-width: 1024px) 100vw, 42vw"
                       className="h-auto w-full"
                     />
                   </div>
                   <figcaption className="mt-4 text-[0.79rem] leading-relaxed text-text-muted">
-                    This is the room. No screens, no stage lights &mdash; a
-                    hymnal in the rack in front of you.
+                    This is the room &mdash; a hymnal in the rack in front of
+                    you.
                   </figcaption>
                 </figure>
               </div>

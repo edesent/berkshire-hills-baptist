@@ -72,7 +72,7 @@ export default async function OpenGraphImage() {
               color: "#fcd68a",
             }}
           >
-            Countryside Baptist Church
+            Berkshire Hills Baptist Church
           </div>
           <div
             style={{
@@ -88,20 +88,18 @@ export default async function OpenGraphImage() {
             <div style={{ display: "flex" }}>
               {site.address.city}, {site.address.regionName}
             </div>
-            <Diamond />
-            <div style={{ display: "flex" }}>Established {site.founded}</div>
           </div>
         </div>
 
         <div
           style={{
             display: "flex",
-            fontSize: 68,
-                        lineHeight: 1.05,
+            fontSize: 60,
+                        lineHeight: 1.1,
             maxWidth: 720,
           }}
         >
-          Church the way it used to be.
+          A church filled with caring, friendly people.
         </div>
 
         <div
@@ -119,9 +117,9 @@ export default async function OpenGraphImage() {
             <Diamond />
             <div style={{ display: "flex" }}>Worship 11:00</div>
             <Diamond />
-            <div style={{ display: "flex" }}>Sunday Evening 6:00</div>
+            <div style={{ display: "flex" }}>Sunday Evening 2:00</div>
             <Diamond />
-            <div style={{ display: "flex" }}>Wednesday 7:00</div>
+            <div style={{ display: "flex" }}>Wednesday 6:30</div>
           </div>
         </div>
       </div>

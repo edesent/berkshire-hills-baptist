@@ -1,67 +1,49 @@
 /**
- * Every fact on this site comes from countrysidebc.com, the church's own
- * Facebook page, or their Ohio Secretary of State filing. Nothing is invented.
- * Items flagged CONFIRM are best-guess phrasing for the church to approve.
+ * Every fact on this site comes from berkshirehillsbaptist.weebly.com (the
+ * church's own site, still live at BerkshireHillsBaptist.com), their Facebook
+ * page (facebook.com/BerkshireHillsBaptist), or a public address lookup.
+ * Nothing is invented. No nonprofit filing details are published here because
+ * none were found on either source — see the Contact page instead of a
+ * fabricated Transparency page.
  */
 
-export const siteUrl = "https://countrysidebc.elijahdesent.com";
+export const siteUrl = "https://berkshirehillsbaptist.elijahdesent.com";
 
 export const site = {
-  name: "Countryside Baptist Church",
-  shortName: "Countryside Baptist",
-  tagline: "Church the way it used to be.",
-  /** From their Facebook page description. */
-  descriptor:
-    "An Independent, Old-Fashioned, King James Bible-believing Baptist church",
+  name: "Berkshire Hills Baptist Church",
+  shortName: "Berkshire Hills Baptist",
+  tagline: "A church filled with caring, loving, friendly people.",
+  /** From their own "Our Church Is..." page. */
+  descriptor: "An Independent, King James Bible-believing Baptist church",
   description:
-    "Countryside Baptist Church is an Independent Baptist church in Port Washington, Ohio — King James Bible preaching, classic hymns, and a welcome that has not changed since 1975. Sunday School 10:00, Worship 11:00, Sunday evening 6:00, Wednesday 7:00.",
-  founded: 1975,
+    "Berkshire Hills Baptist Church is an Independent Baptist church in Lee, Massachusetts, in the Berkshires — King James Bible preaching, hymn singing, and a warm welcome. Sunday School 10:00, Morning Worship 11:00, Sunday Evening Praise 2:00, Wednesday Prayer & Bible Study 6:30.",
   address: {
-    street: "4283 Shoemaker Road SW",
-    city: "Port Washington",
-    region: "OH",
-    regionName: "Ohio",
-    postalCode: "43837",
+    street: "190 Pleasant Street, Route 102",
+    city: "Lee",
+    region: "MA",
+    regionName: "Massachusetts",
+    postalCode: "01238",
     country: "US",
-    county: "Tuscarawas County",
+    county: "Berkshire County",
   },
   /** Reference numbers are assembled client-side, never printed into the HTML. */
-  phoneEncoded: "KzE3NDA0OTg1NTAw", // +17404985500
-  phoneDisplayEncoded: "KDc0MCkgNDk4LTU1MDA=", // (740) 498-5500
+  phoneEncoded: "KzE0MTMyNDMwODM3", // +14132430837
+  phoneDisplayEncoded: "KDQxMykgMjQzLTA4Mzc=", // (413) 243-0837
   contactPath: "/contact",
   geo: {
-    // The church's own building, as mapped in OpenStreetMap ("Countryside
-    // Baptist Church" on Shoemaker Rd SW, just off US-36). The figure that
-    // used to sit here reverse-geocoded to River Road SW, about two miles
-    // north-east — wrong road. These coordinates go out in the Church
-    // JSON-LD, so they need to be the building, not the neighbourhood.
-    latitude: 40.3008478,
-    longitude: -81.5465712,
+    // Geocoded from the church's own street address (190 Pleasant St, Lee, MA
+    // 01238) via OpenStreetMap Nominatim.
+    latitude: 42.2930446,
+    longitude: -73.240733,
   },
   directionsUrl:
-    "https://www.google.com/maps/dir/?api=1&destination=Countryside+Baptist+Church%2C+4283+Shoemaker+Rd+SW%2C+Port+Washington%2C+OH+43837",
+    "https://www.google.com/maps/dir/?api=1&destination=Berkshire+Hills+Baptist+Church%2C+190+Pleasant+St%2C+Lee%2C+MA+01238",
   mapUrl:
-    "https://www.google.com/maps/search/?api=1&query=Countryside+Baptist+Church%2C+4283+Shoemaker+Rd+SW%2C+Port+Washington%2C+OH+43837",
+    "https://www.google.com/maps/search/?api=1&query=Berkshire+Hills+Baptist+Church%2C+190+Pleasant+St%2C+Lee%2C+MA+01238",
   social: {
-    facebook: "https://www.facebook.com/countrysidebc",
-    youtube: "https://www.youtube.com/@countrysidebaptistchurchpo2442",
-    youtubeChannelFeed:
-      "https://www.youtube.com/feeds/videos.xml?channel_id=UCfOTOQ7Uucrqv_EE5Q0Asxw",
-    /** Their current live site, linked from the demo banner. */
-    currentSite: "https://countrysidebc.com",
-  },
-  legal: {
-    legalName: "Countryside Baptist Church",
-    charterNumber: "470602",
-    documentType: "Certificate of Continued Existence (CCE)",
-    documentId: "202604301482",
-    effectiveDate: "February 12, 2026",
-    incorporated: "August 25, 1975",
-    stateOfIncorporation: "Ohio",
-    principalOffice: "Port Washington, Tuscarawas County, Ohio",
-    statutoryAgentAddress: "4283 Shoemaker Rd SW, Port Washington, OH 43837",
-    ein: "05-0597638",
-    orgType: "501(c)(3) Religious Organization",
+    facebook: "https://www.facebook.com/BerkshireHillsBaptist",
+    /** Their current site, linked from the demo banner. */
+    currentSite: "https://berkshirehillsbaptist.weebly.com",
   },
 } as const;
 
@@ -88,7 +70,7 @@ export const serviceTimes: ServiceTime[] = [
     opens: "10:00",
     closes: "10:50",
     blurb:
-      "Classes for every age, straight out of the Book. A good hour to arrive if it is your first Sunday — the halls are busy and nobody notices a new face standing still.",
+      "A class for every age level. Children's classes use crafts and Bible stories; teen and adult classes study Bible topics in depth in an informal discussion setting.",
   },
   {
     day: "Sunday",
@@ -97,162 +79,145 @@ export const serviceTimes: ServiceTime[] = [
     opens: "11:00",
     closes: "12:15",
     blurb:
-      "Hymns from the hymnal, an offering, and preaching from the King James Bible. This is the service most visitors come to first.",
+      "We worship God together with hymns, praise and worship songs, and practical, applicable Bible preaching. Children's Church runs through Grade 6.",
   },
   {
     day: "Sunday",
-    title: "Sunday Evening",
-    time: "6:00 p.m.",
-    opens: "18:00",
-    closes: "19:15",
+    title: "Sunday Evening Praise",
+    time: "2:00 p.m.",
+    opens: "14:00",
+    closes: "15:15",
     blurb:
-      "Quieter, a little more informal, and often the service people say they loved most. Same Book, same singing.",
+      "A good time of fellowship for the whole family — favorite hymns, praise songs and choruses, then an informal Bible study together.",
   },
   {
     day: "Wednesday",
-    title: "Prayer Meeting & Bible Study",
-    time: "7:00 p.m.",
-    opens: "19:00",
-    closes: "20:15",
+    title: "Prayer & Bible Study",
+    time: "6:30 p.m.",
+    opens: "18:30",
+    closes: "19:45",
     blurb:
-      "Midweek. We pray for one another by name and work through a passage together.",
+      "We share our needs, present them to God in prayer, and study the Bible together, with time for questions and answers.",
   },
 ];
 
-/* ── The three words their mission is built on ─────────────────────────────── */
+/* ── What their own "About" page says makes them who they are ───────────── */
 
-export const missionPillars = [
+export const distinctives = [
   {
-    word: "Glorify",
-    verse: "1 Corinthians 10:31",
-    text: "Everything we do here — the singing, the giving, the preaching, the potluck afterward — is meant to bring glory to God rather than attention to us.",
+    word: "Bible Believing",
+    text: "We believe that the Bible is the preserved Word of God and is the only authority for our standard of conduct and the rule for life and service.",
   },
   {
-    word: "Evangelize",
-    verse: "Acts 1:8",
-    text: "Our city, our county, our state, our country, and the world, with the Gospel of our Lord and Saviour Jesus Christ. In that order, and starting with the people down the road.",
+    word: "Independent",
+    text: "We are self-governing and free of any denominational control.",
   },
   {
-    word: "Edify",
-    verse: "Ephesians 4:12",
-    text: "Building up the saints for the work of the ministry, so that believers here grow up rather than merely attend.",
+    word: "Missionary",
+    text: "We believe that the Church has been commissioned to share the Gospel of Jesus Christ locally and abroad, through personal evangelistic efforts and the support of missionaries both here in the United States and around the world.",
+  },
+  {
+    word: "Warm and Friendly",
+    text: "This is the way the majority of first-time visitors describe our church — a real expression of the love we have for each other, and for those who join us each week.",
+  },
+  {
+    word: "Baptist",
+    text: "We follow the basic Baptist distinctives: salvation by faith only; baptism by immersion after salvation; two ordained offices only, pastor and deacon; and the Bible as our authority for faith and practice.",
   },
 ] as const;
 
 export const missionStatement =
-  "The mission of Countryside Baptist Church is to glorify God by evangelizing our city, our county, our state, our country, and the world with the Gospel of our Lord and Saviour Jesus Christ; and by edifying the saints for the work of the ministry so that all may glorify our Father in Heaven.";
+  "Our purpose is to be a Great Church by making the Great Commission and the Great Commandment a priority of our church and daily life — going, teaching and baptizing, and sharing the love of Jesus Christ with those we meet locally, through supporting missionaries around the world.";
 
-export const missionRefs =
-  "1 Corinthians 10:31; 1 Peter 4:11; Acts 1:8; 1 Corinthians 14:26; Ephesians 4:12, 16; Matthew 5:16; John 12:32";
+export const missionRef = "Matthew 28:19-20";
 
 /* ── Pastor ───────────────────────────────────────────────────────────────── */
-
+/**
+ * Only what the church's own site confirms: his name (given as "Pastor Dr.
+ * Doug Mann" in their sermon archive), a photo, and his own welcome letter to
+ * visitors. No ordination date, education or family details were published on
+ * either the current site or Facebook, so none are invented here.
+ */
 export const pastor = {
-  name: "Paul Harvey",
+  name: "Doug Mann",
+  displayName: "Pastor Dr. Doug Mann",
   title: "Pastor",
-  photo: "/csbc/pastor-harvey.jpg",
-  familyPhoto: "/csbc/pastor-harvey-family.jpg",
-  wife: "Joanna",
-  married: 2002,
-  children: ["Daniel", "Caleb", "Abigail"],
-  arrived: "August 2013",
-  seniorPastorSince: "October 2018",
-  ordained: "May 14, 1995",
-  ordainedAt: "First Baptist Church of Spring Valley, California",
-  yearsInMinistry: "over 30 years",
-  /** A one-line welcome in the pastor's own register. CONFIRM with Pastor Harvey. */
+  photo: "/bhbc/pastor-mann.jpg",
   welcomeQuote:
-    "We are not trying to be the newest church in Tuscarawas County. We are trying to be a faithful one — the same Book, the same hymns, and a door that is genuinely open to you.",
-  education: [
-    {
-      credential: "Associate of Arts, Bible",
-      school: "Pacific Coast Baptist Bible College",
-      place: "San Dimas, California",
-      year: "May 1995",
-    },
-    {
-      credential: "Bachelor of Biblical Studies",
-      school: "San Diego Baptist Bible Institute & Theological Seminary",
-      place: "San Diego, California",
-      year: "1998",
-    },
-    {
-      credential: "Master of Ministry",
-      school: "San Diego Baptist Bible Institute & Theological Seminary",
-      place: "San Diego, California",
-      year: "1999",
-    },
-  ],
-  service: [
-    {
-      years: "1995 – 2001",
-      role: "Assistant Pastor & Director of Ministries",
-      place: "First Baptist Church of Spring Valley, California",
-      detail:
-        "Also taught and served as principal at Spring Valley Baptist Academy, and as a professor at San Diego Baptist Bible Institute & Theological Seminary.",
-    },
-    {
-      years: "2001 – 2013",
-      role: "Teacher, Guidance Counselor & Bus Driver",
-      place: "Landmark Christian School, Haines City, Florida",
-      detail:
-        "Taught History and Bible, oversaw the Yearbook, counseled students, and drove the bus. Also taught night classes as a professor at Landmark Baptist College in 2001–2002.",
-    },
-    {
-      years: "2013 – 2018",
-      role: "Assistant Pastor, then Intern Pastor",
-      place: "Countryside Baptist Church, Port Washington, Ohio",
-      detail:
-        "Joined Countryside in August 2013 and served as Assistant Pastor until May 2018, then as Intern Pastor.",
-    },
-    {
-      years: "2018 – present",
-      role: "Senior Pastor",
-      place: "Countryside Baptist Church, Port Washington, Ohio",
-      detail:
-        "Called to serve as Senior Pastor in October 2018, with a strong emphasis on biblical teaching and community outreach.",
-    },
-  ],
+    "What makes Berkshire Hills Baptist Church so special? Very simply, it is the people. BHBC is a church filled with caring, loving, and friendly people. Our church is here to serve you through regular weekly ministries as well as special activities throughout the year. It is here that relationships are made and where Christ is magnified.",
 } as const;
 
-/* ── What a first visit is actually like ──────────────────────────────────── */
+/** A few of Pastor Mann's recent messages, from the church's own Wednesday-night
+ * Bible study archive. Real titles, real dates, real audio links. */
+export const recentMessages = [
+  {
+    title: "Joshua 23",
+    date: "February 25, 2026",
+    description:
+      "An aging Joshua reminds Israel how faithfully God has fought for them and kept every promise.",
+    url: "https://archive.org/download/02.25.2026-joshua-23/02.25.2026%20-%20Joshua%2023.mp3",
+  },
+  {
+    title: "Joshua 22",
+    date: "February 18, 2026",
+    description:
+      "The two-and-a-half tribes explain why they built an altar by the Jordan — a witness, not a rival place of sacrifice.",
+    url: "https://archive.org/download/02.18.26-joshua-22/02.18.26%20Joshua%2022.mp3",
+  },
+  {
+    title: "Joshua 20–21 — Cities of Refuge",
+    date: "February 11, 2026",
+    description:
+      "How God wove justice and mercy into Israel's life through the cities of refuge and the cities given to the Levites.",
+    url: "https://archive.org/download/02.11.2026-joshua_20-21-transcribe/02.11.2026-joshua_20-21-transcribe.pdf",
+  },
+  {
+    title: "A Proper Perspective (Psalm 8)",
+    date: "October 18, 2023",
+    description:
+      "On the name God has given Jesus, and what it means to confess Him as Lord.",
+    url: "https://berkshirehillsbaptist.weebly.com/grow.html",
+  },
+] as const;
+
+/* ── What a first visit is actually like, from their own "What to Expect" page ─ */
 
 export const visitFacts = [
   {
     q: "What should I wear?",
-    a: "You will see suits and ties, and you will see slacks and a shirt. Come as you are able — nobody is going to hand you a dress code at the door.",
+    a: "There is no specific dress code. The pastor wears a suit; some men wear a tie; some ladies wear dresses; but most dress in modest, casual attire.",
   },
   {
-    q: "Where do I park, and which door?",
-    a: "Parking is on the property off Shoemaker Road SW. Come in the main entrance; someone will be there to point you toward Sunday School or the auditorium.",
+    q: "What will happen when I arrive?",
+    a: "Please be seated, and be prepared for several of our friendly people to introduce themselves and welcome you. There is also a time of greeting during the service.",
   },
   {
-    q: "Will I be singled out?",
-    a: "You will be greeted, and you will be glad you came — but you will not be asked to stand up, introduce yourself, or fill anything out.",
-  },
-  {
-    q: "What Bible do you preach from?",
-    a: "The King James Bible, every service. If you do not own one, we will put one in your hands.",
+    q: "What Bible do you use?",
+    a: "We encourage everyone to follow along in their Bibles, so for consistency we use the King James Version. Bring your own, but if you forget it, we have one in the pews for you.",
   },
   {
     q: "What is the music like?",
-    a: "Classic hymns out of the hymnal, sung by the congregation. No band, no screens.",
+    a: "We appreciate the old-fashioned hymns as well as some of the newer songs, choosing musical selections that are conservative in presentation and consistent with the day's message.",
   },
   {
     q: "What about my children?",
-    a: "Sunday School has classes for every age at 10:00. Children are welcome in the service with you, and no one minds the noise.",
+    a: "Sunday School has a class for every age at 10:00, and Children's Church runs during the 11:00 service through Grade 6.",
+  },
+  {
+    q: "What is the preaching like?",
+    a: "Our Sunday morning sermon is usually verse-by-verse or topical preaching from the Word of God, and our Wednesday evening Bible study works through a book of the Bible chapter by chapter.",
   },
 ] as const;
 
 /* ── SEO ──────────────────────────────────────────────────────────────────── */
 
 export const localKeywords = [
-  "Countryside Baptist Church",
-  "Baptist church Port Washington Ohio",
-  "Independent Baptist church Tuscarawas County",
-  "King James Bible church Ohio",
-  "church near Newcomerstown Ohio",
-  "old fashioned Baptist church Ohio",
-  "Sunday School Port Washington OH",
+  "Berkshire Hills Baptist Church",
+  "Baptist church Lee Massachusetts",
+  "Independent Baptist church Berkshire County",
+  "King James Bible church Massachusetts",
+  "church near Lee MA",
+  "old fashioned Baptist church Berkshires",
+  "Sunday School Lee MA",
   "KJV preaching church near me",
 ];

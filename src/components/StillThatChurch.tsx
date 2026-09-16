@@ -44,21 +44,22 @@ export default function StillThatChurch() {
             <figure className="mt-10">
               <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_26px_60px_-30px_rgba(34,30,23,0.4)]">
                 <Image
-                  src="/csbc/preaching-1.jpg"
-                  alt="Pastor Paul Harvey preaching from the oak pulpit at Countryside Baptist Church, with the stacked-stone wall behind him."
-                  width={1280}
-                  height={720}
+                  src="/bhbc/sanctuary.jpg"
+                  alt="The sanctuary at Berkshire Hills Baptist Church during a service, seen from the pews."
+                  width={577}
+                  height={324}
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="h-auto w-full"
                 />
               </div>
               <figcaption className="mt-4 text-[0.78rem] leading-relaxed text-text-muted">
-                Every service is recorded and posted. You can{" "}
+                Wednesday nights we work through the Bible chapter by chapter.
+                You can{" "}
                 <Link
                   href="/sermons"
                   className="focus-ring text-oak-dark underline decoration-gold/50 underline-offset-4 transition hover:decoration-gold"
                 >
-                  listen to last Sunday
+                  listen to a recent message
                 </Link>{" "}
                 before you decide to come.
               </figcaption>
