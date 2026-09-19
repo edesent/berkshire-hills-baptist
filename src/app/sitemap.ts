@@ -6,9 +6,11 @@ const routes = [
   "/who-we-are",
   "/our-pastor",
   "/beliefs",
+  "/missions",
   "/sermons",
   "/visit",
   "/salvation",
+  "/donate",
   "/contact",
 ];
 
