@@ -165,6 +165,14 @@ export default function Navbar() {
               <span className="display">{link.label}</span>
             </Link>
           ))}
+          <a
+            href="https://berkshirehillsbaptist.weebly.com/sermons1"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-ink"
+          >
+            <span className="display">Sermons</span>
+          </a>
           <Link
             href="/salvation"
             className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-oak-dark"
