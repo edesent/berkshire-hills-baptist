@@ -147,39 +147,6 @@ export const pastor = {
     "What makes Berkshire Hills Baptist Church so special? Very simply, it is the people. BHBC is a church filled with caring, loving, and friendly people. Our church is here to serve you through regular weekly ministries as well as special activities throughout the year. It is here that relationships are made and where Christ is magnified.",
 } as const;
 
-/** A few of Pastor Mann's recent messages, from the church's own Wednesday-night
- * Bible study archive. Real titles, real dates, real audio links. */
-export const recentMessages = [
-  {
-    title: "Joshua 23",
-    date: "February 25, 2026",
-    description:
-      "An aging Joshua reminds Israel how faithfully God has fought for them and kept every promise.",
-    url: "https://archive.org/download/02.25.2026-joshua-23/02.25.2026%20-%20Joshua%2023.mp3",
-  },
-  {
-    title: "Joshua 22",
-    date: "February 18, 2026",
-    description:
-      "The two-and-a-half tribes explain why they built an altar by the Jordan — a witness, not a rival place of sacrifice.",
-    url: "https://archive.org/download/02.18.26-joshua-22/02.18.26%20Joshua%2022.mp3",
-  },
-  {
-    title: "Joshua 20–21 — Cities of Refuge",
-    date: "February 11, 2026",
-    description:
-      "How God wove justice and mercy into Israel's life through the cities of refuge and the cities given to the Levites.",
-    url: "https://archive.org/download/02.11.2026-joshua_20-21-transcribe/02.11.2026-joshua_20-21-transcribe.pdf",
-  },
-  {
-    title: "A Proper Perspective (Psalm 8)",
-    date: "October 18, 2023",
-    description:
-      "On the name God has given Jesus, and what it means to confess Him as Lord.",
-    url: "https://berkshirehillsbaptist.weebly.com/grow.html",
-  },
-] as const;
-
 /* ── What a first visit is actually like, from their own "What to Expect" page ─ */
 
 export const visitFacts = [
