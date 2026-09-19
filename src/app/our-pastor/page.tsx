@@ -4,7 +4,8 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import { canonical, pastor, recentMessages, site } from "@/lib/site";
+import { sermonAudioLibrary } from "@/lib/sermon-audio";
+import { canonical, pastor, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `Our Pastor — ${pastor.displayName}`,
