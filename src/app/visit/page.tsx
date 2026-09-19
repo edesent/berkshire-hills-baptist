@@ -60,7 +60,7 @@ export default function VisitPage() {
           eyebrow="Plan a visit"
           title="Come and see. That is the whole invitation."
           lede="Walking into a church you have never been to is a strange feeling for anybody. So here is exactly what a first Sunday at Berkshire Hills is like, before you have to find out in person."
-          breadcrumb={[{ href: "/visit", label: "Plan a Visit" }]}
+          breadcrumb={[{ href: "/visit", label: "What to Expect" }]}
         >
           <div className="mt-10 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 border-t border-cream/15 pt-8 sm:grid-cols-4">
             {[
