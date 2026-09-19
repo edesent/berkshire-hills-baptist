@@ -3,12 +3,13 @@ import Footer from "@/components/Footer";
 import MessagesLibrary from "@/components/MessagesLibrary";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import { canonical, recentMessages, site } from "@/lib/site";
+import { sermonAudioLibrary } from "@/lib/sermon-audio";
+import { canonical, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Messages",
+  title: "Sermon Audio",
   description:
-    "Recent Bible study messages from Pastor Mann at Berkshire Hills Baptist Church in Lee, Massachusetts, preached from the King James Bible.",
+    "Listen to recent Bible study messages from Pastor Mann at Berkshire Hills Baptist Church in Lee, Massachusetts, preached from the King James Bible.",
   alternates: { canonical: "/sermons" },
 };
 
@@ -17,7 +18,7 @@ export default function SermonsPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "@id": canonical("/sermons#page"),
-    name: `Messages — ${site.name}`,
+    name: `Sermon Audio — ${site.name}`,
     isPartOf: { "@id": canonical("/#website") },
     about: { "@id": canonical("/#church") },
     inLanguage: "en-US",
@@ -34,17 +35,25 @@ export default function SermonsPage() {
       <Navbar />
       <main id="main">
         <PageHero
-          eyebrow="Messages"
-          title="Recent Bible study messages."
-          lede="We work through a book of the Bible chapter by chapter on Wednesday nights. A few recent ones are below — follow along on Facebook for the rest."
-          breadcrumb={[{ href: "/sermons", label: "Messages" }]}
+          eyebrow="Sermon audio"
+          title="Listen to recent messages."
+          lede="We work through a book of the Bible chapter by chapter on Wednesday nights. A few recent ones are below, with more added as they're recorded."
+          breadcrumb={[{ href: "/sermons", label: "Sermon Audio" }]}
         >
           <div className="mt-9 flex flex-wrap gap-3">
+            <a
+              href="https://berkshirehillsbaptist.weebly.com/sermons1"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring caps rounded-sm bg-gold-pale px-6 py-4 text-[0.68rem] font-semibold text-ink transition hover:bg-gold-light"
+            >
+              Full Sermon Archive & Blog
+            </a>
             <a
               href={site.social.facebook}
               target="_blank"
               rel="noreferrer"
-              className="focus-ring caps rounded-sm bg-gold-pale px-6 py-4 text-[0.68rem] font-semibold text-ink transition hover:bg-gold-light"
+              className="focus-ring caps rounded-sm border border-linen-dark bg-cream px-6 py-4 text-[0.68rem] font-semibold text-ink-soft transition hover:border-gold hover:text-oak-dark"
             >
               Follow on Facebook
             </a>
@@ -56,8 +65,18 @@ export default function SermonsPage() {
             <MessagesLibrary />
 
             <p className="mt-14 border-t border-linen pt-8 text-[0.85rem] leading-relaxed text-text-muted">
-              Showing {recentMessages.length} recent messages. Ask us on a
-              Sunday and we can point you to more.
+              Showing {sermonAudioLibrary.length} recent{" "}
+              {sermonAudioLibrary.length === 1 ? "message" : "messages"}. For
+              the complete sermon archive and Pastor Mann's blog, visit our{" "}
+              <a
+                href="https://berkshirehillsbaptist.weebly.com/sermons1"
+                target="_blank"
+                rel="noreferrer"
+                className="text-oak-dark underline decoration-gold/50 underline-offset-4 transition hover:decoration-gold"
+              >
+                Sermons page
+              </a>
+              .
             </p>
           </div>
         </section>
