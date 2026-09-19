@@ -84,7 +84,7 @@ export default function OurPastorPage() {
                   Recent messages
                 </h2>
                 <ul className="mt-7 space-y-px overflow-hidden rounded-sm border border-linen-dark bg-linen-dark">
-                  {recentMessages.slice(0, 3).map((message) => (
+                  {sermonAudioLibrary.slice(0, 3).map((message) => (
                     <li key={message.title} className="bg-cream p-6">
                       <a
                         href={message.url}
