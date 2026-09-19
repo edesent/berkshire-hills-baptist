@@ -12,12 +12,12 @@ export default function Hero() {
     <section className="relative isolate flex min-h-[80svh] flex-col overflow-hidden bg-cream">
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/bhbc/church-exterior.jpg"
+          src="/bhbc/church-exterior-fresh.jpg"
           alt="Berkshire Hills Baptist Church, a wood-sided sanctuary with a large white cross, on Pleasant Street in Lee, Massachusetts."
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[70%_center] lg:object-[64%_center]"
+          className="object-cover object-center"
         />
       </div>
 

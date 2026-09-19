@@ -1,14 +1,13 @@
 import Link from "next/link";
-import { recentMessages } from "@/lib/site";
+import { sermonAudioLibrary } from "@/lib/sermon-audio";
 
-function MessageCard({ message }: { message: (typeof recentMessages)[number] }) {
+function MessageCard({
+  message,
+}: {
+  message: (typeof sermonAudioLibrary)[number];
+}) {
   return (
-    <a
-      href={message.url}
-      target="_blank"
-      rel="noreferrer"
-      className="focus-ring group flex flex-col overflow-hidden rounded-sm border border-linen-dark bg-cream p-7 transition-shadow hover:shadow-[0_26px_55px_-32px_rgba(34,30,23,0.45)]"
-    >
+    <div className="focus-ring group flex flex-col overflow-hidden rounded-sm border border-linen-dark bg-cream p-7 transition-shadow hover:shadow-[0_26px_55px_-32px_rgba(34,30,23,0.45)]">
       <span className="caps text-[0.6rem] font-semibold text-text-muted">
         {message.date}
       </span>
@@ -18,37 +17,23 @@ function MessageCard({ message }: { message: (typeof recentMessages)[number] }) 
       <span className="mt-3 text-[0.92rem] leading-relaxed text-text-light">
         {message.description}
       </span>
-      <span className="caps mt-5 inline-flex items-center gap-2 text-[0.66rem] font-semibold text-oak-dark">
-        Listen
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-          className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
-        >
-          <path
-            d="M5 12h14m0 0-5-5m5 5-5 5"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
-    </a>
+      <audio controls preload="none" className="mt-5 w-full">
+        <source src={message.url} />
+      </audio>
+    </div>
   );
 }
 
 /** Homepage strip: the newest message featured, then the rest. */
 export function LatestMessages() {
-  const [featured, ...rest] = recentMessages;
+  const [featured, ...rest] = sermonAudioLibrary;
 
   return (
     <section className="section-pad paper">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="eyebrow">Messages</p>
+            <p className="eyebrow">Sermon audio</p>
             <h2 className="display mt-4 text-[clamp(1.60rem,3.34vw,2.51rem)] text-ink">
               Recent Bible study messages from Pastor Mann.
             </h2>
@@ -92,11 +77,11 @@ export function LatestMessages() {
   );
 }
 
-/** Full archive grid for /sermons. */
+/** Full library grid for /sermons. */
 export default function MessagesLibrary() {
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {recentMessages.map((message) => (
+      {sermonAudioLibrary.map((message) => (
         <MessageCard key={message.title} message={message} />
       ))}
     </div>

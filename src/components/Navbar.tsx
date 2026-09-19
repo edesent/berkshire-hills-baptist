@@ -7,11 +7,11 @@ import Logo from "@/components/Logo";
 import Phone from "@/components/Phone";
 
 const links = [
-  { href: "/who-we-are", label: "Our Church" },
+  { href: "/who-we-are", label: "About" },
+  { href: "/missions", label: "Missions" },
+  { href: "/visit", label: "What to Expect" },
   { href: "/our-pastor", label: "Our Pastor" },
   { href: "/beliefs", label: "What We Believe" },
-  { href: "/sermons", label: "Messages" },
-  { href: "/visit", label: "Plan a Visit" },
 ];
 
 export default function Navbar() {
@@ -97,11 +97,19 @@ export default function Navbar() {
                 />
               </Link>
             ))}
+            <a
+              href="https://berkshirehillsbaptist.weebly.com/sermons1"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring caps whitespace-nowrap rounded-sm px-3 py-2 text-[0.78rem] font-semibold text-ink-soft transition hover:text-oak"
+            >
+              Sermons
+            </a>
             <Link
               href="/salvation"
               className="focus-ring caps ml-2 whitespace-nowrap rounded-sm border border-gold/45 bg-gold-pale/35 px-3.5 py-2 text-[0.76rem] font-semibold text-oak-dark transition hover:border-gold hover:bg-gold-pale/70"
             >
-              Eternal Life
+              Eternity
             </Link>
             <Link
               href="/contact"
@@ -157,6 +165,14 @@ export default function Navbar() {
               <span className="display">{link.label}</span>
             </Link>
           ))}
+          <a
+            href="https://berkshirehillsbaptist.weebly.com/sermons1"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-ink"
+          >
+            <span className="display">Sermons</span>
+          </a>
           <Link
             href="/salvation"
             className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-oak-dark"

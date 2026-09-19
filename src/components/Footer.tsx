@@ -7,17 +7,24 @@ const columns = [
   {
     heading: "Our Church",
     links: [
-      { href: "/who-we-are", label: "Who We Are" },
+      { href: "/who-we-are", label: "About" },
       { href: "/our-pastor", label: "Our Pastor" },
       { href: "/beliefs", label: "What We Believe" },
-      { href: "/visit", label: "Plan a Visit" },
+      { href: "/missions", label: "Missions" },
+      { href: "/visit", label: "What to Expect" },
     ],
   },
   {
     heading: "Listen & Learn",
     links: [
-      { href: "/sermons", label: "Messages" },
-      { href: "/salvation", label: "How to Have Eternal Life" },
+      {
+        href: "https://berkshirehillsbaptist.weebly.com/sermons1",
+        label: "Sermons",
+        external: true,
+      },
+      { href: "/sermons", label: "Sermon Audio" },
+      { href: "/salvation", label: "Eternity" },
+      { href: "/donate", label: "Donate" },
       { href: "/contact", label: "Contact Us" },
     ],
   },
@@ -65,16 +72,29 @@ export default function Footer() {
                 {column.heading}
               </h2>
               <ul className="mt-5 space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="focus-ring text-sm text-cream/70 transition hover:text-gold-light"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {column.links.map((link) =>
+                  "external" in link && link.external ? (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="focus-ring text-sm text-cream/70 transition hover:text-gold-light"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="focus-ring text-sm text-cream/70 transition hover:text-gold-light"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           ))}

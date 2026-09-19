@@ -4,7 +4,8 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import { canonical, pastor, recentMessages, site } from "@/lib/site";
+import { sermonAudioLibrary } from "@/lib/sermon-audio";
+import { canonical, pastor, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `Our Pastor — ${pastor.displayName}`,
@@ -83,7 +84,7 @@ export default function OurPastorPage() {
                   Recent messages
                 </h2>
                 <ul className="mt-7 space-y-px overflow-hidden rounded-sm border border-linen-dark bg-linen-dark">
-                  {recentMessages.slice(0, 3).map((message) => (
+                  {sermonAudioLibrary.slice(0, 3).map((message) => (
                     <li key={message.title} className="bg-cream p-6">
                       <a
                         href={message.url}
