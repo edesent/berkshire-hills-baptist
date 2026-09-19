@@ -49,7 +49,7 @@ export default function WhoWeArePage() {
           eyebrow="Who we are"
           title="A church filled with caring, friendly people."
           lede="Berkshire Hills Baptist Church meets on Pleasant Street in Lee, Massachusetts. What makes it special, in the church's own words, is simply the people — and a welcome that has not changed with the trends."
-          breadcrumb={[{ href: "/who-we-are", label: "Our Church" }]}
+          breadcrumb={[{ href: "/who-we-are", label: "About" }]}
         />
 
         <section className="section-pad paper">
