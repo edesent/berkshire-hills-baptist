@@ -72,16 +72,29 @@ export default function Footer() {
                 {column.heading}
               </h2>
               <ul className="mt-5 space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="focus-ring text-sm text-cream/70 transition hover:text-gold-light"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {column.links.map((link) =>
+                  "external" in link && link.external ? (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="focus-ring text-sm text-cream/70 transition hover:text-gold-light"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="focus-ring text-sm text-cream/70 transition hover:text-gold-light"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           ))}
