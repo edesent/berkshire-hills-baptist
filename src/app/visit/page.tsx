@@ -123,6 +123,39 @@ export default function VisitPage() {
                     you.
                   </figcaption>
                 </figure>
+
+                <div className="mt-6 grid grid-cols-2 gap-4">
+                  <figure>
+                    <div className="overflow-hidden rounded-sm border border-linen-dark">
+                      <Image
+                        src="/bhbc/altar-flowers.jpg"
+                        alt="The altar at Berkshire Hills Baptist Church, set with flowers before a service."
+                        width={500}
+                        height={237}
+                        sizes="(max-width: 1024px) 50vw, 21vw"
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-[0.74rem] leading-relaxed text-text-muted">
+                      The altar, ready for Sunday.
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <div className="overflow-hidden rounded-sm border border-linen-dark">
+                      <Image
+                        src="/bhbc/sanctuary-service.jpg"
+                        alt="A service in progress at Berkshire Hills Baptist Church."
+                        width={500}
+                        height={281}
+                        sizes="(max-width: 1024px) 50vw, 21vw"
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-[0.74rem] leading-relaxed text-text-muted">
+                      A Sunday service in progress.
+                    </figcaption>
+                  </figure>
+                </div>
               </div>
 
               <div>
