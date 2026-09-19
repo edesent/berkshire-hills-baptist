@@ -115,10 +115,10 @@ export default function WhoWeArePage() {
                 <figure>
                   <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_28px_60px_-32px_rgba(34,30,23,0.4)]">
                     <Image
-                      src="/bhbc/sanctuary.jpg"
-                      alt="The sanctuary at Berkshire Hills Baptist Church during a service, with the American and Christian flags flanking the platform."
-                      width={577}
-                      height={324}
+                      src="/bhbc/sanctuary-flags.jpg"
+                      alt="The sanctuary at Berkshire Hills Baptist Church, with flags representing the nations where the church supports missionaries."
+                      width={1100}
+                      height={825}
                       sizes="(max-width: 1024px) 100vw, 46vw"
                       className="h-auto w-full"
                     />
