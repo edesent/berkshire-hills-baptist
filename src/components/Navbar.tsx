@@ -7,11 +7,11 @@ import Logo from "@/components/Logo";
 import Phone from "@/components/Phone";
 
 const links = [
-  { href: "/who-we-are", label: "Our Church" },
+  { href: "/who-we-are", label: "About" },
+  { href: "/missions", label: "Missions" },
+  { href: "/visit", label: "What to Expect" },
   { href: "/our-pastor", label: "Our Pastor" },
   { href: "/beliefs", label: "What We Believe" },
-  { href: "/sermons", label: "Messages" },
-  { href: "/visit", label: "Plan a Visit" },
 ];
 
 export default function Navbar() {
