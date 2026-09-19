@@ -144,6 +144,39 @@ export default function WhoWeArePage() {
                     The building on Pleasant Street, Route 102.
                   </figcaption>
                 </figure>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <figure>
+                    <div className="overflow-hidden rounded-sm border border-linen-dark">
+                      <Image
+                        src="/bhbc/christmas-decoration.jpg"
+                        alt="A wreath decorated for the Christmas season inside the church."
+                        width={500}
+                        height={376}
+                        sizes="(max-width: 1024px) 50vw, 23vw"
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-[0.74rem] leading-relaxed text-text-muted">
+                      Decorating together for the season.
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <div className="overflow-hidden rounded-sm border border-linen-dark">
+                      <Image
+                        src="/bhbc/sign-banner.jpg"
+                        alt="A banner reading Berkshire Hills Baptist Church, with the church's Bible verse and address."
+                        width={250}
+                        height={186}
+                        sizes="(max-width: 1024px) 50vw, 23vw"
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-[0.74rem] leading-relaxed text-text-muted">
+                      You'll find our name over the door.
+                    </figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
           </div>
