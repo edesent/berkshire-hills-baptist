@@ -142,7 +142,7 @@ export const pastor = {
   name: "Doug Mann",
   displayName: "Pastor Dr. Doug Mann",
   title: "Pastor",
-  photo: "/bhbc/pastor-mann.jpg",
+  photo: "/bhbc/pastor-doug.jpg",
   welcomeQuote:
     "What makes Berkshire Hills Baptist Church so special? Very simply, it is the people. BHBC is a church filled with caring, loving, and friendly people. Our church is here to serve you through regular weekly ministries as well as special activities throughout the year. It is here that relationships are made and where Christ is magnified.",
 } as const;
