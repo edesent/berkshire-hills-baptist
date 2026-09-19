@@ -97,11 +97,19 @@ export default function Navbar() {
                 />
               </Link>
             ))}
+            <a
+              href="https://berkshirehillsbaptist.weebly.com/sermons1"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring caps whitespace-nowrap rounded-sm px-3 py-2 text-[0.78rem] font-semibold text-ink-soft transition hover:text-oak"
+            >
+              Sermons
+            </a>
             <Link
               href="/salvation"
               className="focus-ring caps ml-2 whitespace-nowrap rounded-sm border border-gold/45 bg-gold-pale/35 px-3.5 py-2 text-[0.76rem] font-semibold text-oak-dark transition hover:border-gold hover:bg-gold-pale/70"
             >
-              Eternal Life
+              Eternity
             </Link>
             <Link
               href="/contact"
