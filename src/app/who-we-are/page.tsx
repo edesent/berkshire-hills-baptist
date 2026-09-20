@@ -121,10 +121,10 @@ export default function WhoWeArePage() {
                 <figure>
                   <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_28px_60px_-32px_rgba(34,30,23,0.4)]">
                     <Image
-                      src="/bhbc/sanctuary-flags.jpg"
-                      alt="The sanctuary at Berkshire Hills Baptist Church, with flags representing the nations where the church supports missionaries."
-                      width={1100}
-                      height={825}
+                      src="/bhbc/sanctuary.jpg"
+                      alt="The sanctuary at Berkshire Hills Baptist Church during a service, with the American and Christian flags and mission banners on the platform."
+                      width={577}
+                      height={324}
                       sizes="(max-width: 1024px) 100vw, 46vw"
                       className="h-auto w-full"
                     />
@@ -157,10 +157,10 @@ export default function WhoWeArePage() {
                       <Image
                         src="/bhbc/christmas-decoration.jpg"
                         alt="A wreath decorated for the Christmas season inside the church."
-                        width={500}
-                        height={376}
+                        width={450}
+                        height={339}
                         sizes="(max-width: 1024px) 50vw, 23vw"
-                        className="h-auto w-full"
+                        className="aspect-[4/3] w-full object-cover"
                       />
                     </div>
                     <figcaption className="mt-3 text-[0.74rem] leading-relaxed text-text-muted">
@@ -170,16 +170,16 @@ export default function WhoWeArePage() {
                   <figure>
                     <div className="overflow-hidden rounded-sm border border-linen-dark">
                       <Image
-                        src="/bhbc/sign-banner.jpg"
-                        alt="A banner reading Berkshire Hills Baptist Church, with the church's Bible verse and address."
-                        width={250}
-                        height={186}
+                        src="/bhbc/missions-tract-rack.jpg"
+                        alt="A rack of missionary prayer cards and tracts at Berkshire Hills Baptist Church."
+                        width={376}
+                        height={500}
                         sizes="(max-width: 1024px) 50vw, 23vw"
-                        className="h-auto w-full"
+                        className="aspect-[4/3] w-full object-cover object-top"
                       />
                     </div>
                     <figcaption className="mt-3 text-[0.74rem] leading-relaxed text-text-muted">
-                      You&apos;ll find our name over the door.
+                      Prayer cards for the missionaries we support.
                     </figcaption>
                   </figure>
                 </div>

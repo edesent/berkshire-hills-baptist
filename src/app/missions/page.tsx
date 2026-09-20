@@ -78,17 +78,17 @@ export default function MissionsPage() {
               <figure>
                 <div className="overflow-hidden rounded-sm border border-linen-dark shadow-[0_28px_60px_-32px_rgba(34,30,23,0.4)]">
                   <Image
-                    src="/bhbc/sanctuary-flags.jpg"
-                    alt="Flags in the sanctuary at Berkshire Hills Baptist Church, representing the nations where the church supports missionaries."
-                    width={1100}
-                    height={825}
+                    src="/bhbc/missions-tract-rack.jpg"
+                    alt="A rack of missionary prayer cards and tracts at Berkshire Hills Baptist Church."
+                    width={376}
+                    height={500}
                     sizes="(max-width: 1024px) 100vw, 46vw"
                     className="h-auto w-full"
                   />
                 </div>
                 <figcaption className="mt-4 text-[0.79rem] leading-relaxed text-text-muted">
-                  The flags in our sanctuary mark some of the places our
-                  missionaries serve.
+                  Prayer cards for the families we support, kept where the
+                  church can pick one up and pray through the week.
                 </figcaption>
               </figure>
             </div>
