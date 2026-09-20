@@ -11,9 +11,9 @@ export default function Services() {
             Four services a week, and none of them require an invitation.
           </h2>
           <p className="mt-6 leading-relaxed text-text-light">
-            Sunday morning is the easiest place to start. Sunday evening is the
-            one people tend to fall in love with. Come to whichever one your week
-            allows.
+            Sunday morning is the easiest place to start. The Sunday afternoon
+            service is the one people tend to fall in love with. Come to
+            whichever one your week allows.
           </p>
         </div>
 

@@ -21,6 +21,11 @@ const personSchema = {
   name: pastor.displayName,
   jobTitle: `${pastor.title}, ${site.name}`,
   worksFor: { "@id": canonical("/#church") },
+  honorificPrefix: "Dr.",
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Bethany Divinity School",
+  },
   image: canonical(pastor.photo),
   inLanguage: "en-US",
 };
@@ -64,6 +69,19 @@ export default function OurPastorPage() {
                     />
                   </div>
                 </figure>
+
+                <dl className="mx-auto mt-8 grid w-full max-w-[380px] gap-px overflow-hidden rounded-sm border border-linen-dark bg-linen-dark lg:mx-0">
+                  {pastor.facts.map((fact) => (
+                    <div key={fact.label} className="bg-cream px-6 py-5">
+                      <dt className="caps text-[0.58rem] font-semibold text-text-muted">
+                        {fact.label}
+                      </dt>
+                      <dd className="display mt-2 text-[1.1rem] leading-snug text-ink">
+                        {fact.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
 
               <div>
@@ -73,12 +91,20 @@ export default function OurPastorPage() {
                 </blockquote>
                 <p className="ref mt-4">&mdash; {pastor.displayName}</p>
 
-                <p className="mt-10 leading-relaxed text-text-body">
-                  Pastor Mann preaches verse-by-verse and topically from the
-                  King James Bible on Sunday mornings, and leads a chapter-by-
-                  chapter Wednesday night Bible study — recently working
-                  through the book of Joshua.
-                </p>
+                <h2 className="display mt-14 text-[clamp(1.29rem,2.43vw,1.75rem)] text-ink">
+                  About Pastor Mann
+                </h2>
+                <div className="mt-7 space-y-5 leading-relaxed text-text-body">
+                  {pastor.bio.map((paragraph) => (
+                    <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                  ))}
+                  <p>
+                    He preaches verse-by-verse and topically from the King James
+                    Bible on Sunday mornings, and leads a chapter-by-chapter
+                    Wednesday night Bible study &mdash; recently working through
+                    the book of Joshua.
+                  </p>
+                </div>
 
                 <h2 className="display mt-14 text-[clamp(1.29rem,2.43vw,1.75rem)] text-ink">
                   Recent messages

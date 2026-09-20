@@ -1,10 +1,11 @@
 /**
- * Missionary partners, captured from the church's own "Missionary Partners"
- * page (berkshirehillsbaptist.weebly.com/missions1.html) on 2026-09-19.
+ * Missionary partners, as the church sent them on the intake form
+ * (2026-09-19). This replaces the older list carried over from
+ * berkshirehillsbaptist.weebly.com/missions1.html, which Deacon Peter
+ * Markavage said was out of date.
  *
- * Deacon Peter Markavage said this list is out of date and he will send an
- * updated one. When he does, replace the array below the same way — one
- * object per missionary family, four fields, no developer needed:
+ * To change it, edit the array below — one object per missionary family,
+ * four fields, no developer needed:
  *
  *   {
  *     name: "The Smith Family",
@@ -25,61 +26,45 @@ export interface Missionary {
 
 export const missionaries: Missionary[] = [
   {
-    name: "Chris Eckles and family",
-    role: "Church Planter",
-    agency: "Fundamental Baptist World Wide Mission",
-    location: "Australia",
-    link: "http://church.fairhavenbaptist.org/missions/eckels-in-australia",
+    name: "Birch and Connie Champeon",
+    role: "Bible translation",
+    agency: "Unfolding Word Ministries",
+    location: "International",
   },
   {
-    name: "John Asmah and family",
-    role: "Youth Ministries",
+    name: "Chris Birkholz",
+    role: "Missionary",
+    agency: "Go Honduras",
+    location: "Honduras",
+  },
+  {
+    name: "John Asmah",
+    role: "Missionary",
     agency: "Fellowship International Mission",
     location: "Ghana",
   },
   {
-    name: "Chris Birkholz and family",
+    name: "Chris Eckels",
+    role: "Missionary",
+    agency: "Fundamental Baptist World Mission",
+    location: "Australia",
+  },
+  {
+    name: "The Tarwaters",
     role: "Missionaries",
-    agency: "Baptist Evangelistic Missionary Association",
-    location: "Honduras",
-    link: "http://thebirkholzfamily.com/",
+    agency: "Heartland Baptist Mission",
+    location: "Philippines",
   },
   {
-    name: "Brad and Beth Howe",
-    role: "Church Planters",
-    agency: "ABWE — Association of Baptists for World Evangelism",
-    location: "Italy",
-  },
-  {
-    name: "Birch and Connie Champeon",
-    role: "Bibles International",
-    agency: "Baptist Mid-Missions",
-    location: "International",
-    link: "https://www.bmm.org/family/champeon-birch-and-connie/",
-  },
-  {
-    name: "Mike Carr and family",
-    role: "Church Building Ministry",
-    agency: "Continental Baptist Missions",
+    name: "Matthew Frank",
+    role: "Prison ministry",
+    agency: "Rock of Ages Ministries",
     location: "United States",
-  },
-  {
-    name: "Gerard Dumoulin and family",
-    role: "Church Planter — Monsey, NY",
-    agency: "International Board of Jewish Missions, Inc.",
-    location: "United States",
-  },
-  {
-    name: "Brett Reitenbach and family",
-    role: "New England Baptist Fellowship",
-    agency: "Greenfield Baptist Church",
-    location: "New England",
-    link: "http://www.greenfieldbaptistchurch.net/index.html",
   },
   {
     name: "Two missionary families",
     role: "Various ministries",
-    agency: "Restricted Access Nations",
-    location: "Restricted access — names withheld for security",
+    agency: "Names withheld for their security",
+    location: "Restricted access nations",
   },
 ];

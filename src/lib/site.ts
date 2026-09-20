@@ -46,6 +46,12 @@ export const site = {
     facebook: "https://www.facebook.com/BerkshireHillsBaptist",
     /** Their current site, linked from the demo banner. */
     currentSite: "https://berkshirehillsbaptist.weebly.com",
+    /**
+     * The complete sermon archive. Deacon Peter Markavage uploads every
+     * message here, so this list is longer than the handful featured on
+     * /sermons. Given on the intake form as the "second sermon archive".
+     */
+    sermonArchive: "https://archive.org/details/@pjmarkavage",
   },
 } as const;
 
@@ -81,7 +87,7 @@ export const serviceTimes: ServiceTime[] = [
     opens: "11:00",
     closes: "12:15",
     blurb:
-      "We worship God together with hymns, praise and worship songs, and practical, applicable Bible preaching. Children's Church runs through Grade 6.",
+      "We worship God together with hymns, praise and worship songs, and practical, applicable Bible preaching. Children's Church runs after the handshaking, up to age 14.",
   },
   {
     day: "Sunday",
@@ -135,19 +141,109 @@ export const missionRef = "Matthew 28:19-20";
 
 /* ── Pastor ───────────────────────────────────────────────────────────────── */
 /**
- * Only what the church's own site confirms: his name (given as "Pastor Dr.
- * Doug Mann" in their sermon archive), a photo, and his own welcome letter to
- * visitors. No ordination date, education or family details were published on
- * either the current site or Facebook, so none are invented here.
+ * His name, photo and welcome letter come from the church's own site. The
+ * biography below was sent by the church on the intake form (2026-09-19) —
+ * nothing here is inferred.
  */
 export const pastor = {
   name: "Doug Mann",
   displayName: "Pastor Dr. Doug Mann",
   title: "Pastor",
   photo: "/bhbc/pastor-doug.png",
+  /** Year he began pastoring Berkshire Hills Baptist Church. */
+  pastoringSince: 1997,
+  bio: [
+    "Dr. Mann has pastored Berkshire Hills Baptist Church since 1997. He graduated from Bethany Divinity School with his DMin in 2016.",
+    "He has been married for over 50 years, and has four children and eight grandchildren.",
+  ],
+  /** The short facts shown beside his photo. */
+  facts: [
+    { label: "Pastoring here since", value: "1997" },
+    { label: "Doctor of Ministry", value: "Bethany Divinity School, 2016" },
+    { label: "Married", value: "Over 50 years" },
+    { label: "Family", value: "Four children, eight grandchildren" },
+  ],
   welcomeQuote:
     "What makes Berkshire Hills Baptist Church so special? Very simply, it is the people. BHBC is a church filled with caring, loving, and friendly people. Our church is here to serve you through regular weekly ministries as well as special activities throughout the year. It is here that relationships are made and where Christ is magnified.",
 } as const;
+
+/* ── Leadership ───────────────────────────────────────────────────────────── */
+/**
+ * The people shown in the leadership strip on the homepage.
+ *
+ * Only Pastor Mann is listed: the church's own site has never published a
+ * staff page, and the intake form came back with no other names. To add
+ * someone, copy the object below and fill in the four fields — a photo in
+ * /public/bhbc is optional, and without one the card shows their initials
+ * rather than a stand-in picture.
+ *
+ *   { name: "John Smith", role: "Deacon", detail: "Serving since 2005",
+ *     photo: "/bhbc/john-smith.jpg", href: "/our-pastor" }
+ */
+export interface LeaderCard {
+  name: string;
+  role: string;
+  detail: string;
+  photo?: string;
+  href?: string;
+}
+
+export const leadership: LeaderCard[] = [
+  {
+    name: "Dr. Doug Mann",
+    role: "Pastor",
+    detail:
+      "Pastoring Berkshire Hills Baptist Church since 1997. DMin, Bethany Divinity School.",
+    photo: "/bhbc/pastor-doug.png",
+    href: "/our-pastor",
+  },
+];
+
+/* ── Dated events ─────────────────────────────────────────────────────────── */
+/**
+ * The handful of dated things on the calendar, sent by the church on the
+ * intake form. Each one disappears from the site by itself the day after
+ * `endsOn`, so nothing here goes stale if it is not updated — add the next
+ * one whenever the church sends it, and delete nothing.
+ */
+export interface ChurchEvent {
+  /** Shown to visitors, e.g. "Sunday, October 4". */
+  date: string;
+  title: string;
+  detail?: string;
+  /** Last day it should appear, as YYYY-MM-DD. */
+  endsOn: string;
+}
+
+export const churchEvents: ChurchEvent[] = [
+  {
+    date: "Sunday, October 4",
+    title: "Anniversary Sunday",
+    endsOn: "2026-10-04",
+  },
+  {
+    date: "Sunday, October 25",
+    title: "Annual Business Meeting",
+    detail: "After the morning service, with a lite lunch.",
+    endsOn: "2026-10-25",
+  },
+];
+
+/** The events still ahead of us, in date order. Empty is a valid answer. */
+export function upcomingEvents(now = new Date()): ChurchEvent[] {
+  // Compare on the church's own calendar day, not UTC, so an event stays up
+  // through the whole of its final day in Massachusetts.
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now);
+
+  return churchEvents
+    .filter((event) => event.endsOn >= today)
+    .sort((a, b) => a.endsOn.localeCompare(b.endsOn));
+}
 
 /* ── What a first visit is actually like, from their own "What to Expect" page ─ */
 
@@ -170,7 +266,7 @@ export const visitFacts = [
   },
   {
     q: "What about my children?",
-    a: "Sunday School has a class for every age at 10:00, and Children's Church runs during the 11:00 service through Grade 6.",
+    a: "Sunday School has a class for every age at 10:00, and Children's Church runs after the handshaking during the 11:00 service, up to age 14.",
   },
   {
     q: "What is the preaching like?",
