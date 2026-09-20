@@ -10,7 +10,7 @@ import { canonical, serviceTimes, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts. Service times, directions, and a message form that reaches the church directly.",
+    "Get in touch with Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts. Service times, directions, phone, and Facebook contact information.",
   alternates: { canonical: "/contact" },
 };
 
@@ -48,10 +48,32 @@ export default function ContactPage() {
               <div>
                 <p className="eyebrow">Send a message</p>
                 <h2 className="display mt-4 text-[clamp(1.44rem,2.74vw,1.98rem)] text-ink">
-                  Share your details and a member of our staff will reach out.
+                  We would love to hear from you.
                 </h2>
                 <div className="mt-9">
-                  <ContactForm />
+                  {process.env.SLACK_WEBHOOK_URL ? (
+                    <ContactForm />
+                  ) : (
+                    <div className="rounded-sm border border-linen-dark bg-parchment p-7">
+                      <p className="leading-relaxed text-text-light">
+                        Use the chat button at the bottom of the page to send us
+                        a message. You can also call the church or contact us on
+                        Facebook.
+                      </p>
+                      <Phone
+                        showIcon
+                        className="mt-6 block text-lg text-oak-dark"
+                      />
+                      <a
+                        href={site.social.facebook}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="focus-ring mt-5 inline-block rounded-sm bg-ink px-5 py-3 text-sm text-cream"
+                      >
+                        Contact us on Facebook
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
 

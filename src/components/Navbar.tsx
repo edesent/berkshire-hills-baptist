@@ -10,14 +10,15 @@ const links = [
   { href: "/who-we-are", label: "About" },
   { href: "/missions", label: "Missions" },
   { href: "/visit", label: "What to Expect" },
-  { href: "/our-pastor", label: "Our Pastor" },
-  { href: "/beliefs", label: "What We Believe" },
+  { href: "/grow", label: "Growth" },
+  { href: "/resources", label: "Resources" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const open = openPath === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -25,10 +26,6 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -50,7 +47,7 @@ export default function Navbar() {
             <span className="mx-2 text-gold/50">&#9670;</span>
             Worship 11:00
             <span className="mx-2 text-gold/50">&#9670;</span>
-            Sunday Evening 2:00
+            Sunday Afternoon 2:00
             <span className="mx-2 text-gold/50">&#9670;</span>
             Wednesday 6:30
           </p>
@@ -78,7 +75,10 @@ export default function Navbar() {
             <Logo alt="" className="w-[11rem] sm:w-[12.5rem]" />
           </Link>
 
-          <nav className="hidden items-center gap-1 xl:flex">
+          <nav
+            aria-label="Main navigation"
+            className="hidden items-center gap-1 xl:flex"
+          >
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -92,21 +92,21 @@ export default function Navbar() {
                 {link.label}
                 <span
                   className={`mx-auto mt-1 block h-px transition-all ${
-                    isActive(link.href) ? "w-full bg-gold" : "w-0 bg-transparent"
+                    isActive(link.href)
+                      ? "w-full bg-gold"
+                      : "w-0 bg-transparent"
                   }`}
                 />
               </Link>
             ))}
-            <a
-              href="https://berkshirehillsbaptist.weebly.com/sermons1"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/sermons"
               className="focus-ring caps whitespace-nowrap rounded-sm px-3 py-2 text-[0.78rem] font-semibold text-ink-soft transition hover:text-oak"
             >
               Sermons
-            </a>
+            </Link>
             <Link
-              href="/salvation"
+              href="/eternity"
               className="focus-ring caps ml-2 whitespace-nowrap rounded-sm border border-gold/45 bg-gold-pale/35 px-3.5 py-2 text-[0.76rem] font-semibold text-oak-dark transition hover:border-gold hover:bg-gold-pale/70"
             >
               Eternity
@@ -121,7 +121,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpenPath(open ? null : pathname)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             className="focus-ring -mr-2 flex h-11 w-11 items-center justify-center rounded-sm text-ink xl:hidden"
@@ -150,10 +150,16 @@ export default function Navbar() {
       {/* Mobile panel */}
       <div
         className={`overflow-hidden border-b border-linen bg-cream transition-[max-height] duration-400 xl:hidden ${
-          open ? "max-h-[36rem]" : "max-h-0"
+          open ? "max-h-[calc(100dvh-90px)] overflow-y-auto" : "hidden"
         }`}
       >
-        <nav className="mx-auto max-w-7xl px-6 pb-7 pt-3">
+        <nav
+          onClick={(event) => {
+            if ((event.target as HTMLElement).closest("a")) setOpenPath(null);
+          }}
+          aria-label="Mobile navigation"
+          className="mx-auto max-w-7xl px-6 pb-7 pt-3"
+        >
           {links.map((link) => (
             <Link
               key={link.href}
@@ -165,16 +171,14 @@ export default function Navbar() {
               <span className="display">{link.label}</span>
             </Link>
           ))}
-          <a
-            href="https://berkshirehillsbaptist.weebly.com/sermons1"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/sermons"
             className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-ink"
           >
             <span className="display">Sermons</span>
-          </a>
+          </Link>
           <Link
-            href="/salvation"
+            href="/eternity"
             className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-oak-dark"
           >
             <span className="display">How to Have Eternal Life</span>

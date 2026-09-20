@@ -55,8 +55,8 @@ export default function OurPastorPage() {
                     <Image
                       src={pastor.photo}
                       alt={`${pastor.displayName} of Berkshire Hills Baptist Church.`}
-                      width={600}
-                      height={493}
+                      width={1384}
+                      height={1136}
                       preload
                       quality={90}
                       sizes="(max-width: 528px) calc(100vw - 48px), 380px"

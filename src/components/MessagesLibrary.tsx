@@ -17,7 +17,7 @@ function MessageCard({
       <span className="mt-3 text-[0.92rem] leading-relaxed text-text-light">
         {message.description}
       </span>
-      <audio controls preload="none" className="mt-5 w-full">
+      <audio aria-label={`Listen to ${message.title}`} controls preload="none" className="mt-5 w-full">
         <source src={message.url} />
       </audio>
     </div>
@@ -35,11 +35,11 @@ export function LatestMessages() {
           <div className="max-w-2xl">
             <p className="eyebrow">Sermon audio</p>
             <h2 className="display mt-4 text-[clamp(1.60rem,3.34vw,2.51rem)] text-ink">
-              Recent Bible study messages from Pastor Mann.
+              Recent messages from our church.
             </h2>
             <p className="mt-6 leading-relaxed text-text-light">
-              We work through a book of the Bible chapter by chapter on
-              Wednesday nights. Listen to one before you visit.
+              Listen to recent Sunday messages, then explore the sermon
+              archive for Bible studies, notes, and transcripts.
             </p>
           </div>
           <Link

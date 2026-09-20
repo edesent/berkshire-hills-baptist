@@ -4,22 +4,22 @@ import Link from "next/link";
 const marks = [
   {
     title: "The King James Bible",
-    body: "Preached from, read from, and memorized out of — every service. We hold it to be the verbally inspired Word of God and the sole authority for faith and practice. If you do not own one, we will put one in your hands.",
+    body: "We encourage everyone to follow along in their Bibles. For consistency, we use the King James Version. Bring your own, or use one of the Bibles in the pews.",
     ref: "Psalm 12:6-7 · 2 Timothy 3:16",
   },
   {
-    title: "Hymns out of the hymnal",
-    body: "Classic hymns that honor our Saviour, sung by the whole congregation. There is no band and there are no screens — just a piano, a hymn number, and everybody singing the same words.",
+    title: "Hymns and songs of praise",
+    body: "We appreciate the old-fashioned hymns as well as some of the newer songs, choosing musical selections that are conservative in presentation and consistent with the day's message.",
     ref: "Ephesians 5:19",
   },
   {
-    title: "Preaching, not performing",
-    body: "Rather than following modern trends we have stayed with traditional Bible preaching and teaching. You will hear a passage explained and applied, not a talk built around a video clip.",
+    title: "Bible preaching and teaching",
+    body: "Our Sunday morning sermon is usually verse-by-verse or topical preaching from the Word of God. Wednesday Bible study works through a book of the Bible chapter by chapter.",
     ref: "2 Timothy 4:2",
   },
   {
     title: "An independent local church",
-    body: "No denominational headquarters, no board upstate. A local New Testament church governing itself under one Head — Christ — with two offices, pastor and deacon.",
+    body: "We are self-governing and free of denominational control. We follow the Baptist distinctives of salvation by faith, baptism by immersion after salvation, and the Bible as our authority for faith and practice.",
     ref: "Colossians 1:18 · 1 Timothy 3:1-13",
   },
 ];
@@ -32,13 +32,11 @@ export default function StillThatChurch() {
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="eyebrow">What that actually means</p>
             <h2 className="display mt-4 text-[clamp(1.60rem,3.34vw,2.51rem)] text-ink">
-              &ldquo;The way it used to be&rdquo; is not nostalgia. It is four
-              decisions.
+              Rooted in Scripture. Growing together.
             </h2>
             <p className="mt-6 leading-relaxed text-text-light">
-              Plenty of churches say they are old-fashioned. Here is exactly what
-              we mean by it, so you know what Sunday will be like before you ever
-              walk through the door.
+              Get to know the beliefs and practices that shape our worship,
+              our teaching, and our life together as a church.
             </p>
 
             <figure className="mt-10">

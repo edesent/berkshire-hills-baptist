@@ -74,7 +74,7 @@ const faqSchema = {
       name: "What time are services at Berkshire Hills Baptist Church?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sunday School is at 10:00 a.m., Morning Worship at 11:00 a.m., and Sunday Evening Praise at 2:00 p.m. Prayer and Bible Study is Wednesday at 6:30 p.m.",
+        text: "Sunday School is at 10:00 a.m., Morning Worship at 11:00 a.m., and Sunday Afternoon Service at 2:00 p.m. Prayer and Bible Study is Wednesday at 6:30 p.m.",
       },
     },
     {
@@ -120,7 +120,7 @@ export default function Home() {
         }}
       />
       <Navbar />
-      <main>
+      <main id="main">
         <Hero />
         <QuickFacts />
         <WelcomePastor />

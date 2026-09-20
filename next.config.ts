@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import legacyRedirects from "./src/data/legacy-redirects.json";
 import { fileURLToPath } from "node:url";
 
 const nextConfig: NextConfig = {
@@ -15,9 +16,9 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    // Their current WordPress URLs, so nothing that is already linked or
-    // indexed lands on a 404 after the switch.
+    // Preserve every source Weebly page plus existing redesign aliases.
     return [
+      ...legacyRedirects,
       { source: "/who-we-are/our-beliefs", destination: "/beliefs", permanent: true },
       { source: "/who-we-are/our-staff", destination: "/our-pastor", permanent: true },
       { source: "/our-beliefs", destination: "/beliefs", permanent: true },

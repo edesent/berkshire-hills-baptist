@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 
 /**
  * Contact form target. Posts to Slack when SLACK_WEBHOOK_URL is set (works from
- * day one, no domain verification needed); otherwise it accepts the message and
- * records it in the server log so the form is never a dead end.
+ * day one, no domain verification needed). Without a delivery destination,
+ * return an error so visitors are never told an undelivered message was sent.
  */
 
-const FIELDS = ["name", "email", "phone", "reason", "message"] as const;
-
-type Payload = Partial<Record<(typeof FIELDS)[number], string>>;
+type Payload = Partial<
+  Record<"name" | "email" | "phone" | "reason" | "message", string>
+>;
 
 function clean(value: unknown, max = 2000) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
@@ -18,9 +18,15 @@ export async function POST(request: Request) {
   let body: Payload;
 
   try {
-    body = (await request.json()) as Payload;
+    const parsed = await request.json();
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed))
+      throw new Error("Invalid payload");
+    body = parsed as Payload;
   } catch {
-    return NextResponse.json({ ok: false, error: "bad_request" }, { status: 400 });
+    return NextResponse.json(
+      { ok: false, error: "bad_request" },
+      { status: 400 },
+    );
   }
 
   const name = clean(body.name, 120);
@@ -73,7 +79,10 @@ export async function POST(request: Request) {
       );
     }
   } else {
-    console.info("contact (no SLACK_WEBHOOK_URL set):\n", lines);
+    return NextResponse.json(
+      { ok: false, error: "delivery_unavailable" },
+      { status: 503 },
+    );
   }
 
   return NextResponse.json({ ok: true });

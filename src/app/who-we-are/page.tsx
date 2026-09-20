@@ -173,7 +173,7 @@ export default function WhoWeArePage() {
                       />
                     </div>
                     <figcaption className="mt-3 text-[0.74rem] leading-relaxed text-text-muted">
-                      You'll find our name over the door.
+                      You&apos;ll find our name over the door.
                     </figcaption>
                   </figure>
                 </div>

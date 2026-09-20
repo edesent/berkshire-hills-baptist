@@ -13,10 +13,10 @@ export default function FindUs() {
               You will not have to figure it out on your own.
             </h2>
             <p className="mt-6 leading-relaxed text-text-light">
-              Nobody will ask you to stand up, introduce yourself, or fill
-              anything out. Come in the main entrance on Pleasant Street, and
-              somebody will point you where you need to go. Come as you are
-              able &mdash; you will see suits and you will see shirtsleeves.
+              Please be seated and be prepared for our friendly people to
+              introduce themselves and welcome you. There is also a time of
+              greeting during the service. There is no specific dress code; most
+              people dress in modest, casual attire.
             </p>
 
             <dl className="mt-10 space-y-5 border-t border-linen pt-8">
@@ -80,42 +80,32 @@ export default function FindUs() {
             </Link>
           </div>
 
-          <a
-            href={site.directionsUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="focus-ring group flex h-full flex-col justify-between overflow-hidden rounded-sm border border-linen-dark bg-parchment p-8 transition-shadow hover:shadow-[0_26px_55px_-32px_rgba(34,30,23,0.45)] sm:p-10"
-          >
-            <div>
-              <span className="caps text-[0.6rem] font-semibold text-text-muted">
-                Route 102
-              </span>
-              <span className="display mt-3 block text-2xl text-ink">
-                {site.address.street}
-              </span>
-              <span className="mt-2 block text-[0.9rem] text-text-light">
-                {site.address.city}, {site.address.region}{" "}
-                {site.address.postalCode}
-              </span>
-            </div>
-            <span className="caps mt-10 inline-flex shrink-0 items-center text-[0.68rem] font-semibold text-oak-dark">
-              Open in Maps
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-                className="ml-2 inline h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+          <div className="overflow-hidden rounded-sm border border-linen-dark bg-parchment">
+            <iframe
+              src={site.mapEmbedUrl}
+              title="Map to Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts"
+              className="h-[360px] w-full border-0 sm:h-[460px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <div className="border-t border-linen px-6 py-5">
+              <p className="text-sm text-text-light">
+                190 Pleasant Street · Lee, MA 01238
+              </p>
+              <a
+                href={site.directionsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring mt-3 inline-flex text-sm font-semibold text-oak-dark underline underline-offset-4"
               >
-                <path
-                  d="M5 12h14m0 0-5-5m5 5-5 5"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-          </a>
+                Open map & get directions{" "}
+                <span aria-hidden="true" className="ml-2">
+                  ↗
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

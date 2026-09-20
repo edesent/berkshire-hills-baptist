@@ -11,8 +11,8 @@ export default function WelcomePastor() {
             <Image
               src={pastor.photo}
               alt={`${pastor.displayName} of Berkshire Hills Baptist Church.`}
-              width={600}
-              height={493}
+              width={1384}
+              height={1136}
               quality={90}
               sizes="(max-width: 432px) calc(100vw - 48px), 384px"
               className="h-auto w-full"

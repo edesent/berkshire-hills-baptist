@@ -16,7 +16,7 @@ export const site = {
   /** From their own "Our Church Is..." page. */
   descriptor: "An Independent, King James Bible-believing Baptist church",
   description:
-    "Berkshire Hills Baptist Church is an Independent Baptist church in Lee, Massachusetts, in the Berkshires — King James Bible preaching, hymn singing, and a warm welcome. Sunday School 10:00, Morning Worship 11:00, Sunday Evening Praise 2:00, Wednesday Prayer & Bible Study 6:30.",
+    "Berkshire Hills Baptist Church is an Independent Baptist church in Lee, Massachusetts, in the Berkshires — King James Bible preaching, hymn singing, and a warm welcome. Sunday School 10:00, Morning Worship 11:00, Sunday Afternoon Service 2:00, Wednesday Prayer & Bible Study 6:30.",
   address: {
     street: "190 Pleasant Street, Route 102",
     city: "Lee",
@@ -38,6 +38,8 @@ export const site = {
   },
   directionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=Berkshire+Hills+Baptist+Church%2C+190+Pleasant+St%2C+Lee%2C+MA+01238",
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=Berkshire+Hills+Baptist+Church%2C+190+Pleasant+Street%2C+Lee%2C+MA+01238&output=embed",
   mapUrl:
     "https://www.google.com/maps/search/?api=1&query=Berkshire+Hills+Baptist+Church%2C+190+Pleasant+St%2C+Lee%2C+MA+01238",
   social: {
@@ -83,7 +85,7 @@ export const serviceTimes: ServiceTime[] = [
   },
   {
     day: "Sunday",
-    title: "Sunday Evening Praise",
+    title: "Sunday Afternoon Service",
     time: "2:00 p.m.",
     opens: "14:00",
     closes: "15:15",
@@ -142,7 +144,7 @@ export const pastor = {
   name: "Doug Mann",
   displayName: "Pastor Dr. Doug Mann",
   title: "Pastor",
-  photo: "/bhbc/pastor-doug.jpg",
+  photo: "/bhbc/pastor-doug.png",
   welcomeQuote:
     "What makes Berkshire Hills Baptist Church so special? Very simply, it is the people. BHBC is a church filled with caring, loving, and friendly people. Our church is here to serve you through regular weekly ministries as well as special activities throughout the year. It is here that relationships are made and where Christ is magnified.",
 } as const;

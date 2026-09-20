@@ -70,13 +70,7 @@ export default function DonatePage() {
                 alt="Donate with PayPal — the safer, easier way to pay online!"
                 className="cursor-pointer"
               />
-              <img
-                alt=""
-                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
-                width="1"
-                height="1"
-                className="hidden"
-              />
+
             </form>
           </div>
         </section>

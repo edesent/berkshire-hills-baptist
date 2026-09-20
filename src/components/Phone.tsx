@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { site } from "@/lib/site";
 
 /**
  * The church's number is base64'd in site.ts and assembled in the browser, so
  * it never appears in the HTML source, the JSON-LD, or a scraper's harvest.
  */
+const subscribe = () => () => {};
+
 export default function Phone({
   className = "",
   showIcon = false,
@@ -14,18 +16,14 @@ export default function Phone({
   className?: string;
   showIcon?: boolean;
 }) {
-  const [num, setNum] = useState<{ href: string; label: string } | null>(null);
-
-  useEffect(() => {
-    try {
-      setNum({
-        href: atob(site.phoneEncoded),
-        label: atob(site.phoneDisplayEncoded),
-      });
-    } catch {
-      setNum(null);
-    }
-  }, []);
+  const hydrated = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
+  const num = hydrated
+    ? { href: atob(site.phoneEncoded), label: atob(site.phoneDisplayEncoded) }
+    : null;
 
   if (!num) {
     return (

@@ -281,3 +281,17 @@
     display: none;
   }
 }
+
+@layer components {
+  .church-content { line-height: 1.85; overflow-wrap: anywhere; }
+  .church-content p, .church-content > div { margin-block: 1.25rem; }
+  .church-content h1, .church-content h2, .church-content h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.4; margin-block: 2rem 1rem; font-size: clamp(1.2rem, 3vw, 1.65rem); }
+  .church-content a { color: var(--color-oak-dark); text-decoration: underline; text-underline-offset: .2em; }
+  .church-content img { display: block; max-width: min(100%, 720px); width: auto; height: auto; margin: 1.5rem auto; border-radius: 2px; }
+  .church-content ul, .church-content ol { padding-left: 1.5rem; margin-block: 1rem; list-style: revert; }
+  .church-content hr { border-color: var(--color-linen-dark); margin-block: 2rem; }
+  .church-content blockquote { border-left: 2px solid var(--color-gold); padding-left: 1.5rem; margin-block: 1.5rem; }
+  .church-content iframe { border: 0; width: 100%; }
+  .church-content .archive-player { height: 60px; margin-block: 1.5rem; }
+  .church-content .resource-embed { min-height: 640px; }
+}

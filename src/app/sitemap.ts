@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import pages from "@/data/weebly.json";
 import { canonical } from "@/lib/site";
 
 const routes = [
@@ -17,7 +18,7 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return routes.map((route) => ({
+  return [...new Set([...routes, "/resources", ...pages.map(page => page.path)])].map((route) => ({
     url: canonical(route),
     lastModified: now,
     changeFrequency: route === "/sermons" ? "weekly" : "monthly",

@@ -1,0 +1,217 @@
+[
+  {
+    "source": "/missionary-sermons.html",
+    "destination": "/missionary-sermons",
+    "permanent": true
+  },
+  {
+    "source": "/vbs2.html",
+    "destination": "/archive/vbs2",
+    "permanent": true
+  },
+  {
+    "source": "/eternity.html",
+    "destination": "/eternity",
+    "permanent": true
+  },
+  {
+    "source": "/donate.html",
+    "destination": "/donate",
+    "permanent": true
+  },
+  {
+    "source": "/sermons---sept---nov.html",
+    "destination": "/archive/sermons---sept---nov",
+    "permanent": true
+  },
+  {
+    "source": "/audio-sermon-archive.html",
+    "destination": "/archive/audio-sermon-archive",
+    "permanent": true
+  },
+  {
+    "source": "/knowing-god.html",
+    "destination": "/salvation",
+    "permanent": true
+  },
+  {
+    "source": "/welcome-backup.html",
+    "destination": "/archive/welcome-backup",
+    "permanent": true
+  },
+  {
+    "source": "/old-sermons.html",
+    "destination": "/archive/old-sermons",
+    "permanent": true
+  },
+  {
+    "source": "/missions.html",
+    "destination": "/missions/map",
+    "permanent": true
+  },
+  {
+    "source": "/yet-another-sermon-temp.html",
+    "destination": "/archive/yet-another-sermon-temp",
+    "permanent": true
+  },
+  {
+    "source": "/archive---2013.html",
+    "destination": "/archive/archive---2013",
+    "permanent": true
+  },
+  {
+    "source": "/prayer.html",
+    "destination": "/prayer",
+    "permanent": true
+  },
+  {
+    "source": "/paradise-explained.html",
+    "destination": "/archive/paradise-explained",
+    "permanent": true
+  },
+  {
+    "source": "/vbs-pre-registration.html",
+    "destination": "/archive/vbs-pre-registration",
+    "permanent": true
+  },
+  {
+    "source": "/what-to-expect.html",
+    "destination": "/visit",
+    "permanent": true
+  },
+  {
+    "source": "/2013-jan---mar-online-sermons.html",
+    "destination": "/archive/2013-jan---mar-online-sermons",
+    "permanent": true
+  },
+  {
+    "source": "/contact-us.html",
+    "destination": "/contact",
+    "permanent": true
+  },
+  {
+    "source": "/doctrine.html",
+    "destination": "/beliefs",
+    "permanent": true
+  },
+  {
+    "source": "/about.html",
+    "destination": "/who-we-are",
+    "permanent": true
+  },
+  {
+    "source": "/all-prayer-requests.html",
+    "destination": "/all-prayer-requests",
+    "permanent": true
+  },
+  {
+    "source": "/missions1.html",
+    "destination": "/missions",
+    "permanent": true
+  },
+  {
+    "source": "/online-sermons.html",
+    "destination": "/archive/online-sermons",
+    "permanent": true
+  },
+  {
+    "source": "/index.html",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/archive-2014-2015---sermons.html",
+    "destination": "/archive/archive-2014-2015---sermons",
+    "permanent": true
+  },
+  {
+    "source": "/sermon-archives.html",
+    "destination": "/archive/sermon-archives",
+    "permanent": true
+  },
+  {
+    "source": "/directions.html",
+    "destination": "/directions",
+    "permanent": true
+  },
+  {
+    "source": "/schedule.html",
+    "destination": "/archive/schedule",
+    "permanent": true
+  },
+  {
+    "source": "/sermons1.html",
+    "destination": "/sermons",
+    "permanent": true
+  },
+  {
+    "source": "/special-messages.html",
+    "destination": "/special-messages",
+    "permanent": true
+  },
+  {
+    "source": "/christmas-2014-events.html",
+    "destination": "/archive/christmas-2014-events",
+    "permanent": true
+  },
+  {
+    "source": "/blog.html",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/family-series.html",
+    "destination": "/archive/family-series",
+    "permanent": true
+  },
+  {
+    "source": "/wed-night.html",
+    "destination": "/wed-night",
+    "permanent": true
+  },
+  {
+    "source": "/calendar.html",
+    "destination": "/archive/calendar",
+    "permanent": true
+  },
+  {
+    "source": "/sample-music.html",
+    "destination": "/archive/sample-music",
+    "permanent": true
+  },
+  {
+    "source": "/hymns-and-sermons.html",
+    "destination": "/archive/hymns-and-sermons",
+    "permanent": true
+  },
+  {
+    "source": "/vbs.html",
+    "destination": "/archive/vbs",
+    "permanent": true
+  },
+  {
+    "source": "/services.html",
+    "destination": "/services",
+    "permanent": true
+  },
+  {
+    "source": "/grow.html",
+    "destination": "/grow",
+    "permanent": true
+  },
+  {
+    "source": "/deeper-studies.html",
+    "destination": "/archive/deeper-studies",
+    "permanent": true
+  },
+  {
+    "source": "/sermons.html",
+    "destination": "/archive/sermons",
+    "permanent": true
+  },
+  {
+    "source": "/renewal.html",
+    "destination": "/archive/renewal",
+    "permanent": true
+  }
+]
