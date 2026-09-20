@@ -31,6 +31,7 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          website: data.get("website"),
           name: data.get("name"),
           email: data.get("email"),
           phone: data.get("phone"),
@@ -84,8 +85,16 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-sm border border-linen-dark bg-parchment p-6 shadow-[0_24px_55px_-38px_rgba(34,30,23,0.4)] sm:p-8"
+      className="relative rounded-sm border border-linen-dark bg-parchment p-6 shadow-[0_24px_55px_-38px_rgba(34,30,23,0.4)] sm:p-8"
     >
+      {/* Honeypot — hidden from people, irresistible to bots. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+        <label>
+          Leave this field empty
+          <input name="website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="space-y-2">
           <span className={label}>Your name</span>
