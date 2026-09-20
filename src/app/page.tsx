@@ -1,9 +1,13 @@
 import EternalLifeCta from "@/components/EternalLifeCta";
 import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
+import GiveCta from "@/components/GiveCta";
 import Hero from "@/components/Hero";
+import Leadership from "@/components/Leadership";
 import { LatestMessages } from "@/components/MessagesLibrary";
 import Mission from "@/components/Mission";
+import MissionariesHome from "@/components/MissionariesHome";
+import PrayerRequest from "@/components/PrayerRequest";
 import QuickFacts from "@/components/QuickFacts";
 import Navbar from "@/components/Navbar";
 import ScriptureBanner from "@/components/ScriptureBanner";
@@ -127,7 +131,11 @@ export default function Home() {
         <Services />
         <StillThatChurch />
         <Mission />
+        <Leadership />
         <ScriptureBanner />
+        <MissionariesHome />
+        <GiveCta />
+        <PrayerRequest />
         <LatestMessages />
         <EternalLifeCta />
         <FindUs />
