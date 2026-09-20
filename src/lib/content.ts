@@ -151,3 +151,49 @@ export const salvationSteps: SalvationStep[] = [
     ],
   },
 ];
+
+/* ── Our History ──────────────────────────────────────────────────────────── */
+/**
+ * The church's founding history, sent by the church on the intake form
+ * (2026-09-19). The narrative is reproduced word for word; the milestones
+ * below simply pull the dates out of it so they can be shown as a timeline.
+ */
+
+export const historyEpigraph = {
+  text: "God is faithful, by whom ye were called unto the fellowship of His Son Jesus Christ our Lord.",
+  ref: "1 Corinthians 1:9",
+} as const;
+
+export const historyNarrative = [
+  "In May, 1950, a small group of Christian believers in Lee, Massachusetts, feeling the need for greater spiritual food and fellowship, and led separately by the Spirit of God, came together and started what was at first called the “Sunday Evening Gospel Hour”. Meetings were held every Sunday night for a year in the East Lee Chapel and God richly blessed this small ministry. Besides the Sunday evening services, a Children’s Bible Study Hour was held on a week-day afternoon, a Women’s Bible class was held one morning a week, and a prayer service one evening a week. Because of these varied activities the name of the group was changed to the “Gospel Fellowship”.",
+  "During May, 1951, the meeting place was changed to the Lee Grange Hall where the Sunday evening service was held and it was voted to organize an Independent Baptist Church and to have services start on October 7, 1951. One of the richest blessings enjoyed by the Fellowship was the weekday Prayer Meeting. Here, especially, the Lord seemed to be very near and to lead the Fellowship on to the organization of a church of believers with Jesus Christ as the Corner Stone. This brief history of the early beginnings of this Church is given so that in future years those who unite with the Church and carry on its work will know how God led and guided all the way.",
+] as const;
+
+export interface HistoryMilestone {
+  year: string;
+  title: string;
+  text: string;
+}
+
+export const historyMilestones: HistoryMilestone[] = [
+  {
+    year: "May 1950",
+    title: "The Sunday Evening Gospel Hour",
+    text: "A small group of believers in Lee began meeting every Sunday night in the East Lee Chapel, feeling the need for greater spiritual food and fellowship.",
+  },
+  {
+    year: "1950–1951",
+    title: "The Gospel Fellowship",
+    text: "A Children’s Bible Study Hour, a Women’s Bible class and a weekday prayer service were added, and the group took a new name to match.",
+  },
+  {
+    year: "May 1951",
+    title: "The Lee Grange Hall",
+    text: "The meeting place moved, and the Fellowship voted to organize an Independent Baptist Church.",
+  },
+  {
+    year: "October 7, 1951",
+    title: "Services begin",
+    text: "The church was organized with Jesus Christ as the Corner Stone — and has been on Pleasant Street ever since.",
+  },
+];

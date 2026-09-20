@@ -108,6 +108,12 @@ export default function WhoWeArePage() {
                   >
                     Meet our pastor
                   </Link>
+                  <Link
+                    href="/history"
+                    className="focus-ring caps rounded-sm border border-linen-dark bg-cream px-6 py-4 text-[0.68rem] font-semibold text-ink-soft transition hover:border-gold hover:text-oak-dark"
+                  >
+                    Our history
+                  </Link>
                 </div>
               </div>
 

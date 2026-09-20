@@ -6,6 +6,7 @@ const routes = [
   "/",
   "/who-we-are",
   "/our-pastor",
+  "/history",
   "/beliefs",
   "/missions",
   "/sermons",

@@ -9,6 +9,7 @@ const columns = [
     links: [
       { href: "/who-we-are", label: "About" },
       { href: "/our-pastor", label: "Our Pastor" },
+      { href: "/history", label: "Our History" },
       { href: "/beliefs", label: "Doctrine" },
       { href: "/services", label: "Services" },
       { href: "/directions", label: "Directions" },
