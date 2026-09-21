@@ -143,6 +143,17 @@ export default function Footer() {
           <p>
             &copy; {year} {site.name}.
           </p>
+          <p>
+            Church website development by{" "}
+            <a
+              href="https://dfd.llc"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring text-cream/60 underline decoration-cream/25 underline-offset-4 transition hover:text-gold-light hover:decoration-gold-light/50"
+            >
+              dfd.llc
+            </a>
+          </p>
         </div>
       </div>
     </footer>
