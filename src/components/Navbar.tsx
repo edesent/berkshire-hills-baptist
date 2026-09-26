@@ -12,6 +12,7 @@ const links = [
   { href: "/visit", label: "What to Expect" },
   { href: "/grow", label: "Growth" },
   { href: "/resources", label: "Resources" },
+  { href: "/sermons", label: "Sermons" },
 ];
 
 export default function Navbar() {
@@ -83,7 +84,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`focus-ring caps whitespace-nowrap rounded-sm px-3 py-2 text-[0.78rem] font-semibold transition ${
+                className={`focus-ring caps relative whitespace-nowrap rounded-sm px-3 py-2 text-[0.78rem] font-semibold transition ${
                   isActive(link.href)
                     ? "text-oak-dark"
                     : "text-ink-soft hover:text-oak"
@@ -91,20 +92,15 @@ export default function Navbar() {
               >
                 {link.label}
                 <span
-                  className={`mx-auto mt-1 block h-px transition-all ${
+                  className={`absolute bottom-1 left-1/2 h-px -translate-x-1/2 transition-all ${
                     isActive(link.href)
-                      ? "w-full bg-gold"
+                      ? "w-[calc(100%-1.5rem)] bg-gold"
                       : "w-0 bg-transparent"
                   }`}
+                  aria-hidden="true"
                 />
               </Link>
             ))}
-            <Link
-              href="/sermons"
-              className="focus-ring caps whitespace-nowrap rounded-sm px-3 py-2 text-[0.78rem] font-semibold text-ink-soft transition hover:text-oak"
-            >
-              Sermons
-            </Link>
             <Link
               href="/eternity"
               className="focus-ring caps ml-2 whitespace-nowrap rounded-sm border border-gold/45 bg-gold-pale/35 px-3.5 py-2 text-[0.76rem] font-semibold text-oak-dark transition hover:border-gold hover:bg-gold-pale/70"
@@ -171,12 +167,6 @@ export default function Navbar() {
               <span className="display">{link.label}</span>
             </Link>
           ))}
-          <Link
-            href="/sermons"
-            className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-ink"
-          >
-            <span className="display">Sermons</span>
-          </Link>
           <Link
             href="/eternity"
             className="focus-ring block border-b border-linen/70 py-3.5 text-lg text-oak-dark"
