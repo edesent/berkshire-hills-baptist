@@ -1,32 +1,89 @@
 import Link from "next/link";
-import { sermonAudioLibrary } from "@/lib/sermon-audio";
+import {
+  formatSermonDate,
+  getLatestSermons,
+  type SermonDetail,
+} from "@/lib/sermon-audio";
 
-function MessageCard({
-  message,
-}: {
-  message: (typeof sermonAudioLibrary)[number];
-}) {
+function Arrow() {
   return (
-    <div className="focus-ring group flex flex-col overflow-hidden rounded-sm border border-linen-dark bg-cream p-7 transition-shadow hover:shadow-[0_26px_55px_-32px_rgba(34,30,23,0.45)]">
-      <span className="caps text-[0.6rem] font-semibold text-text-muted">
-        {message.date}
-      </span>
-      <span className="display mt-2 text-[1.35rem] leading-tight text-ink">
-        {message.title}
-      </span>
-      <span className="mt-3 text-[0.92rem] leading-relaxed text-text-light">
-        {message.description}
-      </span>
-      <audio aria-label={`Listen to ${message.title}`} controls preload="none" className="mt-5 w-full">
-        <source src={message.url} />
-      </audio>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+    >
+      <path
+        d="M5 12h14m0 0-5-5m5 5-5 5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+/** Audio players for a sermon — one per part when it was uploaded in parts. */
+export function SermonAudio({ sermon }: { sermon: SermonDetail }) {
+  return (
+    <div className="grid gap-3">
+      {sermon.audio.map((a) => (
+        <div key={a.url}>
+          {sermon.audio.length > 1 && (
+            <p className="mb-1.5 text-xs text-text-light">{a.label}</p>
+          )}
+          <audio
+            aria-label={`Listen to ${sermon.audio.length > 1 ? a.label : sermon.title}`}
+            controls
+            preload="none"
+            className="w-full"
+          >
+            <source src={a.url} type="audio/mpeg" />
+          </audio>
+        </div>
+      ))}
     </div>
   );
 }
 
-/** Homepage strip: the newest message featured, then the rest. */
-export function LatestMessages() {
-  const [featured, ...rest] = sermonAudioLibrary;
+function MessageCard({
+  message,
+  featured = false,
+}: {
+  message: SermonDetail;
+  featured?: boolean;
+}) {
+  return (
+    <div className="flex h-full flex-col overflow-hidden rounded-sm border border-linen-dark bg-cream p-7 transition-shadow hover:shadow-[0_26px_55px_-32px_rgba(34,30,23,0.45)]">
+      <span className="caps text-[0.6rem] font-semibold text-text-muted">
+        {formatSermonDate(message.date)}
+        {message.speaker && ` · ${message.speaker}`}
+      </span>
+      <Link
+        href={`/sermons/${message.id}`}
+        className="focus-ring display mt-2 text-[1.35rem] leading-tight text-ink hover:text-oak-dark"
+      >
+        {message.title}
+      </Link>
+      {message.description && (
+        <p
+          className={`mt-3 text-[0.92rem] leading-relaxed text-text-light ${featured ? "" : "line-clamp-5"}`}
+        >
+          {message.description}
+        </p>
+      )}
+      <div className="mt-auto pt-5">
+        <SermonAudio sermon={message} />
+      </div>
+    </div>
+  );
+}
+
+/** Homepage strip: the newest message featured, then the next two. */
+export async function LatestMessages() {
+  const [featured, ...rest] = await getLatestSermons(3);
+  if (!featured) return null;
 
   return (
     <section className="section-pad paper">
@@ -47,43 +104,19 @@ export function LatestMessages() {
             className="focus-ring caps group inline-flex shrink-0 items-center gap-2.5 text-[0.68rem] font-semibold text-oak-dark"
           >
             All messages
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-              className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
-            >
-              <path
-                d="M5 12h14m0 0-5-5m5 5-5 5"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <Arrow />
           </Link>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-2">
-            <MessageCard message={featured} />
+            <MessageCard message={featured} featured />
           </div>
-          {rest.slice(0, 2).map((message) => (
-            <MessageCard key={message.title} message={message} />
+          {rest.map((message) => (
+            <MessageCard key={message.id} message={message} />
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-/** Full library grid for /sermons. */
-export default function MessagesLibrary() {
-  return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {sermonAudioLibrary.map((message) => (
-        <MessageCard key={message.title} message={message} />
-      ))}
-    </div>
   );
 }

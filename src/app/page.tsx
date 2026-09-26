@@ -114,6 +114,9 @@ const websiteSchema = {
 
 const structuredData = [churchSchema, faqSchema, websiteSchema];
 
+// The recent-sermons strip pulls from archive.org.
+export const revalidate = 3600;
+
 export default function Home() {
   return (
     <>

@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "ytimg.com" },
       { protocol: "https", hostname: "**.ytimg.com" },
       { protocol: "https", hostname: "**.youtube.com" },
+      // Sermon title slides live on Peter's archive.org account; downloads
+      // redirect to a numbered storage node (ia800…us.archive.org).
+      { protocol: "https", hostname: "archive.org" },
+      { protocol: "https", hostname: "**.archive.org" },
     ],
   },
   async redirects() {

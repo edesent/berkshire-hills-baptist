@@ -4,7 +4,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import { sermonAudioLibrary } from "@/lib/sermon-audio";
+import { formatSermonDate, getSermons } from "@/lib/sermon-audio";
 import { canonical, pastor, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,7 +30,12 @@ const personSchema = {
   inLanguage: "en-US",
 };
 
-export default function OurPastorPage() {
+export const revalidate = 3600;
+
+export default async function OurPastorPage() {
+  const recent = (await getSermons())
+    .filter((s) => s.speaker === "Pastor Doug Mann")
+    .slice(0, 3);
   return (
     <>
       <script
@@ -110,22 +115,22 @@ export default function OurPastorPage() {
                   Recent messages
                 </h2>
                 <ul className="mt-7 space-y-px overflow-hidden rounded-sm border border-linen-dark bg-linen-dark">
-                  {sermonAudioLibrary.slice(0, 3).map((message) => (
-                    <li key={message.title} className="bg-cream p-6">
-                      <a
-                        href={message.url}
-                        target="_blank"
-                        rel="noreferrer"
+                  {recent.map((message) => (
+                    <li key={message.id} className="bg-cream p-6">
+                      <Link
+                        href={`/sermons/${message.id}`}
                         className="focus-ring group"
                       >
                         <p className="display text-[1.2rem] leading-snug text-ink group-hover:text-oak-dark">
                           {message.title}
                         </p>
-                        <p className="mt-2 text-[0.92rem] text-text-light">
+                        <p className="mt-2 line-clamp-3 text-[0.92rem] text-text-light">
                           {message.description}
                         </p>
-                        <p className="ref mt-2">{message.date}</p>
-                      </a>
+                        <p className="ref mt-2">
+                          {formatSermonDate(message.date)}
+                        </p>
+                      </Link>
                     </li>
                   ))}
                 </ul>
