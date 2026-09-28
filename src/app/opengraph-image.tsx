@@ -117,7 +117,7 @@ export default async function OpenGraphImage() {
             <Diamond />
             <div style={{ display: "flex" }}>Worship 11:00</div>
             <Diamond />
-            <div style={{ display: "flex" }}>Sunday Evening 2:00</div>
+            <div style={{ display: "flex" }}>Sunday Afternoon 2:00</div>
             <Diamond />
             <div style={{ display: "flex" }}>Wednesday 6:30</div>
           </div>
