@@ -146,8 +146,8 @@ export default function ContactForm() {
           role="alert"
           className="mt-4 rounded-sm border border-claret/30 bg-claret/5 px-4 py-3 text-[0.86rem] text-claret-dark"
         >
-          Something went wrong sending that. Please try again, or give the church
-          a call.
+          Something went wrong sending that. Please try again, or email the
+          church at <Email className="underline underline-offset-2" />.
         </p>
       )}
     </form>
