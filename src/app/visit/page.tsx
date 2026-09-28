@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Email from "@/components/Email";
 import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import Phone from "@/components/Phone";
 import { canonical, site, visitFacts } from "@/lib/site";
 
 export const metadata: Metadata = {
