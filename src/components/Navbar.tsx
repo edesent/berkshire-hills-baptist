@@ -73,7 +73,7 @@ export default function Navbar() {
             className="focus-ring shrink-0 py-1"
             aria-label="Berkshire Hills Baptist Church — home"
           >
-            <Logo alt="" layout="inline" />
+            <Logo alt="" size="large" className="w-[13.5rem] sm:w-[15.5rem]" />
           </Link>
 
           <nav
