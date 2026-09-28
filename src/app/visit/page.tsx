@@ -178,13 +178,13 @@ export default function VisitPage() {
                     Still would rather ask a person?
                   </h2>
                   <p className="mt-3 leading-relaxed text-text-light">
-                    Call the church and somebody will talk you through it, or
-                    send a message and we will get back to you.
+                    Email the church and somebody will get back to you, or
+                    send a message through our contact page.
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
-                    <Phone
+                    <Email
                       showIcon
-                      className="caps rounded-sm bg-ink px-6 py-4 text-[0.68rem] font-semibold text-cream transition hover:bg-oak-dark"
+                      className="rounded-sm bg-ink px-6 py-4 text-[0.85rem] font-semibold text-cream transition hover:bg-oak-dark"
                     />
                     <Link
                       href="/contact"
