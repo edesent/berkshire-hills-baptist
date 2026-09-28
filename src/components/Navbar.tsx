@@ -44,16 +44,16 @@ export default function Navbar() {
       <div className="hidden bg-ink text-cream md:block">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-8 gap-y-1 px-6 py-2.5 lg:px-10">
           <p className="caps text-[0.75rem] font-semibold leading-relaxed text-gold-pale/90 xl:text-[0.82rem]">
-            Sunday School 10:00
+            Sun. School 10:00
             <span className="mx-2 text-gold/50">&#9670;</span>
             Worship 11:00
             <span className="mx-2 text-gold/50">&#9670;</span>
-            Sunday Afternoon 2:00
+            Sun. Afternoon 2:00
             <span className="mx-2 text-gold/50">&#9670;</span>
-            Wednesday 6:30
+            Wed. 6:30
           </p>
           <p className="caps text-[0.75rem] font-semibold leading-relaxed text-gold-pale/90 xl:text-[0.82rem]">
-            190 Pleasant St., Lee, MA 01238
+            190 Pleasant St., Lee, MA
             <span className="mx-2 text-gold/50">&#9670;</span>
             <Email className="font-sans text-[0.85rem] font-normal normal-case tracking-normal transition hover:text-gold-light xl:text-[0.92rem]" />
           </p>
