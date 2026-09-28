@@ -73,8 +73,8 @@ export default function PrayerRequest() {
               unto God.&rdquo; &mdash; Philippians 4:6
             </p>
             <p className="mt-8 text-[0.88rem] leading-relaxed text-text-muted">
-              If it is urgent, please call the church instead:{" "}
-              <Phone className="text-oak-dark transition hover:text-gold" />
+              If it is urgent, please email the church instead:{" "}
+              <Email className="text-oak-dark transition hover:text-gold" />
             </p>
           </div>
 
