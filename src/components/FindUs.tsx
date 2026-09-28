@@ -33,10 +33,10 @@ export default function FindUs() {
               </div>
               <div>
                 <dt className="caps text-[0.6rem] font-semibold text-text-muted">
-                  By phone
+                  By email
                 </dt>
                 <dd className="display mt-1.5 text-xl text-ink">
-                  <Phone className="transition hover:text-oak-dark" />
+                  <Email className="transition hover:text-oak-dark" />
                 </dd>
               </div>
             </dl>
