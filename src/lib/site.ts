@@ -29,6 +29,13 @@ export const site = {
   /** Reference numbers are assembled client-side, never printed into the HTML. */
   phoneEncoded: "KzE0MTMyNDMwODM3", // +14132430837
   phoneDisplayEncoded: "KDQxMykgMjQzLTA4Mzc=", // (413) 243-0837
+  /**
+   * The church phone is temporarily out of service, so the site shows this
+   * email instead. Encoded like the phone number and assembled in the browser.
+   * To bring the phone back, revert the "phone out of service" changes.
+   */
+  emailHrefEncoded: "bWFpbHRvOnBhc3RvckBiZXJrc2hpcmVoaWxsc2JhcHRpc3QuY29t", // mailto:pastor@berkshirehillsbaptist.com
+  emailDisplayEncoded: "cGFzdG9yQGJlcmtzaGlyZWhpbGxzYmFwdGlzdC5jb20=", // pastor@berkshirehillsbaptist.com
   contactPath: "/contact",
   geo: {
     // Geocoded from the church's own street address (190 Pleasant St, Lee, MA

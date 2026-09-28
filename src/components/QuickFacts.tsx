@@ -1,4 +1,4 @@
-import Phone from "@/components/Phone";
+import Email from "@/components/Email";
 import { site } from "@/lib/site";
 
 /** The strip under the hero. No brand icon set exists for this church, so
@@ -18,11 +18,21 @@ function PinIcon() {
   );
 }
 
-function PhoneIcon() {
+function MailIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-9 w-9">
+      <rect
+        x="3.5"
+        y="5.5"
+        width="17"
+        height="13"
+        rx="1.5"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
       <path
-        d="M6.5 3.5h2.2l1.6 4-2 1.4a11.4 11.4 0 0 0 5.3 5.3l1.4-2 4 1.6v2.2a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"
+        d="m4 7 8 6 8-6"
         stroke="currentColor"
         strokeWidth="1.4"
         strokeLinecap="round"
@@ -59,9 +69,9 @@ const FACTS = [
     ),
   },
   {
-    icon: PhoneIcon,
-    label: "Call the church",
-    body: <Phone className="transition hover:text-oak" />,
+    icon: MailIcon,
+    label: "Email the church",
+    body: <Email className="transition hover:text-oak" />,
   },
   {
     icon: BookIcon,
@@ -85,7 +95,7 @@ export default function QuickFacts() {
             <span className="caps text-[0.62rem] font-semibold text-text-muted">
               {fact.label}
             </span>
-            <p className="display max-w-[22ch] text-[1.05rem] leading-snug text-ink">
+            <p className="display max-w-[34ch] text-[1.05rem] leading-snug text-ink">
               {fact.body}
             </p>
           </div>

@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import Email from "@/components/Email";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import Phone from "@/components/Phone";
 import { canonical, serviceTimes, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts. Service times, directions, phone, and Facebook contact information.",
+    "Get in touch with Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts. Service times, directions, email, and Facebook contact information.",
   alternates: { canonical: "/contact" },
 };
 
@@ -57,10 +57,10 @@ export default function ContactPage() {
                     <div className="rounded-sm border border-linen-dark bg-parchment p-7">
                       <p className="leading-relaxed text-text-light">
                         Use the chat button at the bottom of the page to send us
-                        a message. You can also call the church or contact us on
-                        Facebook.
+                        a message. You can also email the church or contact us
+                        on Facebook.
                       </p>
-                      <Phone
+                      <Email
                         showIcon
                         className="mt-6 block text-lg text-oak-dark"
                       />
@@ -106,10 +106,10 @@ export default function ContactPage() {
                     </div>
                     <div className="px-7 py-6">
                       <dt className="caps text-[0.58rem] font-semibold text-text-muted">
-                        Phone
+                        Email
                       </dt>
                       <dd className="display mt-2 text-[1.28rem] text-ink">
-                        <Phone className="transition hover:text-oak-dark" />
+                        <Email className="transition hover:text-oak-dark" />
                       </dd>
                     </div>
                     <div className="px-7 py-6">

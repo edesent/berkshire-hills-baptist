@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Phone from "@/components/Phone";
+import Email from "@/components/Email";
 
 /**
  * The prayer request form on the homepage. It posts to the same /api/contact
@@ -73,8 +73,8 @@ export default function PrayerRequest() {
               unto God.&rdquo; &mdash; Philippians 4:6
             </p>
             <p className="mt-8 text-[0.88rem] leading-relaxed text-text-muted">
-              If it is urgent, please call the church instead:{" "}
-              <Phone className="text-oak-dark transition hover:text-gold" />
+              If it is urgent, please email the church instead:{" "}
+              <Email className="text-oak-dark transition hover:text-gold" />
             </p>
           </div>
 
@@ -175,8 +175,8 @@ export default function PrayerRequest() {
                   role="alert"
                   className="mt-4 rounded-sm border border-claret/30 bg-claret/5 px-4 py-3 text-[0.86rem] text-claret-dark"
                 >
-                  Something went wrong sending that. Please try again, or give
-                  the church a call.
+                  Something went wrong sending that. Please try again, or
+                  email the church.
                 </p>
               )}
             </form>

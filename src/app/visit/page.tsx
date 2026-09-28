@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Email from "@/components/Email";
 import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import Phone from "@/components/Phone";
 import { canonical, site, visitFacts } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ const faqSchema = {
 const steps = [
   {
     title: "Pick a service",
-    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come Sunday evening at 2:00.",
+    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come to the Sunday Afternoon Service at 2:00.",
   },
   {
     title: "Find Pleasant Street",
@@ -66,7 +66,7 @@ export default function VisitPage() {
             {[
               ["Sunday School", "10:00 a.m."],
               ["Morning Worship", "11:00 a.m."],
-              ["Sunday Evening", "2:00 p.m."],
+              ["Sunday Afternoon Service", "2:00 p.m."],
               ["Wednesday", "6:30 p.m."],
             ].map(([label, time]) => (
               <div key={label}>
@@ -178,13 +178,13 @@ export default function VisitPage() {
                     Still would rather ask a person?
                   </h2>
                   <p className="mt-3 leading-relaxed text-text-light">
-                    Call the church and somebody will talk you through it, or
-                    send a message and we will get back to you.
+                    Email the church and somebody will get back to you, or
+                    send a message through our contact page.
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
-                    <Phone
+                    <Email
                       showIcon
-                      className="caps rounded-sm bg-ink px-6 py-4 text-[0.68rem] font-semibold text-cream transition hover:bg-oak-dark"
+                      className="rounded-sm bg-ink px-6 py-4 text-[0.85rem] font-semibold text-cream transition hover:bg-oak-dark"
                     />
                     <Link
                       href="/contact"

@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Email from "@/components/Email";
 import Logo from "@/components/Logo";
-import Phone from "@/components/Phone";
 
 const links = [
   { href: "/who-we-are", label: "About" },
@@ -55,7 +55,7 @@ export default function Navbar() {
           <p className="caps text-[0.63rem] font-semibold text-gold-pale/85 xl:text-[0.7rem]">
             Lee, Massachusetts
             <span className="mx-2 text-gold/50">&#9670;</span>
-            <Phone className="transition hover:text-gold-light" />
+            <Email className="normal-case tracking-normal transition hover:text-gold-light" />
           </p>
         </div>
       </div>
@@ -180,9 +180,9 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
-            <Phone
+            <Email
               showIcon
-              className="caps rounded-sm border border-linen-dark px-5 py-3.5 text-center text-[0.78rem] font-semibold text-ink-soft"
+              className="rounded-sm border border-linen-dark px-5 py-3.5 text-center text-[0.85rem] font-semibold text-ink-soft"
             />
           </div>
         </nav>

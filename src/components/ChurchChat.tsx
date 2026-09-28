@@ -2,7 +2,7 @@
 import Script from "next/script";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import Phone from "@/components/Phone";
+import Email from "@/components/Email";
 import { chat } from "@/lib/chat";
 import { site } from "@/lib/site";
 
@@ -79,7 +79,7 @@ export default function ChurchChat({ enabled }: { enabled: boolean }) {
             Live chat is currently unavailable. We’d still love to hear from
             you.
           </p>
-          <Phone
+          <Email
             showIcon
             className="mt-5 block rounded-sm bg-ink px-4 py-3 text-center text-sm text-cream"
           />

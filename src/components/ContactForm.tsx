@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Email from "@/components/Email";
 
 const reasons = [
   "Planning a first visit",
@@ -69,7 +70,8 @@ export default function ContactForm() {
         <p className="display mt-6 text-2xl text-ink">Thank you &mdash; it sent.</p>
         <p className="mt-3 leading-relaxed text-text-light">
           Someone from the church will get back to you. If it is urgent, please
-          give us a call instead.
+          email the church directly:{" "}
+          <Email className="text-oak-dark transition hover:text-gold" />
         </p>
         <button
           type="button"
@@ -145,8 +147,8 @@ export default function ContactForm() {
           role="alert"
           className="mt-4 rounded-sm border border-claret/30 bg-claret/5 px-4 py-3 text-[0.86rem] text-claret-dark"
         >
-          Something went wrong sending that. Please try again, or give the church
-          a call.
+          Something went wrong sending that. Please try again, or email the
+          church at <Email className="underline underline-offset-2" />.
         </p>
       )}
     </form>
