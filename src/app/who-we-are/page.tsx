@@ -66,8 +66,8 @@ export default function WhoWeArePage() {
                     church that believes the Bible is the preserved Word of
                     God and the only authority for our standard of conduct
                     and the rule for life and service. Rather than following
-                    modern trends, we remain committed to King James Bible
-                    preaching and teaching.
+                    modern trends, we remain committed to old-fashioned Bible
+                    preaching and teaching, in love.
                   </p>
                   <p>
                     We warmly invite you to join us as we grow together in
