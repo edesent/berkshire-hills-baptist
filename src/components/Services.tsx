@@ -42,6 +42,11 @@ export default function Services() {
               <p className="mt-5 text-[0.88rem] leading-relaxed text-text-light">
                 {service.blurb}
               </p>
+              {service.note && (
+                <p className="mt-5 rounded-sm border border-gold/50 bg-parchment px-3 py-2.5 text-[0.82rem] font-medium leading-snug text-oak-dark">
+                  {service.note}
+                </p>
+              )}
             </div>
           ))}
         </div>

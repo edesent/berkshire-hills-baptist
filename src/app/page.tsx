@@ -1,3 +1,4 @@
+import AnniversaryBanner from "@/components/AnniversaryBanner";
 import EternalLifeCta from "@/components/EternalLifeCta";
 import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
@@ -129,6 +130,7 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
+        <AnniversaryBanner />
         <QuickFacts />
         <WelcomePastor />
         <Services />
