@@ -42,10 +42,10 @@ export default function AnniversaryBanner() {
         />
 
         <p className="mt-6 text-[clamp(1rem,1.7vw,1.2rem)] leading-relaxed text-cream/90">
-          <strong className="font-semibold text-cream">10 am</strong> Sunday
-          School &nbsp;&middot;&nbsp;{" "}
-          <strong className="font-semibold text-cream">11 am</strong> Worship
-          Service
+          <strong className="font-semibold text-cream">10 am</strong>
+          &nbsp;&nbsp;Sunday School &nbsp;&middot;&nbsp;{" "}
+          <strong className="font-semibold text-cream">11 am</strong>
+          &nbsp;&nbsp;Worship Service
         </p>
         <p className="mt-2 text-[clamp(1rem,1.7vw,1.2rem)] leading-relaxed text-cream/90">
           followed by a light lunch and a hymn sing &amp; testimonies
