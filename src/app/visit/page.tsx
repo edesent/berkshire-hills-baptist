@@ -29,7 +29,7 @@ const faqSchema = {
 const steps = [
   {
     title: "Pick a service",
-    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come Sunday evening at 2:00.",
+    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come to the Sunday Afternoon Service at 2:00.",
   },
   {
     title: "Find Pleasant Street",
