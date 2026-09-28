@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Phone from "@/components/Phone";
+import Email from "@/components/Email";
 import { site } from "@/lib/site";
 
 export default function FindUs() {
