@@ -52,7 +52,7 @@ export default function AnniversaryBanner() {
         </p>
 
         <p className="caps mt-7 inline-block max-w-full rounded-sm border border-gold/60 px-5 py-2 text-[0.68rem] font-semibold leading-relaxed text-gold-light">
-          In place of our regular 2 pm service
+          No 2 pm service Oct 4
         </p>
       </div>
     </section>
