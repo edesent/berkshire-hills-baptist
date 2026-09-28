@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const marks = [
   {
-    title: "The King James Bible",
+    title: "Preaching from the Bible",
     body: "We encourage everyone to follow along in their Bibles. For consistency, we use the King James Version. Bring your own, or use one of the Bibles in the pews.",
     ref: "Psalm 12:6-7 · 2 Timothy 3:16",
   },
