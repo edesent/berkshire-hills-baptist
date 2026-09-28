@@ -115,7 +115,7 @@ export default function Footer() {
               {site.address.city}, {site.address.region}{" "}
               {site.address.postalCode}
             </address>
-            <Phone
+            <Email
               showIcon
               className="mt-4 block text-sm text-cream/70 transition hover:text-gold-light"
             />
