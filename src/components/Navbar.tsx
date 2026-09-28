@@ -42,7 +42,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50">
       {/* Service times sit above everything — it is the thing visitors want. */}
       <div className="hidden bg-ink text-cream md:block">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-8 gap-y-1 px-6 py-2.5 lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-8 gap-y-1 px-6 py-2.5 lg:px-10 2xl:max-w-[1600px]">
           <p className="caps text-[0.75rem] font-semibold leading-relaxed text-gold-pale/90 xl:text-[0.82rem]">
             Sun. School 10:00
             <span className="mx-2 text-gold/50">&#9670;</span>
