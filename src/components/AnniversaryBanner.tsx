@@ -51,8 +51,8 @@ export default function AnniversaryBanner() {
           followed by a light lunch and a hymn sing &amp; testimonies
         </p>
 
-        <p className="caps mt-7 inline-block rounded-sm border border-gold/60 px-5 py-2 text-[0.68rem] font-semibold text-gold-light">
-          No 2 pm service
+        <p className="caps mt-7 inline-block max-w-full rounded-sm border border-gold/60 px-5 py-2 text-[0.68rem] font-semibold leading-relaxed text-gold-light">
+          In place of our regular 2 pm service
         </p>
       </div>
     </section>
