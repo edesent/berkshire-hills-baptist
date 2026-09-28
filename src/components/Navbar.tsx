@@ -67,7 +67,7 @@ export default function Navbar() {
             : "border-transparent bg-cream"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-10 lg:py-5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-10 lg:py-5 2xl:max-w-[1600px]">
           <Link
             href="/"
             className="focus-ring shrink-0 py-1"
