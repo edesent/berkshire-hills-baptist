@@ -36,8 +36,8 @@ export default function Hero() {
               </span>
             </h1>
             <p className="mt-6 text-base leading-relaxed text-text-light lg:text-white/95">
-              Welcome to Berkshire Hills Baptist Church. Join us for King James
-              Bible preaching, hymns, prayer, and fellowship in the heart of the
+              Welcome to Berkshire Hills Baptist Church. Join us for Bible
+              preaching, hymns, prayer, and fellowship in the heart of the
               Berkshires.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
