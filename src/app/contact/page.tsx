@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import Email from "@/components/Email";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
-import Phone from "@/components/Phone";
 import { canonical, serviceTimes, site } from "@/lib/site";
 
 export const metadata: Metadata = {
