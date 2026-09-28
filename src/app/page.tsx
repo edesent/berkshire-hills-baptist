@@ -129,6 +129,7 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
+        <AnniversaryBanner />
         <QuickFacts />
         <WelcomePastor />
         <Services />
