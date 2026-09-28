@@ -120,7 +120,7 @@ export default function Navbar() {
             onClick={() => setOpenPath(open ? null : pathname)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="focus-ring -mr-2 flex h-11 w-11 items-center justify-center rounded-sm text-ink 2xl:hidden"
+            className="focus-ring -mr-2 flex h-11 w-11 items-center justify-center rounded-sm text-ink xl:hidden"
           >
             <span className="relative block h-4 w-6">
               <span
