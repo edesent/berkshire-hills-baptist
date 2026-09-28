@@ -10,7 +10,7 @@ import { canonical, serviceTimes, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts. Service times, directions, phone, and Facebook contact information.",
+    "Get in touch with Berkshire Hills Baptist Church, 190 Pleasant Street, Lee, Massachusetts. Service times, directions, email, and Facebook contact information.",
   alternates: { canonical: "/contact" },
 };
 
