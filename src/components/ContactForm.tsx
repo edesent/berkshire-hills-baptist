@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Email from "@/components/Email";
 
 const reasons = [
   "Planning a first visit",
