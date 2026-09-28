@@ -95,7 +95,7 @@ export default function QuickFacts() {
             <span className="caps text-[0.62rem] font-semibold text-text-muted">
               {fact.label}
             </span>
-            <p className="display max-w-[22ch] text-[1.05rem] leading-snug text-ink">
+            <p className="display max-w-[34ch] text-[1.05rem] leading-snug text-ink">
               {fact.body}
             </p>
           </div>
