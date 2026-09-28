@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Email from "@/components/Email";
 import Logo from "@/components/Logo";
-import Phone from "@/components/Phone";
 import { serviceTimes, site } from "@/lib/site";
 
 const columns = [
