@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Email from "@/components/Email";
 import Logo from "@/components/Logo";
-import Phone from "@/components/Phone";
 
 const links = [
   { href: "/who-we-are", label: "About" },
