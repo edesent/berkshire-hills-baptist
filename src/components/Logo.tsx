@@ -63,10 +63,22 @@ type LogoProps = {
   tone?: "ink" | "cream";
   alt?: string;
   className?: string;
+  /** "large" sets the name a step bigger (used in the top navigation). */
+  size?: "default" | "large";
 };
 
-export default function Logo({ tone = "ink", alt = "", className = "" }: LogoProps) {
+export default function Logo({
+  tone = "ink",
+  alt = "",
+  className = "",
+  size = "default",
+}: LogoProps) {
   const color = tone === "cream" ? "text-cream" : "text-ink";
+  const nameSize =
+    size === "large"
+      ? "text-[1.2rem] sm:text-[1.4rem]"
+      : "text-[1.05rem] sm:text-[1.2rem]";
+  const subSize = size === "large" ? "text-[0.6rem]" : "text-[0.52rem]";
 
   return (
     <span
@@ -74,10 +86,12 @@ export default function Logo({ tone = "ink", alt = "", className = "" }: LogoPro
       aria-label={alt || undefined}
       className={`block whitespace-nowrap leading-none ${color} ${className}`}
     >
-      <span className="display block text-[1.05rem] leading-[1.15] sm:text-[1.2rem]">
+      <span className={`display block leading-[1.15] ${nameSize}`}>
         Berkshire Hills
       </span>
-      <span className="caps mt-1 block text-[0.52rem] font-semibold tracking-[0.16em] text-gold">
+      <span
+        className={`caps mt-1 block font-semibold tracking-[0.16em] text-gold ${subSize}`}
+      >
         Baptist Church
       </span>
     </span>
