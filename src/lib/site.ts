@@ -7,7 +7,7 @@
  * fabricated Transparency page.
  */
 
-export const siteUrl = "https://berkshirehillsbaptist.elijahdesent.com";
+export const siteUrl = "https://www.berkshirehillsbaptist.com";
 
 export const site = {
   name: "Berkshire Hills Baptist Church",
