@@ -55,7 +55,7 @@ export default function Navbar() {
           <p className="caps text-[0.63rem] font-semibold text-gold-pale/85 xl:text-[0.7rem]">
             Lee, Massachusetts
             <span className="mx-2 text-gold/50">&#9670;</span>
-            <Phone className="transition hover:text-gold-light" />
+            <Email className="normal-case tracking-normal transition hover:text-gold-light" />
           </p>
         </div>
       </div>
