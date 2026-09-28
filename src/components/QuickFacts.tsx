@@ -76,7 +76,7 @@ const FACTS = [
   {
     icon: BookIcon,
     label: "What you will hear",
-    body: <>Preaching straight from the King&nbsp;James Bible</>,
+    body: <>Christ centered Teaching and Preaching for the Whole Family</>,
   },
 ] as const;
 
