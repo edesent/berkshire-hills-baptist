@@ -180,9 +180,9 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
-            <Phone
+            <Email
               showIcon
-              className="caps rounded-sm border border-linen-dark px-5 py-3.5 text-center text-[0.78rem] font-semibold text-ink-soft"
+              className="rounded-sm border border-linen-dark px-5 py-3.5 text-center text-[0.85rem] font-semibold text-ink-soft"
             />
           </div>
         </nav>
