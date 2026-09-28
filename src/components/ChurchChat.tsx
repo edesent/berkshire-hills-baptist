@@ -79,7 +79,7 @@ export default function ChurchChat({ enabled }: { enabled: boolean }) {
             Live chat is currently unavailable. We’d still love to hear from
             you.
           </p>
-          <Phone
+          <Email
             showIcon
             className="mt-5 block rounded-sm bg-ink px-4 py-3 text-center text-sm text-cream"
           />
