@@ -2,7 +2,7 @@
 import Script from "next/script";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import Phone from "@/components/Phone";
+import Email from "@/components/Email";
 import { chat } from "@/lib/chat";
 import { site } from "@/lib/site";
 
