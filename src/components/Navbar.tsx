@@ -42,8 +42,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50">
       {/* Service times sit above everything — it is the thing visitors want. */}
       <div className="hidden bg-ink text-cream md:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-2 lg:px-10">
-          <p className="caps text-[0.63rem] font-semibold text-gold-pale/85 xl:text-[0.7rem]">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-8 gap-y-1 px-6 py-2.5 lg:px-10">
+          <p className="caps text-[0.75rem] font-semibold leading-relaxed text-gold-pale/90 xl:text-[0.82rem]">
             Sunday School 10:00
             <span className="mx-2 text-gold/50">&#9670;</span>
             Worship 11:00
@@ -52,10 +52,10 @@ export default function Navbar() {
             <span className="mx-2 text-gold/50">&#9670;</span>
             Wednesday 6:30
           </p>
-          <p className="caps text-[0.63rem] font-semibold text-gold-pale/85 xl:text-[0.7rem]">
-            Lee, Massachusetts
+          <p className="caps text-[0.75rem] font-semibold leading-relaxed text-gold-pale/90 xl:text-[0.82rem]">
+            190 Pleasant St., Lee, MA 01238
             <span className="mx-2 text-gold/50">&#9670;</span>
-            <Email className="normal-case tracking-normal transition hover:text-gold-light" />
+            <Email className="font-sans text-[0.85rem] font-normal normal-case tracking-normal transition hover:text-gold-light xl:text-[0.92rem]" />
           </p>
         </div>
       </div>
