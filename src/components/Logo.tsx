@@ -63,32 +63,22 @@ type LogoProps = {
   tone?: "ink" | "cream";
   alt?: string;
   className?: string;
-  /** "stacked" (default): name over a small "Baptist Church". "inline": the
-   * whole name on one line at a single size — used in the top navigation. */
-  layout?: "stacked" | "inline";
+  /** "large" sets the name a step bigger (used in the top navigation). */
+  size?: "default" | "large";
 };
 
 export default function Logo({
   tone = "ink",
   alt = "",
   className = "",
-  layout = "stacked",
+  size = "default",
 }: LogoProps) {
   const color = tone === "cream" ? "text-cream" : "text-ink";
-
-  if (layout === "inline") {
-    return (
-      <span
-        role={alt ? "img" : undefined}
-        aria-label={alt || undefined}
-        className={`block whitespace-nowrap leading-none ${color} ${className}`}
-      >
-        <span className="display block text-[clamp(0.6rem,3.3vw,0.95rem)] leading-[1.15] sm:text-[1.05rem] lg:text-[1.3rem] 2xl:text-[1.35rem]">
-          Berkshire Hills <span className="text-gold">Baptist Church</span>
-        </span>
-      </span>
-    );
-  }
+  const nameSize =
+    size === "large"
+      ? "text-[1.2rem] sm:text-[1.4rem]"
+      : "text-[1.05rem] sm:text-[1.2rem]";
+  const subSize = size === "large" ? "text-[0.6rem]" : "text-[0.52rem]";
 
   return (
     <span
