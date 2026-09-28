@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Phone from "@/components/Phone";
+import Email from "@/components/Email";
 
 /**
  * The prayer request form on the homepage. It posts to the same /api/contact
