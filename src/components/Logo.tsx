@@ -86,10 +86,12 @@ export default function Logo({
       aria-label={alt || undefined}
       className={`block whitespace-nowrap leading-none ${color} ${className}`}
     >
-      <span className="display block text-[1.05rem] leading-[1.15] sm:text-[1.2rem]">
+      <span className={`display block leading-[1.15] ${nameSize}`}>
         Berkshire Hills
       </span>
-      <span className="caps mt-1 block text-[0.52rem] font-semibold tracking-[0.16em] text-gold">
+      <span
+        className={`caps mt-1 block font-semibold tracking-[0.16em] text-gold ${subSize}`}
+      >
         Baptist Church
       </span>
     </span>
