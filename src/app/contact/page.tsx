@@ -106,10 +106,10 @@ export default function ContactPage() {
                     </div>
                     <div className="px-7 py-6">
                       <dt className="caps text-[0.58rem] font-semibold text-text-muted">
-                        Phone
+                        Email
                       </dt>
                       <dd className="display mt-2 text-[1.28rem] text-ink">
-                        <Phone className="transition hover:text-oak-dark" />
+                        <Email className="transition hover:text-oak-dark" />
                       </dd>
                     </div>
                     <div className="px-7 py-6">
