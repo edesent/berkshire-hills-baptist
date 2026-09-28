@@ -1,4 +1,4 @@
-import Phone from "@/components/Phone";
+import Email from "@/components/Email";
 import { site } from "@/lib/site";
 
 /** The strip under the hero. No brand icon set exists for this church, so
