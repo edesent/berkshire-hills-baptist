@@ -145,7 +145,7 @@ export default function Navbar() {
 
       {/* Mobile panel */}
       <div
-        className={`overflow-hidden border-b border-linen bg-cream transition-[max-height] duration-400 2xl:hidden ${
+        className={`overflow-hidden border-b border-linen bg-cream transition-[max-height] duration-400 xl:hidden ${
           open ? "max-h-[calc(100dvh-90px)] overflow-y-auto" : "hidden"
         }`}
       >
