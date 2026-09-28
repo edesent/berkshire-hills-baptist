@@ -23,10 +23,39 @@ export async function generateMetadata({
   const { id } = await params;
   const sermon = await getSermon(decodeURIComponent(id));
   if (!sermon) return {};
+
+  const path = `/sermons/${sermon.id}`;
+  const description = sermon.description.slice(0, 300) || undefined;
+  // Each sermon's own title slide from archive.org is the preview picture;
+  // messages without one fall back to the church's general share image.
+  const image = sermon.imageUrl
+    ? {
+        url: sermon.imageUrl,
+        width: 1440,
+        height: 1080,
+        alt: `Title slide for “${sermon.title}”`,
+      }
+    : { url: `${siteUrl}/opengraph-image` };
+
   return {
     title: `${sermon.title} — Sermon`,
-    description: sermon.description.slice(0, 300) || undefined,
-    alternates: { canonical: `/sermons/${sermon.id}` },
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: sermon.title,
+      description,
+      url: path,
+      type: "article",
+      locale: "en_US",
+      siteName: site.name,
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: sermon.title,
+      description,
+      images: [image.url],
+    },
   };
 }
 
