@@ -69,9 +69,9 @@ const FACTS = [
     ),
   },
   {
-    icon: PhoneIcon,
-    label: "Call the church",
-    body: <Phone className="transition hover:text-oak" />,
+    icon: MailIcon,
+    label: "Email the church",
+    body: <Email className="transition hover:text-oak" />,
   },
   {
     icon: BookIcon,
