@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { SermonAudio } from "@/components/MessagesLibrary";
 import { formatSermonDate, getSermon, getSermons } from "@/lib/sermon-audio";
+import { site, siteUrl } from "@/lib/site";
 
 export const revalidate = 3600;
 
