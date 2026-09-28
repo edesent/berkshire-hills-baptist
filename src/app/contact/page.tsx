@@ -57,10 +57,10 @@ export default function ContactPage() {
                     <div className="rounded-sm border border-linen-dark bg-parchment p-7">
                       <p className="leading-relaxed text-text-light">
                         Use the chat button at the bottom of the page to send us
-                        a message. You can also call the church or contact us on
-                        Facebook.
+                        a message. You can also email the church or contact us
+                        on Facebook.
                       </p>
-                      <Phone
+                      <Email
                         showIcon
                         className="mt-6 block text-lg text-oak-dark"
                       />
