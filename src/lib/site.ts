@@ -99,6 +99,7 @@ export const serviceTimes: ServiceTime[] = [
     closes: "15:15",
     blurb:
       "A good time of fellowship for the whole family — favorite hymns, praise songs and choruses, then an informal Bible study together.",
+    note: "Sunday, Oct 4 only: in place of the 2:00 service, join us after worship for a light lunch, a hymn sing and testimonies.",
   },
   {
     day: "Wednesday",
