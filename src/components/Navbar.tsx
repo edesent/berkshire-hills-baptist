@@ -78,7 +78,7 @@ export default function Navbar() {
 
           <nav
             aria-label="Main navigation"
-            className="hidden items-center gap-1 2xl:flex"
+            className="hidden items-center gap-1 xl:flex"
           >
             {links.map((link) => (
               <Link
