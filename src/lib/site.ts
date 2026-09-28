@@ -68,6 +68,8 @@ export interface ServiceTime {
   opens: string;
   closes: string;
   blurb: string;
+  /** Optional one-off notice shown on the service card (e.g. a special Sunday). */
+  note?: string;
 }
 
 export const serviceTimes: ServiceTime[] = [
