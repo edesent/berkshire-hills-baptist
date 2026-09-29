@@ -33,14 +33,10 @@ export const metadata: Metadata = {
     description: site.description,
     images: [`${siteUrl}/twitter-image`],
   },
-  // This is a design proposal that re-hosts the church's own words. It must
-  // never compete with berkshirehillsbaptist.weebly.com in search. Flip to
-  // index/follow only once it becomes the live site on their own domain.
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: { index: false, follow: false },
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
   category: "religion",
   icons: {
