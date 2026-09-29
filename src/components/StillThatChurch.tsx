@@ -51,15 +51,8 @@ export default function StillThatChurch() {
                 />
               </div>
               <figcaption className="mt-4 text-[0.78rem] leading-relaxed text-text-muted">
-                Wednesday nights we work through the Bible chapter by chapter.
-                You can{" "}
-                <Link
-                  href="/sermons"
-                  className="focus-ring text-oak-dark underline decoration-gold/50 underline-offset-4 transition hover:decoration-gold"
-                >
-                  listen to a recent message
-                </Link>{" "}
-                before you decide to come.
+                View from the pew: special music and a projector screen to
+                help lead worship!
               </figcaption>
             </figure>
           </div>
