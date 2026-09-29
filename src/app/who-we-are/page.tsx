@@ -130,8 +130,8 @@ export default function WhoWeArePage() {
                     />
                   </div>
                   <figcaption className="mt-4 text-[0.79rem] leading-relaxed text-text-muted">
-                    Wooden pews, a simple platform, and a message on the
-                    screen behind the pulpit.
+                    Wooden pews, a simple platform, and special music being
+                    sung to glorify the Lord!
                   </figcaption>
                 </figure>
 
