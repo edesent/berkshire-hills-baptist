@@ -18,7 +18,14 @@ type Payload = Partial<
     "name" | "email" | "phone" | "reason" | "message" | "website",
     string
   >
->;
+> & { elapsed?: unknown };
+
+// Faster than anyone can type a name, a contact and a message.
+const MIN_FILL_MS = 3000;
+
+// Fake-data generators (Faker and friends) build addresses like
+// "Orpha256.DAmore.1963@…": first name + digits, last name, birth year.
+const GENERATED_EMAIL = /^[a-z]+\d+\.[a-z]+\.(19|20)\d\d@/i;
 
 function clean(value: unknown, max = 2000) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
@@ -42,6 +49,14 @@ export async function POST(request: Request) {
   // Honeypot: a real visitor never fills this in, a bot fills in everything.
   // Answer as though it sent, so the bot has nothing to learn from retrying.
   if (clean(body.website, 200)) {
+    return NextResponse.json({ ok: true });
+  }
+
+  // Same quiet answer for a form filled too fast (or posted without the page
+  // at all) and for a generated address.
+  const elapsed = typeof body.elapsed === "number" ? body.elapsed : 0;
+  if (elapsed < MIN_FILL_MS || GENERATED_EMAIL.test(clean(body.email, 200))) {
+    console.warn("contact: dropped as spam", { elapsed, email: body.email });
     return NextResponse.json({ ok: true });
   }
 

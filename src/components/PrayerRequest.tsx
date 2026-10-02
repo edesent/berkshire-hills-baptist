@@ -17,6 +17,9 @@ export default function PrayerRequest() {
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
+  // When the form appeared. A person takes seconds to write; a bot fills it
+  // in instantly, and one posting straight to the API never sends it at all.
+  const [shownAt] = useState(() => Date.now());
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -31,6 +34,7 @@ export default function PrayerRequest() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           website: data.get("website"),
+          elapsed: Date.now() - shownAt,
           name: data.get("name"),
           email: data.get("email"),
           phone: data.get("phone"),
