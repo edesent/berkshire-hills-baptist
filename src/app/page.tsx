@@ -13,6 +13,7 @@ import Navbar from "@/components/Navbar";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import Services from "@/components/Services";
 import StillThatChurch from "@/components/StillThatChurch";
+import UpcomingDatesBanner from "@/components/UpcomingDatesBanner";
 import WelcomePastor from "@/components/WelcomePastor";
 import { canonical, pastor, serviceTimes, site } from "@/lib/site";
 
