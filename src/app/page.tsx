@@ -1,4 +1,3 @@
-import AnniversaryBanner from "@/components/AnniversaryBanner";
 import EternalLifeCta from "@/components/EternalLifeCta";
 import FindUs from "@/components/FindUs";
 import Footer from "@/components/Footer";
