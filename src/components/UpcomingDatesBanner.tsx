@@ -18,7 +18,7 @@ const dates: {
     date: "Sun, Nov 1",
     lines: ["10:00 am \u00b7 Sunday School", "11:00 am \u00b7 Morning Service"],
     note: "A light luncheon will follow the morning service, followed by an abbreviated afternoon service.",
-    badge: "No 2 pm Afternoon Service on Oct 25",
+    badge: "No 2 pm Afternoon Service on Nov 1",
   },
 ];
 
