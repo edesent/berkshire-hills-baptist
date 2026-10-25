@@ -10,7 +10,7 @@ const dates: {
   badge?: string;
 }[] = [
   {
-    date: "Wed, Oct 21",
+    date: "Wed, Oct 28",
     lines: ["6:30 pm \u00b7 Prayer and Bible Study"],
     note: "Location: email pjmarkavage@gmail.com for tonight's location.",
   },
