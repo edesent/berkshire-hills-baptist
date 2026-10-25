@@ -15,7 +15,7 @@ const dates: {
     note: "Location: email pjmarkavage@gmail.com for tonight's location.",
   },
   {
-    date: "Sun, Oct 25",
+    date: "Sun, Nov 1",
     lines: ["10:00 am \u00b7 Sunday School", "11:00 am \u00b7 Morning Service"],
     note: "Shortly following, Annual Business Meeting and brief afternoon service.",
     badge: "No 2 pm Afternoon Service on Oct 25",
