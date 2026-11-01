@@ -117,14 +117,9 @@ export default function Footer() {
             </address>
             <Email
               showIcon
-              className="mt-4 block text-sm text-cream/70 transition hover:text-gold-light"
+              stacked
+              className="mt-4 block space-y-1.5 text-sm text-cream/70 transition hover:text-gold-light"
             />
-            <Link
-              href="/contact"
-              className="focus-ring mt-2 block text-sm text-cream/70 transition hover:text-gold-light"
-            >
-              Send us a message
-            </Link>
 
             <dl className="mt-6 space-y-1.5 text-[0.8rem] text-cream/60">
               {serviceTimes.map((service) => (

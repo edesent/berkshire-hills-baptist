@@ -36,7 +36,10 @@ export default function FindUs() {
                   By email
                 </dt>
                 <dd className="display mt-1.5 text-xl text-ink">
-                  <Email className="transition hover:text-oak-dark" />
+                  <Email
+                    stacked
+                    className="block break-words text-[1.1rem] transition hover:text-oak-dark"
+                  />
                 </dd>
               </div>
             </dl>
@@ -54,7 +57,7 @@ export default function FindUs() {
                 href="/contact"
                 className="focus-ring caps rounded-sm border border-linen-dark bg-cream px-6 py-4 text-[0.68rem] font-semibold text-ink-soft transition hover:border-gold hover:text-oak-dark"
               >
-                Send a Message
+                Contact Us
               </Link>
             </div>
 

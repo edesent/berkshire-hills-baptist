@@ -20,7 +20,7 @@ The preview deliberately uses `noindex` and disallows crawling. Keep those setti
 
 ## Content and pages
 
-`src/lib/site.ts` holds the church's facts and service times. The current schedule is Sunday School 10 a.m., morning worship 11 a.m., Sunday afternoon service 2 p.m., and Wednesday prayer and Bible study 6:30 p.m. The website's original service descriptions call the afternoon gathering “Sunday Evening Praise”; the redesigned schedule labels it by the actual time of day.
+`src/lib/site.ts` holds the church's facts and service times. The current schedule is Sunday School 10 a.m., morning worship 11 a.m., a light luncheon around 12:15 p.m., Sunday afternoon service around 1 p.m., and Wednesday prayer and Bible study 6:30 p.m. The website's original service descriptions call the afternoon gathering “Sunday Evening Praise”; the redesigned schedule labels it by the actual time of day.
 
 `src/data/weebly.json` preserves all 617 pages in the original sitemap as of September 19, 2026, including 574 sermon and devotional posts. The source URL is retained for every page. Scripts, old layout styling, comments, and obsolete forms are removed from the imported markup; the church's article text, resource links, audio players, and prayer embeds remain. Original historical event pages are labeled as archives. The full doctrinal statement is preserved from the source, replacing the previous shortened version.
 

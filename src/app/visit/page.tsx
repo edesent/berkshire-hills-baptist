@@ -29,7 +29,7 @@ const faqSchema = {
 const steps = [
   {
     title: "Pick a service",
-    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come to the Sunday Afternoon Service at 2:00.",
+    body: "Sunday morning at 11:00 is the easiest first visit. Stay for the light luncheon afterward, around 12:15, and the Sunday Afternoon Service follows around 1:00.",
   },
   {
     title: "Find Pleasant Street",
@@ -62,11 +62,12 @@ export default function VisitPage() {
           lede="Walking into a church you have never been to is a strange feeling for anybody. So here is exactly what a first Sunday at Berkshire Hills is like, before you have to find out in person."
           breadcrumb={[{ href: "/visit", label: "What to Expect" }]}
         >
-          <div className="mt-10 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 border-t border-cream/15 pt-8 sm:grid-cols-4">
+          <div className="mt-10 grid max-w-4xl grid-cols-2 gap-x-8 gap-y-5 border-t border-cream/15 pt-8 sm:grid-cols-5">
             {[
               ["Sunday School", "10:00 a.m."],
               ["Morning Worship", "11:00 a.m."],
-              ["Sunday Afternoon Service", "2:00 p.m."],
+              ["Light Luncheon", "Around 12:15 p.m."],
+              ["Sunday Afternoon Service", "Around 1:00 p.m."],
               ["Wednesday", "6:30 p.m."],
             ].map(([label, time]) => (
               <div key={label}>
@@ -179,18 +180,19 @@ export default function VisitPage() {
                   </h2>
                   <p className="mt-3 leading-relaxed text-text-light">
                     Email the church and somebody will get back to you, or
-                    send a message through our contact page.
+                    see our contact page.
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <Email
                       showIcon
+                      stacked
                       className="rounded-sm bg-ink px-6 py-4 text-[0.85rem] font-semibold text-cream transition hover:bg-oak-dark"
                     />
                     <Link
                       href="/contact"
                       className="focus-ring caps rounded-sm border border-linen-dark bg-cream px-6 py-4 text-[0.68rem] font-semibold text-ink-soft transition hover:border-gold hover:text-oak-dark"
                     >
-                      Send a message
+                      Contact us
                     </Link>
                   </div>
                 </div>

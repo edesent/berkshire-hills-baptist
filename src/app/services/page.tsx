@@ -19,7 +19,7 @@ export default function Page() {
         <PageHero
           eyebrow="Worship with us"
           title="A place for you, every week."
-          lede="Join us for Sunday School at 10 a.m., morning worship at 11 a.m., Sunday afternoon service at 2 p.m., and Wednesday prayer and Bible study at 6:30 p.m."
+          lede="Join us for Sunday School at 10 a.m., morning worship at 11 a.m., a light luncheon around 12:15 p.m., the Sunday afternoon service around 1 p.m., and Wednesday prayer and Bible study at 6:30 p.m."
         />
         <Services />
         <UpcomingEvents />

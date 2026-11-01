@@ -16,7 +16,7 @@ export const site = {
   /** From their own "Our Church Is..." page. */
   descriptor: "An Independent, King James Bible-believing Baptist church",
   description:
-    "Berkshire Hills Baptist Church is an Independent Baptist church in Lee, Massachusetts, in the Berkshires — King James Bible preaching, hymn singing, and a warm welcome. Sunday School 10:00, Morning Worship 11:00, Sunday Afternoon Service 2:00, Wednesday Prayer & Bible Study 6:30.",
+    "Berkshire Hills Baptist Church is an Independent Baptist church in Lee, Massachusetts, in the Berkshires — King James Bible preaching, hymn singing, and a warm welcome. Sunday School 10:00, Morning Worship 11:00, Light Luncheon around 12:15, Sunday Afternoon Service around 1:00, Wednesday Prayer & Bible Study 6:30.",
   address: {
     street: "190 Pleasant Street, Route 102",
     city: "Lee",
@@ -34,8 +34,16 @@ export const site = {
    * email instead. Encoded like the phone number and assembled in the browser.
    * To bring the phone back, revert the "phone out of service" changes.
    */
-  emailHrefEncoded: "bWFpbHRvOnBhc3RvckBiZXJrc2hpcmVoaWxsc2JhcHRpc3QuY29t", // mailto:pastor@berkshirehillsbaptist.com
-  emailDisplayEncoded: "cGFzdG9yQGJlcmtzaGlyZWhpbGxzYmFwdGlzdC5jb20=", // pastor@berkshirehillsbaptist.com
+  emails: [
+    {
+      hrefEncoded: "bWFpbHRvOnBhc3RvckBiZXJrc2hpcmVoaWxsc2JhcHRpc3QuY29t", // mailto:pastor@berkshirehillsbaptist.com
+      displayEncoded: "cGFzdG9yQGJlcmtzaGlyZWhpbGxzYmFwdGlzdC5jb20=", // pastor@berkshirehillsbaptist.com
+    },
+    {
+      hrefEncoded: "bWFpbHRvOnBldGVyQGJlcmtzaGlyZWhpbGxzYmFwdGlzdC5jb20=", // mailto:peter@berkshirehillsbaptist.com
+      displayEncoded: "cGV0ZXJAYmVya3NoaXJlaGlsbHNiYXB0aXN0LmNvbQ==", // peter@berkshirehillsbaptist.com
+    },
+  ],
   contactPath: "/contact",
   geo: {
     // Geocoded from the church's own street address (190 Pleasant St, Lee, MA
@@ -97,15 +105,16 @@ export const serviceTimes: ServiceTime[] = [
     closes: "12:15",
     blurb:
       "We worship God together with hymns, praise and worship songs, and practical, applicable Bible preaching. Children's Church runs after the handshaking, up to age 14.",
+    note: "A light luncheon follows the service, around 12:15.",
   },
   {
     day: "Sunday",
     title: "Sunday Afternoon Service",
-    time: "2:00 p.m.",
-    opens: "14:00",
-    closes: "15:15",
+    time: "Around 1:00 p.m.",
+    opens: "13:00",
+    closes: "14:15",
     blurb:
-      "A good time of fellowship for the whole family — favorite hymns, praise songs and choruses, then an informal Bible study together.",
+      "Following the light luncheon, a good time of fellowship for the whole family — favorite hymns, praise songs and choruses, then an informal Bible study together.",
   },
   {
     day: "Wednesday",
