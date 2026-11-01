@@ -180,7 +180,7 @@ export default function VisitPage() {
                   </h2>
                   <p className="mt-3 leading-relaxed text-text-light">
                     Email the church and somebody will get back to you, or
-                    send a message through our contact page.
+                    see our contact page.
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <Email
