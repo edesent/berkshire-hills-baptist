@@ -36,7 +36,10 @@ export default function FindUs() {
                   By email
                 </dt>
                 <dd className="display mt-1.5 text-xl text-ink">
-                  <Email className="transition hover:text-oak-dark" />
+                  <Email
+                    stacked
+                    className="block break-words text-[1.1rem] transition hover:text-oak-dark"
+                  />
                 </dd>
               </div>
             </dl>
