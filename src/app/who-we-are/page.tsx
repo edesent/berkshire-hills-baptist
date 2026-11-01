@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import StillThatChurch from "@/components/StillThatChurch";
-import { canonical, site } from "@/lib/site";
+import { canonical, site, staff } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Who We Are",
