@@ -46,34 +46,30 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <div className="grid gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
               <div>
-                <p className="eyebrow">Send a message</p>
+                <p className="eyebrow">Email us</p>
                 <h2 className="display mt-4 text-[clamp(1.44rem,2.74vw,1.98rem)] text-ink">
                   We would love to hear from you.
                 </h2>
                 <div className="mt-9">
-                  {process.env.SLACK_WEBHOOK_URL ? (
-                    <ContactForm />
-                  ) : (
-                    <div className="rounded-sm border border-linen-dark bg-parchment p-7">
-                      <p className="leading-relaxed text-text-light">
-                        Use the chat button at the bottom of the page to send us
-                        a message. You can also email the church or contact us
-                        on Facebook.
-                      </p>
-                      <Email
-                        showIcon
-                        className="mt-6 block text-lg text-oak-dark"
-                      />
-                      <a
-                        href={site.social.facebook}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="focus-ring mt-5 inline-block rounded-sm bg-ink px-5 py-3 text-sm text-cream"
-                      >
-                        Contact us on Facebook
-                      </a>
-                    </div>
-                  )}
+                  <div className="rounded-sm border border-linen-dark bg-parchment p-7">
+                    <p className="leading-relaxed text-text-light">
+                      Send an email to either address below and somebody will
+                      get back to you. You can also contact us on Facebook.
+                    </p>
+                    <Email
+                      showIcon
+                      stacked
+                      className="mt-6 block space-y-2 text-lg text-oak-dark"
+                    />
+                    <a
+                      href={site.social.facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="focus-ring mt-5 inline-block rounded-sm bg-ink px-5 py-3 text-sm text-cream"
+                    >
+                      Contact us on Facebook
+                    </a>
+                  </div>
                 </div>
               </div>
 
