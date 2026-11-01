@@ -184,6 +184,7 @@ export default function Navbar() {
             </Link>
             <Email
               showIcon
+              stacked
               className="rounded-sm border border-linen-dark px-5 py-3.5 text-center text-[0.85rem] font-semibold text-ink-soft"
             />
           </div>
