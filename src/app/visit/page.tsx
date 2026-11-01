@@ -185,6 +185,7 @@ export default function VisitPage() {
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <Email
                       showIcon
+                      stacked
                       className="rounded-sm bg-ink px-6 py-4 text-[0.85rem] font-semibold text-cream transition hover:bg-oak-dark"
                     />
                     <Link
