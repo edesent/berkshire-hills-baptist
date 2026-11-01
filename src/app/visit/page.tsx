@@ -29,7 +29,7 @@ const faqSchema = {
 const steps = [
   {
     title: "Pick a service",
-    body: "Sunday morning at 11:00 is the easiest first visit. If you would rather start somewhere quieter, come to the Sunday Afternoon Service at 2:00.",
+    body: "Sunday morning at 11:00 is the easiest first visit. Stay for the light luncheon afterward, around 12:15, and the Sunday Afternoon Service follows around 1:00.",
   },
   {
     title: "Find Pleasant Street",
