@@ -97,6 +97,7 @@ export const serviceTimes: ServiceTime[] = [
     closes: "12:15",
     blurb:
       "We worship God together with hymns, praise and worship songs, and practical, applicable Bible preaching. Children's Church runs after the handshaking, up to age 14.",
+    note: "A light luncheon follows the service, around 12:15.",
   },
   {
     day: "Sunday",
