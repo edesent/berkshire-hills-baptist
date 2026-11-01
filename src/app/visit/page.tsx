@@ -62,7 +62,7 @@ export default function VisitPage() {
           lede="Walking into a church you have never been to is a strange feeling for anybody. So here is exactly what a first Sunday at Berkshire Hills is like, before you have to find out in person."
           breadcrumb={[{ href: "/visit", label: "What to Expect" }]}
         >
-          <div className="mt-10 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 border-t border-cream/15 pt-8 sm:grid-cols-4">
+          <div className="mt-10 grid max-w-4xl grid-cols-2 gap-x-8 gap-y-5 border-t border-cream/15 pt-8 sm:grid-cols-5">
             {[
               ["Sunday School", "10:00 a.m."],
               ["Morning Worship", "11:00 a.m."],
