@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import ChurchChat from "@/components/ChurchChat";
 import { HashScroller } from "@/components/HashScroller";
 import { localKeywords, site, siteUrl } from "@/lib/site";
 import "./globals.css";
