@@ -217,6 +217,17 @@ export const leadership: LeaderCard[] = [
   },
 ];
 
+/**
+ * The brief staff list shown on the About page (/who-we-are). To add or
+ * change someone, edit a line below: role first, then name.
+ */
+export const staff: { role: string; name: string }[] = [
+  { role: "Pastor", name: "Doug Mann, DMin" },
+  { role: "Deacon", name: "Peter Markavage" },
+  { role: "Deacon", name: "Will Stewart" },
+  { role: "Deacon", name: "Greg Nelson" },
+];
+
 /* ── Dated events ─────────────────────────────────────────────────────────── */
 /**
  * The handful of dated things on the calendar, sent by the church on the

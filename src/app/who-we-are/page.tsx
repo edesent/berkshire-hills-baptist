@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import StillThatChurch from "@/components/StillThatChurch";
-import { canonical, site } from "@/lib/site";
+import { canonical, site, staff } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Who We Are",
@@ -185,6 +185,33 @@ export default function WhoWeArePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section
+          aria-labelledby="staff-heading"
+          className="section-pad bg-parchment"
+        >
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <p className="eyebrow">Church staff</p>
+            <h2
+              id="staff-heading"
+              className="display mt-4 text-[clamp(1.52rem,3.04vw,2.20rem)] text-ink"
+            >
+              Who leads Berkshire Hills Baptist Church.
+            </h2>
+            <dl className="mt-10 grid gap-px overflow-hidden rounded-sm border border-linen-dark bg-linen-dark sm:grid-cols-2 lg:grid-cols-4">
+              {staff.map((person) => (
+                <div key={person.name} className="bg-cream p-6 lg:p-7">
+                  <dt className="caps text-[0.58rem] font-semibold text-text-muted">
+                    {person.role}
+                  </dt>
+                  <dd className="display mt-2 text-[1.28rem] leading-snug text-ink">
+                    {person.name}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
 
