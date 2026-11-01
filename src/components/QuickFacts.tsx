@@ -71,7 +71,7 @@ const FACTS = [
   {
     icon: MailIcon,
     label: "Email the church",
-    body: <Email className="transition hover:text-oak" />,
+    body: <Email stacked className="block break-words transition hover:text-oak" />,
   },
   {
     icon: BookIcon,
