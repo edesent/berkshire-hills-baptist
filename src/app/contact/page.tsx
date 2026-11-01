@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ContactForm from "@/components/ContactForm";
 import Email from "@/components/Email";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
