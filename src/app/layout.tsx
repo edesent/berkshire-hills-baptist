@@ -72,9 +72,6 @@ export default function RootLayout({
         </a>
         <HashScroller />
         {children}
-        <ChurchChat
-          enabled={process.env.NEXT_PUBLIC_CHAT_ENABLED !== "false"}
-        />
       </body>
     </html>
   );
