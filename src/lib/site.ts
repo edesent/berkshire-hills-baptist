@@ -16,7 +16,7 @@ export const site = {
   /** From their own "Our Church Is..." page. */
   descriptor: "An Independent, King James Bible-believing Baptist church",
   description:
-    "Berkshire Hills Baptist Church is an Independent Baptist church in Lee, Massachusetts, in the Berkshires — King James Bible preaching, hymn singing, and a warm welcome. Sunday School 10:00, Morning Worship 11:00, Sunday Afternoon Service 2:00, Wednesday Prayer & Bible Study 6:30.",
+    "Berkshire Hills Baptist Church is an Independent Baptist church in Lee, Massachusetts, in the Berkshires — King James Bible preaching, hymn singing, and a warm welcome. Sunday School 10:00, Morning Worship 11:00, Light Luncheon around 12:15, Sunday Afternoon Service around 1:00, Wednesday Prayer & Bible Study 6:30.",
   address: {
     street: "190 Pleasant Street, Route 102",
     city: "Lee",
