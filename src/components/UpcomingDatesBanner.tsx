@@ -12,15 +12,16 @@ const dates: {
   {
     date: "Wed, Nov 4",
     lines: ["6:30 pm \u00b7 Prayer and Bible Study"],
+    note: "Location: At the church at 190 Pleasant St., Lee, MA",
   },
   {
     date: "Sun, Nov 8",
     lines: [
       "10:00 am \u00b7 Sunday School",
       "11:00 am \u00b7 Morning Worship",
-      "2:00 pm \u00b7 Afternoon Service",
+      "Around 12:15 pm \u00b7 Light Luncheon",
+      "Around 1:00 pm \u00b7 Afternoon Service",
     ],
-    note: "Thank you to everyone who joined us for the morning service, luncheon, and afternoon service on Nov 1.",
   },
 ];
 
