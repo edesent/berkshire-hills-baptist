@@ -104,7 +104,10 @@ export default function ContactPage() {
                         Email
                       </dt>
                       <dd className="display mt-2 text-[1.28rem] text-ink">
-                        <Email className="transition hover:text-oak-dark" />
+                        <Email
+                          stacked
+                          className="block break-words text-[1.1rem] transition hover:text-oak-dark"
+                        />
                       </dd>
                     </div>
                     <div className="px-7 py-6">
