@@ -34,8 +34,16 @@ export const site = {
    * email instead. Encoded like the phone number and assembled in the browser.
    * To bring the phone back, revert the "phone out of service" changes.
    */
-  emailHrefEncoded: "bWFpbHRvOnBhc3RvckBiZXJrc2hpcmVoaWxsc2JhcHRpc3QuY29t", // mailto:pastor@berkshirehillsbaptist.com
-  emailDisplayEncoded: "cGFzdG9yQGJlcmtzaGlyZWhpbGxzYmFwdGlzdC5jb20=", // pastor@berkshirehillsbaptist.com
+  emails: [
+    {
+      hrefEncoded: "bWFpbHRvOnBhc3RvckBiZXJrc2hpcmVoaWxsc2JhcHRpc3QuY29t", // mailto:pastor@berkshirehillsbaptist.com
+      displayEncoded: "cGFzdG9yQGJlcmtzaGlyZWhpbGxzYmFwdGlzdC5jb20=", // pastor@berkshirehillsbaptist.com
+    },
+    {
+      hrefEncoded: "bWFpbHRvOnBldGVyQGJlcmtzaGlyZWhpbGxzYmFwdGlzdC5jb20=", // mailto:peter@berkshirehillsbaptist.com
+      displayEncoded: "cGV0ZXJAYmVya3NoaXJlaGlsbHNiYXB0aXN0LmNvbQ==", // peter@berkshirehillsbaptist.com
+    },
+  ],
   contactPath: "/contact",
   geo: {
     // Geocoded from the church's own street address (190 Pleasant St, Lee, MA
