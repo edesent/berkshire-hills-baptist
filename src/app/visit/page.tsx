@@ -66,7 +66,8 @@ export default function VisitPage() {
             {[
               ["Sunday School", "10:00 a.m."],
               ["Morning Worship", "11:00 a.m."],
-              ["Sunday Afternoon Service", "2:00 p.m."],
+              ["Light Luncheon", "Around 12:15 p.m."],
+              ["Sunday Afternoon Service", "Around 1:00 p.m."],
               ["Wednesday", "6:30 p.m."],
             ].map(([label, time]) => (
               <div key={label}>
