@@ -79,7 +79,7 @@ const faqSchema = {
       name: "What time are services at Berkshire Hills Baptist Church?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sunday School is at 10:00 a.m., Morning Worship at 11:00 a.m., and Sunday Afternoon Service at 2:00 p.m. Prayer and Bible Study is Wednesday at 6:30 p.m.",
+        text: "Sunday School is at 10:00 a.m., Morning Worship at 11:00 a.m., followed by a light luncheon around 12:15 p.m. and the Sunday Afternoon Service around 1:00 p.m. Prayer and Bible Study is Wednesday at 6:30 p.m.",
       },
     },
     {
