@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { serviceTimes, site } from "@/lib/site";
+// The strip under the hero: the regular service times, with the light
+// luncheon slotted in between the morning and afternoon services.
+const stripTimes = [
+  ...serviceTimes.slice(0, 2),
+  { day: "Sunday", title: "Light Luncheon", time: "Around 12:15 p.m." },
+  ...serviceTimes.slice(2),
+];
+
 export default function Hero() {
   return (
     <section className="overflow-hidden bg-cream">
