@@ -85,6 +85,13 @@ export default function UpcomingDatesBanner() {
             </li>
           ))}
         </ul>
+
+        <p className="mt-10 text-[clamp(1rem,1.7vw,1.2rem)] leading-relaxed text-cream/90">
+          <span className="caps text-[0.78rem] font-semibold text-gold-light">
+            Wed, Nov 25
+          </span>{" "}
+          @ 6:30 pm &middot; Thanksgiving Service
+        </p>
       </div>
     </section>
   );
