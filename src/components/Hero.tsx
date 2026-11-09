@@ -66,8 +66,8 @@ export default function Hero() {
         </div>
       </div>
       <div className="border-y border-linen bg-parchment">
-        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-7 lg:grid-cols-4 lg:px-10">
-          {serviceTimes.map((s) => (
+        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-7 lg:grid-cols-5 lg:px-10">
+          {stripTimes.map((s) => (
             <div key={s.title}>
               <dt className="text-xs text-text-light">
                 {s.day} · {s.title}
