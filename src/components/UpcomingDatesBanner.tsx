@@ -10,12 +10,12 @@ const dates: {
   badge?: string;
 }[] = [
   {
-    date: "Wed, Nov 11",
+    date: "Wed, Nov 18",
     lines: ["6:30 pm \u00b7 Prayer and Bible Study"],
     note: "Location: Email pjmarkavage@gmail.com for this week's location.",
   },
   {
-    date: "Sun, Nov 15",
+    date: "Sun, Nov 22",
     lines: [
       "10:00 am \u00b7 Sunday School",
       "11:00 am \u00b7 Morning Worship",
@@ -90,7 +90,7 @@ export default function UpcomingDatesBanner() {
           <span className="caps text-[0.78rem] font-semibold text-gold-light">
             Wed, Nov 25
           </span>{" "}
-          @ 6:30 pm &middot; Thanksgiving Service
+          @ 6:30 pm &middot; &ldquo;Pie and Praise&rdquo; Thanksgiving Service. You are also invited to stay for pie and fellowship after the service.
         </p>
       </div>
     </section>
