@@ -90,7 +90,7 @@ export default function UpcomingDatesBanner() {
           <span className="caps text-[0.78rem] font-semibold text-gold-light">
             Wed, Nov 25
           </span>{" "}
-          @ 6:30 pm &middot; Thanksgiving Service
+          @ 6:30 pm &middot; &ldquo;Pie and Praise&rdquo; Thanksgiving Service. You are also invited to stay for pie and fellowship after the service.
         </p>
       </div>
     </section>
