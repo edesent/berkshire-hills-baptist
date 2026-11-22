@@ -81,7 +81,7 @@ export interface ServiceTime {
   title: string;
   time: string;
   opens: string;
-  closes: string;
+  closes?: string;
   blurb: string;
   /** Optional one-off notice shown on the service card (e.g. a special Sunday). */
   note?: string;
