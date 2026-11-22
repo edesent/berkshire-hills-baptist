@@ -112,7 +112,6 @@ export const serviceTimes: ServiceTime[] = [
     title: "Sunday Afternoon Service",
     time: "Around 12:45 p.m.",
     opens: "12:45",
-    closes: "14:15",
     blurb:
       "Following the light luncheon, a good time of fellowship for the whole family — favorite hymns, praise songs and choruses, then an informal Bible study together.",
   },
