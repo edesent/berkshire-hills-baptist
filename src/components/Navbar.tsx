@@ -50,7 +50,7 @@ export default function Navbar() {
             <span className="mx-2 text-gold/50">&#9670;</span>
             Luncheon 12:15
             <span className="mx-2 text-gold/50">&#9670;</span>
-            Sun. Afternoon 1:00
+            Sun. Afternoon 12:45
             <span className="mx-2 text-gold/50">&#9670;</span>
             Wed. 6:30
           </p>
