@@ -10,17 +10,17 @@ const dates: {
   badge?: string;
 }[] = [
   {
-    date: "Wed, Nov 18",
-    lines: ["6:30 pm \u00b7 Prayer and Bible Study"],
-    note: "Location: Email pjmarkavage@gmail.com for this week's location.",
+    date: "Wed, Nov 25",
+    lines: ["6:30 pm \u00b7 \u201cPie and Praise\u201d Thanksgiving Service"],
+    note: "You are also invited to stay for pie and fellowship after the service. Location: at the church.",
   },
   {
-    date: "Sun, Nov 22",
+    date: "Sun, Nov 29",
     lines: [
       "10:00 am \u00b7 Sunday School",
       "11:00 am \u00b7 Morning Worship",
       "Around 12:15 pm \u00b7 Light Luncheon",
-      "Around 1:00 pm \u00b7 Afternoon Service",
+      "Around 12:45 pm \u00b7 Afternoon Service",
     ],
   },
 ];
