@@ -131,6 +131,7 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
+        <PiePraiseAnnouncement />
         <UpcomingDatesBanner />
         <QuickFacts />
         <WelcomePastor />
