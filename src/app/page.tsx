@@ -7,6 +7,7 @@ import Leadership from "@/components/Leadership";
 import { LatestMessages } from "@/components/MessagesLibrary";
 import Mission from "@/components/Mission";
 import MissionariesHome from "@/components/MissionariesHome";
+import PiePraiseAnnouncement from "@/components/PiePraiseAnnouncement";
 import PrayerRequest from "@/components/PrayerRequest";
 import QuickFacts from "@/components/QuickFacts";
 import Navbar from "@/components/Navbar";
