@@ -82,6 +82,15 @@ export default function UpcomingDatesBanner() {
                   {item.note}
                 </p>
               ) : null}
+              {item.image ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  className="mx-auto mt-6 h-auto w-full max-w-md rounded-sm shadow-lg"
+                  loading="lazy"
+                />
+              ) : null}
               {item.badge ? (
                 <p className="caps mt-4 inline-block max-w-full rounded-sm border border-gold/60 px-5 py-2 text-[0.68rem] font-semibold leading-relaxed text-gold-light">
                   {item.badge}
