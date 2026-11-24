@@ -8,11 +8,16 @@ const dates: {
   lines: string[];
   note?: string;
   badge?: string;
+  image?: { src: string; alt: string };
 }[] = [
   {
     date: "Wed, Nov 25",
     lines: ["6:30 pm \u00b7 \u201cPie and Praise\u201d Thanksgiving Service"],
     note: "You are also invited to stay for pie and fellowship after the service. Location: at the church.",
+    image: {
+      src: "/pie-and-praise.jpg",
+      alt: "Announcement for the Pie and Praise Thanksgiving Service, Wednesday, November 25 at 6:30 pm at the church",
+    },
   },
   {
     date: "Sun, Nov 29",
